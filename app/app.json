@@ -30,7 +30,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "WeUI for 小程序",
+    "navigationBarTitleText": "遇见广金",
     "navigationBarBackgroundColor": "#f8f8f8",
     "backgroundColor": "#f8f8f8"
   },
@@ -54,25 +54,25 @@
       {
         "selectedIconPath": "images/icon2_h.png",
         "iconPath": "images/icon2.png",
-        "pagePath": "page/index",
+        "pagePath": "page/icons/icons",
         "text": "广金圈"
       },
       {
         "selectedIconPath": "images/icon3_h.png",
         "iconPath": "images/icon3_h.png",
-        "pagePath": "page/index",
+        "pagePath": "page/grid/grid",
         "text": "发布"
       },
       {
         "selectedIconPath": "images/icon4_h.png",
         "iconPath": "images/icon4.png",
-        "pagePath": "page/index",
+        "pagePath": "page/gallery/gallery",
         "text": "消息"
       },
       {
         "selectedIconPath": "images/icon5_h.png",
         "iconPath": "images/icon5.png",
-        "pagePath": "page/index",
+        "pagePath": "page/tabbar/tabbar",
         "text": "我的"
       }
     ]
