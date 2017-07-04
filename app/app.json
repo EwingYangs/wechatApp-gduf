@@ -1,32 +1,32 @@
 {
   "pages": [
-    "example/index",
-    "example/button/button",
-    "example/list/list",
-    "example/input/input",
-    "example/slider/slider",
-    "example/uploader/uploader",
-    "example/article/article",
-    "example/badge/badge",
-    "example/flex/flex",
-    "example/footer/footer",
-    "example/gallery/gallery",
-    "example/grid/grid",
-    "example/icons/icons",
-    "example/loadmore/loadmore",
-    "example/panel/panel",
-    "example/preview/preview",
-    "example/progress/progress",
-    "example/actionsheet/actionsheet",
-    "example/dialog/dialog",
-    "example/msg/msg",
-    "example/msg/msg_success",
-    "example/msg/msg_fail",
-    "example/picker/picker",
-    "example/toast/toast",
-    "example/navbar/navbar",
-    "example/tabbar/tabbar",
-    "example/searchbar/searchbar"
+    "page/index",
+    "page/button/button",
+    "page/list/list",
+    "page/input/input",
+    "page/slider/slider",
+    "page/uploader/uploader",
+    "page/article/article",
+    "page/badge/badge",
+    "page/flex/flex",
+    "page/footer/footer",
+    "page/gallery/gallery",
+    "page/grid/grid",
+    "page/icons/icons",
+    "page/loadmore/loadmore",
+    "page/panel/panel",
+    "page/preview/preview",
+    "page/progress/progress",
+    "page/actionsheet/actionsheet",
+    "page/dialog/dialog",
+    "page/msg/msg",
+    "page/msg/msg_success",
+    "page/msg/msg_fail",
+    "page/picker/picker",
+    "page/toast/toast",
+    "page/navbar/navbar",
+    "page/tabbar/tabbar",
+    "page/searchbar/searchbar"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -42,31 +42,37 @@
   },
   "tabBar": {
     "color": "#a9b7b7",
-    "selectedColor": "#d81e06",
+    "selectedColor": "#000000",
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/index.png",
-        "iconPath": "images/index1.png",
-        "pagePath": "example/index",
-        "text": "首页"
+        "selectedIconPath": "images/icon1_h.png",
+        "iconPath": "images/icon1.png",
+        "pagePath": "page/index",
+        "text": "遇见"
       },
       {
-        "selectedIconPath": "images/type.png",
-        "iconPath": "images/type1.png",
-        "pagePath": "example/index",
+        "selectedIconPath": "images/icon2_h.png",
+        "iconPath": "images/icon2.png",
+        "pagePath": "page/index",
         "text": "广金圈"
       },
       {
-        "selectedIconPath": "images/cart.png",
-        "iconPath": "images/cart1.png",
-        "pagePath": "example/index",
-        "text": "二手市场"
+        "selectedIconPath": "images/icon3_h.png",
+        "iconPath": "images/icon3_h.png",
+        "pagePath": "page/index",
+        "text": "发布"
       },
       {
-        "selectedIconPath": "images/center.png",
-        "iconPath": "images/center1.png",
-        "pagePath": "example/index",
+        "selectedIconPath": "images/icon4_h.png",
+        "iconPath": "images/icon4.png",
+        "pagePath": "page/index",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "images/icon5_h.png",
+        "iconPath": "images/icon5.png",
+        "pagePath": "page/index",
         "text": "我的"
       }
     ]
