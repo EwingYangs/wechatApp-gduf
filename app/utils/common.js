@@ -1,6 +1,6 @@
 function showTip(sms, icon, fun, t) {
     if (!t) {
-        t = 1000;
+        t = 500;
     }
     wx.showToast({
         title: sms,
