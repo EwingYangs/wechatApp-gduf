@@ -20,6 +20,7 @@ App({
               if (user.get("nickName")) {
                 // 第二次访问
                 wx.setStorageSync('openid', openid)
+                wx.setStorageSync('user_id', user.id)
               } else {
                 //保存用户其他信息
                 wx.getUserInfo({

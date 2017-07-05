@@ -109,11 +109,11 @@ function getReturn() {
   });
   var molist = new Array();
   wx.getStorage({
-    key: 'openid',
+    key: 'user_id',
     success: function (ress) {
       if (ress.data) {
-        var Diary = Bmob.Object.extend("Cricle");
-        var query = new Bmob.Query(Diary);
+        var Cricle = Bmob.Object.extend("Cricle");
+        var query = new Bmob.Query(Cricle);
 
         if (that.data.limit == that.data.pageSize) {
           query.limit(that.data.limit);
@@ -121,11 +121,12 @@ function getReturn() {
         if (that.data.limit > that.data.pageSize) {
           query.limit(that.data.limit)
         }
-
+        console.log('252');
         //条件查询
         query.equalTo("is_hide", "0");
         query.descending("title");
         query.include("publisher");
+        
         // 查询所有数据
         query.find({
           success: function (results) {

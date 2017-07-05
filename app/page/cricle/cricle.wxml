@@ -2,9 +2,9 @@
 <loading hidden="{{loading}}">
   加载中...
 </loading>
-<import src="../template/cricle.wxml" />
+<import src="../template/list.wxml" />
 <view class="index_list">
-  <navigator url="" hover-class="navigator-hover" wx:for-items="{{moodList}}" wx:key="moodListId" wx:if="{{item.id}}">
+  <navigator url="../cricleDetail/cricleDetail?moodId={{item.id}}" hover-class="navigator-hover" wx:for-items="{{moodList}}" wx:key="moodListId" wx:if="{{item.id}}">
     <template is="listHeader" data="{{userPic:item.avatar,userNick:item.username,publishTime:item.created_at}}" />
     <template is="listTemp" data="{{listPic:item.attachment,listTitle:item.title,listContent:item.content}}" />
     <view class="list_footer">
