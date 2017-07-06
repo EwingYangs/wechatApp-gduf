@@ -45,8 +45,7 @@ navigator {
 }
 
 .listPic {
-  width: 100%;
-  height: 360rpx;
+  width: 156rpx; height: 152rpx;margin-right:15rpx;
   margin-bottom: 16rpx;
 }
 
@@ -114,5 +113,9 @@ navigator {
   bottom: 100rpx;
   border-bottom: 0;
   border-top: 0;
+}
+
+.cricle_pic{
+  
 }
 /*.bord{height:1px;width:100%;position:fixed;bottom: 0;left:0;background:#ccc;}*/

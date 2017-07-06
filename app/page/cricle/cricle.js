@@ -8,8 +8,8 @@ var that;
 Page({
   data: {
     moodList: [],
-    pageSize: 2,//每次加载多少条
-    limit: 2,//跟上面要一致
+    pageSize: 3,//每次加载多少条
+    limit: 3,//跟上面要一致
     loading: false,
     windowHeight1: 0,
     windowWidth1: 0,
@@ -93,7 +93,12 @@ Page({
       });
     }
   },
-
+  seeBig: function (e) {
+    wx.previewImage({
+      current: e.currentTarget.id, // 当前显示图片的http链接
+      urls: this.data.molist // 需要预览的图片http链接列表
+    })
+  }
 })
 
 // 获取广金圈数据
@@ -121,7 +126,6 @@ function getReturn() {
         if (that.data.limit > that.data.pageSize) {
           query.limit(that.data.limit)
         }
-        console.log('252');
         //条件查询
         query.equalTo("is_hide", "0");
         query.descending("title");
@@ -134,7 +138,6 @@ function getReturn() {
               loading: true
             });
             for (var i = 0; i < results.length; i++) {
-              console.log(results[i]);
               var publisherId = results[i].get("publisher").id;
               var title = results[i].get("title");
               var content = results[i].get("content");
@@ -144,12 +147,6 @@ function getReturn() {
               var likeNum = results[i].get("likeNum");
               var commentNum = results[i].get("commentNum");
               var pic = results[i].get("pic");
-              if (pic) {
-                _url = results[i].get("pic")._url;
-              }
-              else {
-                _url = null;
-              }
               var name = results[i].get("publisher").get("nickName");
               var userPic = results[i].get("publisher").get("userPic");
               var liker = results[i].get("liker");
@@ -168,7 +165,7 @@ function getReturn() {
                   "id": id || '',
                   "avatar": userPic || '',
                   "created_at": createdAt || '',
-                  "attachment": _url || '',
+                  "attachment": pic || '',
                   "likes": likeNum,
                   "comments": commentNum,
                   "is_liked": isLike || '',
@@ -182,7 +179,7 @@ function getReturn() {
                   "id": id || '',
                   "avatar": userPic || '',
                   "created_at": createdAt || '',
-                  "attachment": _url || '',
+                  "attachment": pic || '',
                   "likes": likeNum,
                   "comments": commentNum,
                   "is_liked": isLike || '',

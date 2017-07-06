@@ -9,7 +9,10 @@
 label{color:#a0a0a0;padding-left:40rpx;}
 label text{padding-left:10rpx;}
 button{width:400rpx;height:80rpx;line-height:80rpx;text-align:center;font-size:16px;border:0 none;background:red;color:#fff;margin:30rpx auto}
-.picPre{width:50%;margin:0 auto;position:relative;box-sizing:border-box;}
-.picPre image{width:100%;height:180rpx;}
+.picPre{
+  width: 156rpx; height: 152rpx; float:left; margin:45rpx 13rpx;
+  position:relative;box-sizing:border-box;
+  }
+.picPre image{width: 156rpx; height: 152rpx;}
 .picPre view{position: absolute;right:-6rpx;top:-20rpx;width:15px;height:15px;background:url(https://bmob-cdn-12684.b0.upaiyun.com/2017/07/05/4f5886c2407649a280923943f3335d0d.png) no-repeat;background-size: cover;}
 .hidden{display:none;}

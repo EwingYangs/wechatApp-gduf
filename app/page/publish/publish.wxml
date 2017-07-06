@@ -6,8 +6,8 @@
           <view></view>
       </view>
       <view wx:if="{{isSrc}}" class="image_box">
-          <view  class="picPre" style="width: 156rpx; height: 152rpx; float:left; margin:45rpx 13rpx" wx:for="{{src}}">
-              <image src="{{item}}"  mode="aspectFill" style="width: 156rpx; height: 152rpx;"></image>
+          <view  class="picPre" wx:for="{{filesUrl}}">
+              <image src="{{item}}"  mode="aspectFill"></image>
               <view bindtap="clearPic" data-picurl="{{item}}"></view>
           </view>
 

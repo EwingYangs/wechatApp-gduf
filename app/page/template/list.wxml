@@ -1,7 +1,6 @@
 <!--广金圈模板-->
 <template name="listTemp">
-    <image  mode="aspectFill" src="{{listPic}}" class="listPic" wx:if="{{listPic}}" bindtap="seeBig"></image>
-    
+    <image mode="aspectFill"  class="listPic" wx:if="{{listPic}}" catchtap="seeBig" wx:for="{{listPic}}" src="{{item}}"></image>
     <view class="listTitle" wx-if="{{listTitle!=''}}">{{listTitle}}</view>
     <view class="listContent"><text>{{listContent}}</text></view>
 </template>
