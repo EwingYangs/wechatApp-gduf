@@ -1,5 +1,6 @@
 {
   "pages": [
+    "page/index/index",
     "page/index",
     "page/cricle/cricle",
     "page/publish/publish",
@@ -28,13 +29,12 @@
     "page/picker/picker",
     "page/toast/toast",
     "page/navbar/navbar",
-    "page/tabbar/tabbar",
     "page/searchbar/searchbar"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "遇见广金",
-    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarBackgroundColor": "#6981ea",
     "backgroundColor": "#f8f8f8"
   },
   "networkTimeout": {
@@ -44,38 +44,33 @@
     "downloadFile": 10000
   },
   "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#000000",
+    "color": "#dddddd",
+    "selectedColor": "#6981ea",
+    "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [
       {
         "selectedIconPath": "images/icon1_h.png",
         "iconPath": "images/icon1.png",
-        "pagePath": "page/index",
-        "text": "遇见"
+        "pagePath": "page/index/index",
+        "text": "首页"
       },
       {
         "selectedIconPath": "images/icon2_h.png",
         "iconPath": "images/icon2.png",
         "pagePath": "page/cricle/cricle",
-        "text": "广金圈"
+        "text": "课表"
       },
       {
         "selectedIconPath": "images/icon3_h.png",
         "iconPath": "images/icon3.png",
-        "pagePath": "page/publish/publish",
-        "text": "发布"
+        "pagePath": "page/gallery/gallery",
+        "text": "发现"
       },
       {
         "selectedIconPath": "images/icon4_h.png",
         "iconPath": "images/icon4.png",
-        "pagePath": "page/gallery/gallery",
-        "text": "消息"
-      },
-      {
-        "selectedIconPath": "images/icon5_h.png",
-        "iconPath": "images/icon5.png",
-        "pagePath": "page/tabbar/tabbar",
+        "pagePath": "page/index",
         "text": "我的"
       }
     ]
