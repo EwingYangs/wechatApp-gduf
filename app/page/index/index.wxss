@@ -1,1 +1,110 @@
-/* page/index/index.wxss */
+.placeholder{
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #9932CC;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #cfcfcf;
+}
+
+.holder{
+    text-align:center;
+    height:2.3em;
+    line-height:2.3em;
+    color:#949494;
+}
+
+.holder-left{
+  float:left;
+  margin-left:10px;
+}
+
+.holder-right{
+  float:right;
+}
+
+.banner{
+    position: relative;
+    margin: 12px 12px 0px 12px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #d5edff;
+    background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/08/07/25c6993740a660dc80ba1d115c83b413.png);
+    background-position: bottom;
+    background-repeat:no-repeat; 
+    background-size:100% 45%;
+    height: 11.8em;
+    line-height: 11.8em;
+    color: #C6E2FF;
+}
+
+.fbox-left{
+    margin: 12px 6px 0px 12px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #ffffff;
+    height: 10em;
+    line-height: 10em;
+    color: #cfcfcf;
+}
+
+.fbox-right{
+    margin: 12px 12px 0px 6px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #ffffff;
+    height: 10em;
+    line-height: 10em;
+    color: #cfcfcf;
+}
+
+.bimg{
+  width: 5em;
+  height:5em;
+  margin-bottom: 0px;
+  margin-top:20%;
+  margin-left:20%;
+  margin-right:20%;
+}
+
+.btitle{
+  position:relative;
+  top:-3.5em;
+  font-size:20px;
+  color:#000000;
+  height: 1.5em;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+.flush{
+  height:1.5em;
+  line-height:1.5em;
+  width:3.5em;
+  position:relative;
+  top:7px;
+  right:-10px;
+  color:#625edd;
+  float:right;
+  font-weight: 500;
+}
+.switch{
+  height:1.5em;
+  line-height:1.5em;
+  width:4.5em;
+  position:relative;
+  top:42px;
+  right:-9px;
+  color:#625edd;
+  float:right;
+  font-weight:500;
+}
+
+.banner-inner{
+  float:left;
+  height:50%;
+  position:relative;
+  top:26px;
+  width:100%;
+}
