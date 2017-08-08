@@ -5,14 +5,15 @@
     background-color: #9932CC;
     height: 2.3em;
     line-height: 2.3em;
-    color: #cfcfcf;
+    color: #8F8F8F;
 }
 
 .holder{
     text-align:center;
     height:2.3em;
     line-height:2.3em;
-    color:#949494;
+    color:#666666;
+    font-weight: 500;
 }
 
 .holder-left{
@@ -29,13 +30,13 @@
     margin: 12px 12px 0px 12px;
     padding: 0 10px;
     text-align: center;
-    background-color: #d5edff;
     background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/08/07/25c6993740a660dc80ba1d115c83b413.png);
     background-position: bottom;
     background-repeat:no-repeat; 
-    background-size:100% 45%;
-    height: 11.8em;
-    line-height: 11.8em;
+    background-size:100% 40%;
+    background-color: #eaf4ff;
+    height: 12.8em;
+    line-height: 12.8em;
     color: #C6E2FF;
 }
 
@@ -44,8 +45,8 @@
     padding: 0 10px;
     text-align: center;
     background-color: #ffffff;
-    height: 10em;
-    line-height: 10em;
+    height: 11.7em;
+    line-height: 11.7em;
     color: #cfcfcf;
 }
 
@@ -54,14 +55,14 @@
     padding: 0 10px;
     text-align: center;
     background-color: #ffffff;
-    height: 10em;
-    line-height: 10em;
+    height: 11.7em;
+    line-height: 11.7em;
     color: #cfcfcf;
 }
 
 .bimg{
-  width: 5em;
-  height:5em;
+  width: 4em;
+  height:4em;
   margin-bottom: 0px;
   margin-top:20%;
   margin-left:20%;
