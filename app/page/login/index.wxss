@@ -1,0 +1,5 @@
+/* page/login/index.wxss */
+page{
+    background-color: #FFFFFF;
+}
+

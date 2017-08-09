@@ -21,6 +21,19 @@ function showModal(c,t,fun) {
     })
 }
 
+function checkLogin(){
+    wx.getStorage({
+      key: 'jwxtInfo',
+      success: function(res) {
+        return true;
+      },
+      fail : function(){
+        return false;
+      }
+    })
+}
+
 
 module.exports.showTip = showTip;
 module.exports.showModal = showModal;
+module.exports.checkLogin = checkLogin;

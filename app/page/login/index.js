@@ -1,5 +1,4 @@
-// page/index/index.js
-var common = require('../../utils/common.js');
+// page/login/index.js
 Page({
 
   /**
@@ -63,21 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-
-  //***********************自定义函数 **************************//
-  score : function(){
-    //如果没有登录跳到登录界面
-    var isLogin = common.checkLogin();
-    if (!isLogin) {
-      wx.navigateTo({
-        url: '../login/index'
-      })
-    }else{
-      wx.navigateTo({
-        url: '../score/index'
-      })
-    }
   }
 })

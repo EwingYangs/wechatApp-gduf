@@ -461,6 +461,19 @@ icon {
 .weui-uploader__input-box:active:after {
   background-color: #999999;
 }
+
+.input{
+  border:1px #cccccc solid;
+  height:2.0em;
+  line-height:2.0em;
+  width:77%;
+  border-radius:5px;
+  margin-left:auto;
+  margin-bottom: 10px;
+  margin-right:auto;
+  text-align:center;
+  padding-left:4.5em;
+}
 .weui-uploader__input {
   position: absolute;
   z-index: 1;
@@ -548,6 +561,11 @@ icon {
 }
 .weui-btn {
   margin-top: 15px;
+  background-color:#6981ea!important;
+  height:2.0em;
+  line-height: 2.0em;
+  width:95%;
+  font-size:17px;
 }
 .weui-btn:first-child {
   margin-top: 0;
