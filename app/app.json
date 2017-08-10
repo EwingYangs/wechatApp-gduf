@@ -35,7 +35,8 @@
     "page/picker/picker",
     "page/toast/toast",
     "page/navbar/navbar",
-    "page/searchbar/searchbar"
+    "page/searchbar/searchbar",
+    "page/user/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -70,13 +71,13 @@
       {
         "selectedIconPath": "images/icon3_h.png",
         "iconPath": "images/icon3.png",
-        "pagePath": "page/gallery/gallery",
+        "pagePath": "page/index",
         "text": "发现"
       },
       {
         "selectedIconPath": "images/icon4_h.png",
         "iconPath": "images/icon4.png",
-        "pagePath": "page/index",
+        "pagePath": "page/user/index",
         "text": "我的"
       }
     ]

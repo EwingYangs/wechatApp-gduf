@@ -2,7 +2,7 @@
     <view class="weui-flex">
         <view class="weui-flex__item ">
           <view class="gbox banner">
-            <view class="flush">刷新</view>
+            <view class="banner-label-top">刷新</view>
             <view class="banner-inner">
                   <view class="weui-flex">
                       <view class="weui-flex__item">
@@ -32,7 +32,7 @@
                       </view>
                   </view>
             </view>
-            <view class="switch">切换宿舍</view>
+            <view class="banner-label-bottom">切换宿舍</view>
           </view>
         </view>
     </view>
