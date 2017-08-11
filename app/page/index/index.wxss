@@ -79,7 +79,7 @@
   font-weight: 500;
 }
 
-.flush{
+.banner-label-top{
   height:1.5em;
   line-height:1.5em;
   width:3.5em;
@@ -90,7 +90,7 @@
   float:right;
   font-weight: 500;
 }
-.switch{
+.banner-label-bottom{
   height:1.5em;
   line-height:1.5em;
   width:4.5em;
