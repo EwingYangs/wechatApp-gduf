@@ -1,12 +1,8 @@
 {
   "pages": [
-    "page/index/index",
-    
     "page/login/index",
-    
-    
+    "page/index/index",
     "page/score/index",
-    
     "page/index",
     "page/cricle/cricle",
     "page/publish/publish",

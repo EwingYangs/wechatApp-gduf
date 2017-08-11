@@ -1,4 +1,6 @@
 // page/login/index.js
+var common = require('../../utils/common.js');
+var Bmob = require("../../utils/bmob.js");
 Page({
 
   /**
@@ -62,5 +64,37 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  //显示模拟登录教务系统
+  login: function (event){
+    var sno = event.detail.value.usno;
+    var pwd = event.detail.value.password;
+    var account = common.encodeInp(sno);
+    var passwd = common.encodeInp(pwd);
+    var encoded = account + "%%%" + passwd;
+    //console.log(encoded);
+    //实现登录请求
+    // wx.request({
+    //   url: 'http://jwxt.gduf.edu.cn/jsxsd/xk/LoginToXk', //教务系统登录地址
+    //   data: {
+    //     encoded: encoded,
+    //   },
+    //   header: {
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   },
+    //   method: 'POST',
+    //   success: function (res) {
+    //     console.log(res)
+    //   }
+    // })
+
+    Bmob.Cloud.run('login', { "encoded": encoded }, {
+      success: function (result) {
+        console.log(result);
+      },
+      error: function (error) {
+      }
+    })
   }
 })
