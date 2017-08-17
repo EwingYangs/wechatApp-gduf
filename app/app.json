@@ -1,7 +1,8 @@
 {
   "pages": [
-    "page/login/index",
+    "page/user/index",
     "page/index/index",
+    "page/login/index",
     "page/score/index",
     "page/index",
     "page/cricle/cricle",
@@ -31,8 +32,7 @@
     "page/picker/picker",
     "page/toast/toast",
     "page/navbar/navbar",
-    "page/searchbar/searchbar",
-    "page/user/index"
+    "page/searchbar/searchbar"
   ],
   "window": {
     "navigationBarTextStyle": "white",

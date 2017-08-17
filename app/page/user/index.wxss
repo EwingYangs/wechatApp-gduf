@@ -25,3 +25,8 @@
   float:right;
   font-weight: 500;
 }
+.user_icon{
+  width:1.5em;
+  height:1.5em;
+  margin-right:0.5em;
+}
