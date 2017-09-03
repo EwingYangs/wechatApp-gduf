@@ -323,7 +323,7 @@ icon {
   line-height: 2.58823529em;
   border-right: 1rpx solid #D9D9D9;
 }
-.weui-select:before {
+/* .weui-select:before {
   content: " ";
   display: inline-block;
   height: 6px;
@@ -339,7 +339,7 @@ icon {
   top: 50%;
   right: 15px;
   margin-top: -4px;
-}
+} */
 .weui-select_in-select-after {
   padding-left: 0;
 }

@@ -1,2 +1,25 @@
-<!--page/score/index.wxml-->
-<text>page/score/index.wxml</text>
+<view class="gbox weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+                        <view class="weui-select" style="margin-left:167rpx;">(当前) <text style="color:#333333;font-weight:700">{{accounts[accountIndex]}}</text></view>
+                    </picker>
+                </view>
+            </view>
+</view>
+
+<view class="classname">
+  <view class="weui-cells gbox sbox">
+        <view class="score-title" style="padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:15px;color:#333333;">办公自动化</view>
+        <view class="" style="float:left;padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:15px;color:#333333;">
+          <view class="">课程编号</view>
+          <view class="">课程属性</view>
+          <view class="">课程性质</view>
+          <view class="">考试性质</view>
+          <view class="">所修学分</view>
+          <view class="">开课学期</view>
+          <view class="">绩点</view>
+        </view>
+        <view class="" style="float:right;padding-right:24rpx;padding-top:160rpx"><view class="fa" style="font-size:84px;color:#e183a8;">89</view>分</view>
+  </view>    
+</view>     

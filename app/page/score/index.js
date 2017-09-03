@@ -1,12 +1,12 @@
 // page/score/index.js
 var common = require('../../utils/common.js');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-  
+    accounts: ["2016-2017第二学期", "QQ", "Email"],
+    accountIndex: 0,
   },
 
   /**
@@ -63,5 +63,22 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  bindCountryChange: function (e) {
+    console.log('picker country 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      countryIndex: e.detail.value
+    })
+  },
+  bindAccountChange: function (e) {
+    console.log('picker account 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      accountIndex: e.detail.value
+    })
+  },
+
+
 })

@@ -70,7 +70,7 @@ Page({
   score : function(){
     //如果没有登录跳到登录界面
     var isLogin = common.checkLogin();
-    if (!isLogin) {
+    if (isLogin) {
       wx.navigateTo({
         url: '../login/index'
       })

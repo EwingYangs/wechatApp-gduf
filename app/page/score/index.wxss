@@ -1,1 +1,5 @@
-/* page/score/index.wxss */
+.sbox{
+  margin:12px 12px 0px 12px;
+  height:400rpx;
+
+}
