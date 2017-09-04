@@ -73,21 +73,22 @@ Page({
     var account = common.encodeInp(sno);
     var passwd = common.encodeInp(pwd);
     var encoded = account + "%%%" + passwd;
-    //console.log(encoded);
+    var token = md5('gduf-token-key');
     //实现登录请求
-    // wx.request({
-    //   url: 'http://jwxt.gduf.edu.cn/jsxsd/xk/LoginToXk', //教务系统登录地址
-    //   data: {
-    //     encoded: encoded,
-    //   },
-    //   header: {
-    //     'content-type': 'application/x-www-form-urlencoded'
-    //   },
-    //   method: 'POST',
-    //   success: function (res) {
-    //     console.log(res)
-    //   }
-    // })
+    wx.request({
+      url: 'https://www.itbasket.top/site/login', //教务系统登录地址
+      data: {
+        encoded: encoded,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token' : token,
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+      }
+    })
 
     Bmob.Cloud.run('login', { "encoded": encoded }, {
       success: function (result) {
