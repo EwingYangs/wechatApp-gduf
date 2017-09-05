@@ -1,2 +1,62 @@
-<!--page/score/index.wxml-->
-<text>page/score/index.wxml</text>
+<view class="gbox weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+                        <view class="weui-select" style="margin-left:167rpx;">(当前) <text style="color:#333333;font-weight:700">{{accounts[accountIndex]}}</text></view>
+                    </picker>
+                </view>
+            </view>
+</view>
+
+<view class="classname">
+  <view class="weui-cells gbox sbox">
+        <view class="score-title b-f">办公自动化</view>
+        <view class="score-content">
+          <view>课程编号：<text class="b-f">15412007</text></view>
+          <view>课程属性：<text class="b-f">必修</text></view>
+          <view>课程性质：<text class="b-f">专业基础课</text></view>
+          <view>所修学分：<text class="b-f">4</text></view>
+          <view>开课学期：<text class="b-f">2013-2014-1</text></view>
+          <view>课程绩点：<text class="b-f">1</text></view>
+        </view>
+        <view class="score-view"><view class="fa score">89</view>分</view>
+  </view>    
+  <view class="weui-cells gbox sbox">
+        <view class="score-title b-f">办公自动化</view>
+        <view class="score-content">
+          <view>课程编号：<text class="b-f">15412007</text></view>
+          <view>课程属性：<text class="b-f">必修</text></view>
+          <view>课程性质：<text class="b-f">专业基础课</text></view>
+          <view>所修学分：<text class="b-f">4</text></view>
+          <view>开课学期：<text class="b-f">2013-2014-1</text></view>
+          <view>课程绩点：<text class="b-f">1</text></view>
+        </view>
+        <view class="score-view"><view class="fa score">89</view>分</view>
+  </view>    
+  <view class="weui-cells gbox sbox">
+        <view class="score-title b-f">办公自动化</view>
+        <view class="score-content">
+          <view>课程编号：<text class="b-f">15412007</text></view>
+          <view>课程属性：<text class="b-f">必修</text></view>
+          <view>课程性质：<text class="b-f">专业基础课</text></view>
+          <view>所修学分：<text class="b-f">4</text></view>
+          <view>开课学期：<text class="b-f">2013-2014-1</text></view>
+          <view>课程绩点：<text class="b-f">1</text></view>
+        </view>
+        <view class="score-view"><view class="fa score">89</view>分</view>
+  </view>    
+  <view class="weui-cells gbox sbox">
+        <view class="score-title b-f">办公自动化</view>
+        <view class="score-content">
+          <view>课程编号：<text class="b-f">15412007</text></view>
+          <view>课程属性：<text class="b-f">必修</text></view>
+          <view>课程性质：<text class="b-f">专业基础课</text></view>
+          <view>所修学分：<text class="b-f">4</text></view>
+          <view>开课学期：<text class="b-f">2013-2014-1</text></view>
+          <view>课程绩点：<text class="b-f">1</text></view>
+        </view>
+        <view class="score-view"><view class="fa score">89</view>分</view>
+  </view>   
+  <!--底部分割view-->
+  <view class="bottom"></view> 
+</view>     
