@@ -920,9 +920,10 @@ icon {
   display: flex;
   position: absolute;
   z-index: 500;
+  background-color: #ffffff;
   top: 0;
   width: 100%;
-  border-bottom: 1rpx solid #CCCCCC;
+  border-bottom: 7rpx solid #dddddd;
 }
 .weui-navbar__item {
   position: relative;
@@ -930,21 +931,24 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  padding: 13px 0;
+  padding: 10px 0;
+  padding-bottom: 3px;
   text-align: center;
   font-size: 0;
+  color:#999999;
 }
 .weui-navbar__item.weui-bar__item_on {
-  color: #1AAD19;
+  color: #333333;
 }
 .weui-navbar__slider {
   position: absolute;
+  top: 134rpx;
   content: " ";
   left: 0;
   bottom: 0;
-  width: 6em;
+  width: 13em;
   height: 3px;
-  background-color: #1AAD19;
+  background-color: #6981ea;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -978,9 +982,8 @@ icon {
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
-  background-color: #EFEFF4;
+  background-color: #ffffff;
   border-top: 1rpx solid #D7D6DC;
-  border-bottom: 1rpx solid #D7D6DC;
 }
 .weui-icon-search {
   margin-right: 8px;

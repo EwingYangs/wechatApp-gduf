@@ -1,7 +1,8 @@
 {
   "pages": [
-    "page/score/index",
+    "page/find/index",
     "page/index/index",
+    "page/score/index",
     "page/user/index",
     "page/login/index",
     "page/index",
@@ -61,7 +62,7 @@
       {
         "selectedIconPath": "images/icon2_h.png",
         "iconPath": "images/icon2.png",
-        "pagePath": "page/cricle/cricle",
+        "pagePath": "page/find/index",
         "text": "课表"
       },
       {

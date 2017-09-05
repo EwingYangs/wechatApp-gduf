@@ -115,3 +115,11 @@ page{
   color :#333333;
   margin-top:20rpx;
 }
+
+.b-f{
+  color:#333333;
+}
+
+.bottom{
+  height:24rpx;
+}
