@@ -29,30 +29,29 @@ page,
 }
 
 .label-2__text{
-    font-size:13px;
     text-align: center;
     margin-top: 15px;
 }
 
 .label-2{
-  margin-left:80rpx;
+  margin-left:1.45em;
 }
 
 .label-2:first-child{
-  margin-left:30rpx;
+  margin-left:0.65em;
 }
 
 .bbox{
   margin:12px 12px 0px 12px;
-  height:280rpx;
+  height:9em;
 }
 
 .book-title{
-  padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:15px;
+  padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;
 }
 
 .book-content{
-  float:left;padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:13px;
+  float:left;padding-bottom:12rpx;padding-left:24rpx;
 }
 
 .book-bg{
@@ -64,7 +63,7 @@ page,
 }
 
 .book-view{
-  float:right;padding-right:24rpx;padding-top:100rpx;
+  float:right;padding-right:24rpx;padding-top:3em;
 }
 .bookcount{
   font-size:54px;color:#e183a8;
@@ -77,4 +76,8 @@ page,
 .book-info-left{
   float:left;
   padding-right: 12px;
+}
+
+.img-icon{
+  width:70rpx;height:70rpx;
 }

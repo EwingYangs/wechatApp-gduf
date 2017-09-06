@@ -38,7 +38,7 @@
   </view>
   <view class="weui-flex">
 
-    <view class="weui-flex__item ">
+    <view class="weui-flex__item">
       <view class="fbox-left gbox" bindtap="score">
         <image class="bimg" src="../../images/icon_achievement.png"></image>
         <view class="btitle">成绩查询</view>

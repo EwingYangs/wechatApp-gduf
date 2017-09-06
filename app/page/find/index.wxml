@@ -4,13 +4,13 @@
             <view class="weui-navbar">
                 <block wx:for="{{tabs}}" wx:key="*this">
                     <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                        <view class="">
-                          <image style="width:30px;height:30px;" src="{{item.img}}"></image>
+                        <view>
+                          <image class="img-icon"  src="{{item.img}}"></image>
                         </view>
                         <view class="weui-navbar__title">{{item.name}}</view>
                     </view>
                 </block>
-                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                <view class="weui-navbar__slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
             </view>
             <view class="weui-tab__panel">
               <view class="" hidden="{{activeIndex != 0}}">
@@ -33,7 +33,7 @@
                             <view class="label-2__icon">
                               <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
                             </view>
-                            <label class="label-2__text" for="{{item.name}}"><text>{{item.value}}</text></label>
+                            <label class="label-2__text f-s-09x" for="{{item.name}}"><text>{{item.value}}</text></label>
                           </label>
                         </radio-group>
 
@@ -42,39 +42,18 @@
 
                     <view wx:if="{{books}}">
                           <view class="classname">
-                            <view class="weui-cells gbox bbox">
-                                  <view class="book-title b-f">1、译林世界名著（绿色卷）</view>
-                                  <view class="book-content">
-                                    <view><text class="book-info-left">作</text>者：<text class="b-f">[法]奥德里-依吉克等</text></view>
-                                    <view>出版社：<text class="b-f">译林出版社</text></view>
-                                    <view><text style="letter-spacing:2.2px;">ISBN：</text><text class="b-f">978-7-300-12345</text></view>
-                                    <view>索书号：<text class="b-f">F837.125</text></view>
-                                    <view><view class="book-info-left">藏</view>馆：<text class="b-f">肇庆校区</text></view>
+                           
+                            <view class="weui-cells gbox bbox" wx:for="{{bookList}}">
+                                  <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>
+                                  <view class="book-content f-s-09x">
+                                    <view><text class="book-info-left">作</text>者：<text class="b-f">{{item.author}}</text></view>
+                                    <view>出版社：<text class="b-f">{{item.publish}}</text></view>
+                                    <view><text style="letter-spacing:2.2px;">ISBN：</text><text class="b-f">{{item.ISBN}}</text></view>
+                                    <view>索书号：<text class="b-f">{{item.snum}}</text></view>
+                                    <view>馆藏点：<text class="b-f">{{item.location}}</text></view>
                                   </view>
-                                  <view class="book-view">余书:<view class="fa bookcount">5</view></view>
+                                  <view class="book-view">余书:<view class="fa bookcount">{{item.remain}}</view></view>
                             </view>  
-                             <view class="weui-cells gbox bbox">
-                                  <view class="book-title b-f">1、大而不倒</view>
-                                  <view class="book-content">
-                                    <view><text class="book-info-left">作</text>者：<text class="b-f">[法]奥德里-依吉克等</text></view>
-                                    <view>出版社：<text class="b-f">译林出版社</text></view>
-                                    <view><text style="letter-spacing:2.2px;">ISBN：</text><text class="b-f">978-7-300-12345</text></view>
-                                    <view>索书号：<text class="b-f">F837.125</text></view>
-                                    <view><view class="book-info-left">藏</view>馆：<text class="b-f">肇庆校区</text></view>
-                                  </view>
-                                  <view class="book-view">余书:<view class="fa bookcount">5</view></view>
-                            </view> 
-                             <view class="weui-cells gbox bbox">
-                                  <view class="book-title b-f">1、大而不倒</view>
-                                  <view class="book-content">
-                                    <view><text class="book-info-left">作</text>者：<text class="b-f">[法]奥德里-依吉克等</text></view>
-                                    <view>出版社：<text class="b-f">译林出版社</text></view>
-                                    <view><text style="letter-spacing:2.2px;">ISBN：</text><text class="b-f">978-7-300-12345</text></view>
-                                    <view>索书号：<text class="b-f">F837.125</text></view>
-                                    <view><view class="book-info-left">藏</view>馆：<text class="b-f">肇庆校区</text></view>
-                                  </view>
-                                  <view class="book-view">余书:<view class="fa bookcount">5</view></view>
-                            </view> 
                             
                           </view>     
                     </view>

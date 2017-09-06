@@ -5,8 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    accounts: ["2016-2017第二学期", "QQ", "Email"],
+    accounts: ["2016-2017-2", "QQ", "Email"],
     accountIndex: 0,
+    scoreData : [
+      { course: '微积分Ⅰ', num: '	16130014', attr: '必修', character: '专业基础课', credit: 4, term: '2013-2014-1', point: 3.7, score: 85},
+      { course: '信息技术导论', num: '15412007', attr: '必修', character: '专业基础课', credit: 3, term: '2013-2014-1', point: 1, score: 61 },
+    ],
   },
 
   /**

@@ -84,6 +84,14 @@ page{
   font-size: 5em;
 }
 
+.f-s-1x{
+  font-size: 1em;
+}
+
+.f-s-09x{
+  font-size:0.9em;
+}
+
 
 .userinfo-avatar {
   width: 160rpx;

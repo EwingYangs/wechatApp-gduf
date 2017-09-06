@@ -17,6 +17,12 @@ Page({
       { name: 'title', value: '主题词' },
       { name: 'ISBN', value: 'ISBN' },
     ],
+
+    bookList: [
+      { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8 },
+      { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8 },
+      { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8 },
+    ]
   },
 
   /**

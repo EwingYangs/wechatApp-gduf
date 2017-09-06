@@ -1,18 +1,27 @@
 .sbox{
   margin:12px 12px 0px 12px;
-  height:350rpx;
+  height:12em;
 }
 .score-view{
-  float:right;padding-right:24rpx;padding-top:115rpx;
+  float:right;padding-right:24rpx;padding-top:4em;
 }
 .score{
-  font-size:84px;color:#e183a8;
+  font-size:5.4em;color:#e183a8;
 }
 
 .score-content{
-  float:left;padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:15px;
+  float:left;padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:1.0em;
 }
 
 .score-title{
-  padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:18px;
+  padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:1.2em;
+}
+
+.select-term{
+  display: flex;justify-content: center;
+}
+
+.select-list{
+  color:#333333;
+  font-weight:700;
 }

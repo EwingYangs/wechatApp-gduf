@@ -931,7 +931,7 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  padding: 10px 0;
+  padding-top: 10px;
   padding-bottom: 3px;
   text-align: center;
   font-size: 0;
@@ -942,11 +942,11 @@ icon {
 }
 .weui-navbar__slider {
   position: absolute;
-  top: 134rpx;
+  top: 4.7em;
   content: " ";
   left: 0;
   bottom: 0;
-  width: 13em;
+  width: 50%;
   height: 3px;
   background-color: #6981ea;
   -webkit-transition: -webkit-transform .3s;
@@ -971,7 +971,7 @@ icon {
 .weui-tab__panel {
   box-sizing: border-box;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 4.0em;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
