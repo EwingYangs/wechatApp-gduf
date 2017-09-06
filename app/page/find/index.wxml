@@ -40,7 +40,7 @@
                     </view>
 
 
-                    <view wx:if="{{books}}">
+                    <view wx:if="{{bookList}}">
                           <view class="classname">
                            
                             <view class="weui-cells gbox bbox" wx:for="{{bookList}}">
