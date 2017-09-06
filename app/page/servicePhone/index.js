@@ -1,13 +1,17 @@
 // page/servicePhone/index.js
+var Bmob = require("../../utils/bmob.js");
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    phoneList: [
-      { shorthand: '教', bgColor: '#E183A8', siteName: '教务处', phone: '020-8558888' },
-      { shorthand: '保', bgColor: '#7EB1C6', siteName: '保卫处', phone: '020-8558888' },
-      { shorthand: '龙', bgColor: '#F3BD5B', siteName: '龙会酒店', phone: '020-8558888' }
+    bgColor: [
+      'p-color',
+      'e-color',
+      'b-color',
+      'y-color',
+      'g-color',
+      'l-color',
     ]
   },
 
@@ -15,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setPhoneListData();
   },
 
   /**
@@ -71,6 +75,8 @@ Page({
     this.setData({
       inputVal: e.detail.value
     });
+
+    this.setPhoneListData(e.detail.value);
   },
 
   call: function (e) {
@@ -78,5 +84,37 @@ Page({
     wx.makePhoneCall({
       phoneNumber: phone
     })
+  },
+
+  // 设置电话列表的值，可根据名字搜索
+  setPhoneListData : function (where){
+      var that = this;
+      var Phone = Bmob.Object.extend("phone");
+      var query = new Bmob.Query(Phone);
+      if (where){
+        query.equalTo("siteName", { "$regex": "" + where + ".*" });//模糊查询
+      }
+      var bgColorList = that.data.bgColor;
+      // 查询所有数据
+      query.find({
+        success: function (results) {
+          // 循环处理查询到的数据
+          var phoneList = [];
+          for (var i = 0; i < results.length; i++) {
+            var object = results[i];
+            var fname = object.get('siteName').substr(0, 1);
+            var j = i % 6;
+            var bgColor = bgColorList[j];
+            var a = { shorthand: fname, bgColor: bgColor, siteName: object.get('siteName'), phone: object.get('phone') };
+            phoneList.push(a);
+          }
+          that.setData({
+            phoneList: phoneList,
+          })
+        },
+        error: function (error) {
+          console.log("查询失败: " + error.code + " " + error.message);
+        }
+      });
   }
 })

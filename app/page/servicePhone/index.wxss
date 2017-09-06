@@ -25,7 +25,9 @@ page, .page {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  background-color: #ccc;
+  font-size:18px;
+  font-weight:700;
+  color:#ffffff;
   text-align: center;
   line-height: 100rpx;
 }

@@ -12,15 +12,17 @@
   <view class="phoneList" wx:for="{{phoneList}}" wx:key="*this">
     <view class="weui-cells listItem gbox">
       <view class="itemLeft">
-        <view class="shorthand">{{item.shorthand}}</view>
+        <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
         <view class="box">
-          <view class="siteName">{{item.siteName}}</view>
-          <view class="phone">{{item.phone}}</view>
+          <view class="siteName b-f">{{item.siteName}}</view>
+          <view class="phone g-f">{{item.phone}}</view>
         </view>
       </view>
-      <view class="itemRight" data-phone="{{item.phone}}" bindtap="call">
+      <view class="itemRight p-f" data-phone="{{item.phone}}" bindtap="call">
         拨打
       </view>
     </view>
   </view>
+  <!--底部分割view-->
+  <view class="bottom"></view>
 </view>

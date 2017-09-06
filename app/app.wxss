@@ -120,6 +120,38 @@ page{
   color:#333333;
 }
 
+.p-f{
+  color:#6981ea;
+}
+
+.g-f{
+  color:#999999;
+}
+
 .bottom{
   height:24rpx;
+}
+
+.p-color{
+  background-color: #e080a6;
+}
+
+.e-color{
+  background-color: #7eb1c6;
+}
+
+.b-color{
+  background-color: #3aadde;
+}
+
+.y-color{
+  background-color: #f3bd5b;
+}
+
+.g-color{
+  background-color: #957bd1;
+}
+
+.l-color{
+  background-color: #90c14a;
 }
