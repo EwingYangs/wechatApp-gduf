@@ -1,12 +1,14 @@
-// page/index/index.js
-var common = require('../../utils/common.js');
+// page/servicePhone/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    phoneList: [
+      { shorthand: '教', bgColor: '#E183A8', siteName: '教务处', phone: '020-8558888' },
+      { shorthand: '保', bgColor: '#7EB1C6', siteName: '保卫处', phone: '020-8558888' },
+      { shorthand: '龙', bgColor: '#F3BD5B', siteName: '龙会酒店', phone: '020-8558888' }
+    ]
   },
 
   /**
@@ -65,35 +67,16 @@ Page({
 
   },
 
-
-  //***********************自定义函数 **************************//
-  score: function () {
-    //如果没有登录跳到登录界面
-    var isLogin = common.checkLogin();
-    if (isLogin) {
-      wx.navigateTo({
-        url: '../login/index'
-      })
-    } else {
-      wx.navigateTo({
-        url: '../score/index'
-      })
-    }
+  inputTyping: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
   },
-  servicePhone: function () {
-    //如果没有登录跳到登录界面
-    // var isLogin = common.checkLogin();
-    // if (!isLogin) {
-    //   wx.navigateTo({
-    //     url: '../login/index'
-    //   })
-    // } else {
-    //   wx.navigateTo({
-    //     url: '../servicePhone/index'
-    //   })
-    // }
-    wx.navigateTo({
-      url: '../servicePhone/index'
+
+  call: function (e) {
+    let phone = e.target.dataset.phone;
+    wx.makePhoneCall({
+      phoneNumber: phone
     })
   }
 })

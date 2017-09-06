@@ -6,6 +6,7 @@
     "page/user/index",
     "page/login/index",
     "page/index",
+    "page/servicePhone/index",
     "page/cricle/cricle",
     "page/publish/publish",
     "page/cricleDetail/cricleDetail",

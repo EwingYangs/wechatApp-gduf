@@ -1,0 +1,35 @@
+/* page/servicePhone/index.wxss */
+
+page, .page {
+  height: 100%;
+}
+
+.listItem {
+  margin: 12px 12px 0px 12px;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.shorthand {
+  margin: 0 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.itemRight {
+  margin-right: 20rpx;
+}

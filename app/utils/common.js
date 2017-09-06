@@ -1,3 +1,4 @@
+
 function showTip(sms, icon, fun, t) {
     if (!t) {
         t = 500;
