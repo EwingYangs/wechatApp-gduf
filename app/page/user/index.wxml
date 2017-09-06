@@ -15,11 +15,11 @@
     </view>
 
       <view class="weui-cells gbox" style="margin:12px 12px 0px 12px;" >
-          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="score">
               <image src="../../images/icon_result-.png" class="user_icon"></image>
               <view class="weui-cell__bd">我的成绩</view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
+          </view>
       </view>    
 
       <view class="weui-cells gbox " style="margin:12px 12px 0px 12px;">
