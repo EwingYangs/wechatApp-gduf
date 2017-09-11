@@ -1,42 +1,42 @@
 <view class="page">
-    <view class="weui-flex">
-        <view class="weui-flex__item ">
-          <view class="gbox banner">
-            <view class="banner-label-top">设置</view>
-            <view class="banner-inner">
-                <view class="g-bda-userinfo">
-                    <image class="userinfo-avatar" src="{{userInfo.userPic}}"></image>
-                    <text class="fa userinfo-sno">131545151</text>
-                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-                </view>
-            </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item ">
+      <view class="gbox banner">
+        <view class="banner-label-top">设置</view>
+        <view class="banner-inner">
+          <view class="g-bda-userinfo">
+            <image class="userinfo-avatar" src="{{userInfo.userPic}}"></image>
+            <text class="fa userinfo-sno">131545151</text>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
           </view>
         </view>
+      </view>
     </view>
+  </view>
 
-      <view class="weui-cells gbox" style="margin:12px 12px 0px 12px;" >
-          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="score">
-              <image src="../../images/icon_result-.png" class="user_icon"></image>
-              <view class="weui-cell__bd">我的成绩</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </view>
-      </view>    
+  <view class="weui-cells gbox" style="margin:12px 12px 0px 12px;">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="score">
+      <image src="../../images/icon_result-.png" class="user_icon"></image>
+      <view class="weui-cell__bd">我的成绩</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
 
-      <view class="weui-cells gbox " style="margin:12px 12px 0px 12px;">
-          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <image src="../../images/icon_publish.png" class="user_icon"></image>
-              <view class="weui-cell__bd">我发布的</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <image src="../../images/icon_collect.png" class="user_icon"></image>
-              <view class="weui-cell__bd">我收藏的</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-           <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-              <image src="../../images/icon_comment.png" class="user_icon"></image>
-              <view class="weui-cell__bd">我评论的</view>
-              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-      </view>            
+  <view class="weui-cells gbox " style="margin:12px 12px 0px 12px;">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <image src="../../images/icon_publish.png" class="user_icon"></image>
+      <view class="weui-cell__bd">我发布的</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="../collect/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <image src="../../images/icon_collect.png" class="user_icon"></image>
+      <view class="weui-cell__bd">我收藏的</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <image src="../../images/icon_comment.png" class="user_icon"></image>
+      <view class="weui-cell__bd">我评论的</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
 </view>

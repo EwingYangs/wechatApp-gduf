@@ -1,72 +1,103 @@
 <view class="page">
-    <view class="page__bd">
-        <view class="weui-tab">
-            <view class="weui-navbar">
-                <block wx:for="{{tabs}}" wx:key="*this">
-                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                        <view>
-                          <image class="img-icon"  src="{{item.img}}"></image>
-                        </view>
-                        <view class="weui-navbar__title">{{item.name}}</view>
-                    </view>
-                </block>
-                <view class="weui-navbar__slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view>
+              <image class="img-icon" src="{{item.img}}"></image>
             </view>
-            <view class="weui-tab__panel">
-              <view class="" hidden="{{activeIndex != 0}}">
-                    <view class="weui-cells gbox" >
-
-                        <!--搜索-->
-                        <view class="weui-search-bar">
-                            <view class="weui-search-bar__form">
-                                <view class="weui-search-bar__box">
-                                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                                    <input type="text" class="weui-search-bar__input"  value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-                                </view>
-                            </view>
-                        </view>
-
-                        <!--单选-->
-                        <radio-group class="group" bindchange="radioChange" style="padding-bottom:8px;">
-                          <label class="label-2" wx:for="{{radios}}">
-                            <radio id="{{item.name}}" hidden value="{{item.name}}" checked="{{item.checked}}"></radio>
-                            <view class="label-2__icon">
-                              <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
-                            </view>
-                            <label class="label-2__text f-s-09x" for="{{item.name}}"><text>{{item.value}}</text></label>
-                          </label>
-                        </radio-group>
-
-                    </view>
-
-
-                    <view wx:if="{{bookList}}">
-                          <view class="classname">
-                           
-                            <view class="weui-cells gbox bbox" wx:for="{{bookList}}">
-                                  <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>
-                                  <view class="book-content f-s-09x">
-                                    <view><text class="book-info-left">作</text>者：<text class="b-f">{{item.author}}</text></view>
-                                    <view>出版社：<text class="b-f">{{item.publish}}</text></view>
-                                    <view><text style="letter-spacing:2.2px;">ISBN：</text><text class="b-f">{{item.ISBN}}</text></view>
-                                    <view>索书号：<text class="b-f">{{item.snum}}</text></view>
-                                    <view>馆藏点：<text class="b-f">{{item.location}}</text></view>
-                                  </view>
-                                  <view class="book-view">余书:<view class="fa bookcount">{{item.remain}}</view></view>
-                            </view>  
-                            
-                          </view>     
-                    </view>
-                    <view wx:else>
-                        <view class="book-bg" ></view>
-                    </view>
-
-                    <!--底部分割view-->
-                    <view class="bottom"></view>
-
+            <view class="weui-navbar__title">{{item.name}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel panel">
+        <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
+          <view class="weui-cells gbox">
+            <!--搜索-->
+            <view class="weui-search-bar">
+              <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                  <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                  <input type="text" class="weui-search-bar__input" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
                 </view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+              </view>
             </view>
+
+            <!--单选-->
+            <radio-group class="group" bindchange="radioChange" style="padding-bottom:8px;">
+              <label class="label-2" wx:for="{{radios}}">
+                <radio id="{{item.name}}" hidden value="{{item.name}}" checked="{{item.checked}}"></radio>
+                <view class="label-2__icon">
+                  <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
+                </view>
+                <label class="label-2__text f-s-09x" for="{{item.name}}">
+                  <text>{{item.value}}</text>
+                </label>
+              </label>
+            </radio-group>
+
+          </view>
+
+
+          <view wx:if="{{bookList}}">
+            <view class="classname">
+
+              <view class="weui-cells gbox bbox" wx:for="{{bookList}}">
+                <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>
+                <view class="book-content f-s-09x">
+                  <view>
+                    <text class="book-info-left">作</text>者：
+                    <text class="b-f">{{item.author}}</text>
+                  </view>
+                  <view>出版社：
+                    <text class="b-f">{{item.publish}}</text>
+                  </view>
+                  <view>
+                    <text style="letter-spacing:2.2px;">ISBN：</text>
+                    <text class="b-f">{{item.ISBN}}</text>
+                  </view>
+                  <view>索书号：
+                    <text class="b-f">{{item.snum}}</text>
+                  </view>
+                  <view>馆藏点：
+                    <text class="b-f">{{item.location}}</text>
+                  </view>
+                </view>
+                <view class="book-view">余书:
+                  <view class="fa bookcount">{{item.remain}}</view>
+                </view>
+              </view>
+
+            </view>
+          </view>
+          <view wx:else>
+            <view class="book-bg"></view>
+          </view>
+
+          <!--底部分割view-->
+          <view class="bottom"></view>
+
         </view>
+        <view class="weui-tab__content content" hidden="{{activeIndex != 1}}">
+          <view class="phoneList" wx:for="{{guide}}" wx:key="*this">
+            <view class="weui-cells listItem gbox">
+              <view class="itemLeft">
+                <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+                <view class="box">
+                  <view class="siteName b-f">{{item.siteName}}</view>
+                  <view class="thing g-f">{{item.thing}}</view>
+                </view>
+              </view>
+              <view class="itemRight">
+                <view class='collect'>收藏</view>
+                <view></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
+  </view>
 </view>

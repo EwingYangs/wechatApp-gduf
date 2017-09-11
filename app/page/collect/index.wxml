@@ -1,0 +1,66 @@
+<!--page/collect/index.wxml-->
+<view class='page'>
+  <view class='page__bd'>
+
+    <view class='weui-tab'>
+      <!-- 导航栏 -->
+      <view class="weui-navbar navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view>
+              <image class="img-icon" src="{{item.img}}"></image>
+            </view>
+            <view class="weui-navbar__title">{{item.name}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <!-- 标签页 -->
+      <view class="weui-tab__panel panel">
+        <!-- 电话 -->
+        <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
+          <view class="phoneList" wx:for="{{phoneList}}" wx:key="*this">
+            <view class="weui-cells listItem gbox">
+              <view class="itemLeft">
+                <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+                <view class="box">
+                  <view class="siteName b-f">{{item.siteName}}</view>
+                  <view class="phone g-f">{{item.phone}}</view>
+                </view>
+              </view>
+              <view class="itemRight">
+                <view class='cancel'>取消收藏</view>
+                <view class='p-f' data-phone="{{item.phone}}" bindtap="call">拨打</view>
+              </view>
+            </view>
+          </view>
+          <!--底部分割view-->
+          <view class="bottom"></view>
+
+        </view>
+        <!-- 图书 -->
+        <view class="weui-tab__content content" hidden="{{activeIndex != 1}}">
+
+        </view>
+        <!-- 指南 -->
+        <view class="weui-tab__content content" hidden="{{activeIndex != 2}}">
+          <view class="phoneList" wx:for="{{guide}}" wx:key="*this">
+            <view class="weui-cells listItem gbox">
+              <view class="itemLeft">
+                <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+                <view class="box">
+                  <view class="siteName b-f">{{item.siteName}}</view>
+                  <view class="thing g-f">{{item.thing}}</view>
+                </view>
+              </view>
+              <view class="itemRight">
+                <view class='cancel'>取消收藏</view>
+                <view></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
