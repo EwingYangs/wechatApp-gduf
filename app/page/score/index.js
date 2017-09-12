@@ -8,8 +8,8 @@ Page({
     accounts: ["2016-2017-2", "QQ", "Email"],
     accountIndex: 0,
     scoreData : [
-      { course: '微积分Ⅰ', num: '	16130014', attr: '必修', character: '专业基础课', credit: 4, term: '2013-2014-1', point: 3.7, score: 85},
-      { course: '信息技术导论', num: '15412007', attr: '必修', character: '专业基础课', credit: 3, term: '2013-2014-1', point: 1, score: 61 },
+      { course: '微积分Ⅰ', num: '	16130014', attr: '必修', character: '专业基础课', credit: 4, term: '2013-2014-1', point: 3.7, score: 85, bgColor: 'b-p-color', color: 'p-color'},
+      { course: '信息技术导论', num: '15412007', attr: '必修', character: '专业基础课', credit: 3, term: '2013-2014-1', point: 1, score: 61, bgColor: 'b-l-color', color: 'l-color'},
     ],
   },
 

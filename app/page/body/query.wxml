@@ -1,0 +1,14 @@
+<view class="page">
+     <view class="weui-flex">
+        <view class="weui-flex__item ">
+            <image src="../../images/login_bg.png" style="margin-top:6em;margin-bottom:3em;margin-left:20%;margin-right:20%;width:61.3%;height:6em;"></image>
+        </view>
+      </view>
+      <view class="page__bd page__bd_spacing">
+        <form bindsubmit="search">
+            <input class="input" name="usno" placeholder="学号" bindinput="userNameInput" type="text" bindfocus=""/>
+            <input class="input" name="password" placeholder="密码" bindinput="userNameInput"  password="true" bindfocus=""/>
+            <button class="weui-btn" type="primary" formType="submit"> 查询</button>
+        </form>
+      </view>
+</view>

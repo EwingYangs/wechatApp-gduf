@@ -1,0 +1,17 @@
+/* page/body/query.wxss */
+/* page/login/index.wxss */
+page{
+    background-color: #FFFFFF;
+}
+.input{
+  border:1px #cccccc solid;
+  height:2.0em;
+  line-height:2.0em;
+  width:78%;
+  border-radius:5px;
+  margin-left:auto;
+  margin-bottom: 10px;
+  margin-right:auto;
+  text-align:center;
+  padding-left:17%;
+}

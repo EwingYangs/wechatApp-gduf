@@ -16,7 +16,7 @@
         <view class="weui-navbar__slider slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
       <!-- 标签页 -->
-      <view class="weui-tab__panel panel">
+      <view class="weui-tab__panel">
         <!-- 电话 -->
         <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
           <view class="phoneList" wx:for="{{phoneList}}" wx:key="*this">

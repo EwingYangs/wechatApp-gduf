@@ -70,7 +70,7 @@ Page({
   score: function () {
     //如果没有登录跳到登录界面
     var isLogin = common.checkLogin();
-    if (isLogin) {
+    if (!isLogin) {
       wx.navigateTo({
         url: '../login/index'
       })
@@ -80,20 +80,24 @@ Page({
       })
     }
   },
+
+
   servicePhone: function () {
-    //如果没有登录跳到登录界面
-    // var isLogin = common.checkLogin();
-    // if (!isLogin) {
-    //   wx.navigateTo({
-    //     url: '../login/index'
-    //   })
-    // } else {
-    //   wx.navigateTo({
-    //     url: '../servicePhone/index'
-    //   })
-    // }
     wx.navigateTo({
       url: '../servicePhone/index'
+    })
+  },
+
+
+  bodyQuery : function () {
+    wx.navigateTo({
+      url: '../body/query'
+    })
+  },
+
+  studyQuery : function () {
+    wx.navigateTo({
+      url: '../study/index'
     })
   }
 })

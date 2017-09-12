@@ -6,15 +6,15 @@
   float:right;padding-right:24rpx;padding-top:4em;
 }
 .score{
-  font-size:5.4em;color:#e183a8;
+  font-size:5.4em;
 }
 
 .score-content{
-  float:left;padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:1.0em;
+  float:left;padding-bottom:12rpx;padding-left:24rpx;font-size:1.0em;
 }
 
 .score-title{
-  padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:1.2em;
+  padding-top:12rpx;padding-left:24rpx;font-size:1.2em;
 }
 
 .select-term{

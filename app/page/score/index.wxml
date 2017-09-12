@@ -12,6 +12,7 @@
   <view class="weui-cells gbox sbox" wx:for="{{scoreData}}">
         <view class="score-title b-f">{{item.course}}</view>
         <view class="score-content">
+          <view class="adron {{item.bgColor}}"></view>
           <view>课程编号：<text class="b-f">{{item.num}}</text></view>
           <view>课程属性：<text class="b-f">{{item.attr}}</text></view>
           <view>课程性质：<text class="b-f">{{item.character}}</text></view>
@@ -19,7 +20,7 @@
           <view>开课学期：<text class="b-f">{{item.term}}</text></view>
           <view>课程绩点：<text class="b-f">{{item.point}}</text></view>
         </view>
-        <view class="score-view"><view class="fa score">{{item.score}}</view>分</view>
+        <view class="score-view"><view class="fa score {{item.color}}">{{item.score}}</view>分</view>
   </view>    
   
   <!--底部分割view-->

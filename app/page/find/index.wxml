@@ -12,9 +12,9 @@
         </block>
         <view class="weui-navbar__slider slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
-      <view class="weui-tab__panel panel">
+      <view class="weui-tab__panel">
         <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
-          <view class="weui-cells gbox">
+          <view class="weui-cells gbox" style="margin-top:0px;">
             <!--搜索-->
             <view class="weui-search-bar">
               <view class="weui-search-bar__form">
@@ -44,9 +44,10 @@
           <view wx:if="{{bookList}}">
             <view class="classname">
 
-              <view class="weui-cells gbox bbox" wx:for="{{bookList}}">
+              <view class="weui-cells gbox bbox" wx:for="{{bookList}}" bindtap="bookdetail">
                 <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>
                 <view class="book-content f-s-09x">
+                  <view class="adron {{item.bgColor}}"></view>
                   <view>
                     <text class="book-info-left">作</text>者：
                     <text class="b-f">{{item.author}}</text>
@@ -66,7 +67,7 @@
                   </view>
                 </view>
                 <view class="book-view">余书:
-                  <view class="fa bookcount">{{item.remain}}</view>
+                  <view class="fa bookcount {{item.color}}">{{item.remain}}</view>
                 </view>
               </view>
 

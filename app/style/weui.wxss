@@ -479,7 +479,7 @@ icon {
   margin-bottom: 1.5em;
 }
 .weui-article__h1 {
-  font-size: 18px;
+  font-size: 1.5em;
   font-weight: 400;
   margin-bottom: .9em;
 }
@@ -495,6 +495,12 @@ icon {
 }
 .weui-article__p {
   margin: 0 0 .8em;
+}
+
+.weui-article__d {
+  margin: 0 0 .8em;
+  color: #999999;
+  font-size: 0.8em;
 }
 .weui-msg {
   padding-top: 36px;
@@ -931,7 +937,7 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  padding-top: 10px;
+  padding-top: 3%;
   padding-bottom: 3px;
   text-align: center;
   font-size: 0;
@@ -942,7 +948,7 @@ icon {
 }
 .weui-navbar__slider {
   position: absolute;
-  top: 4.7em;
+  top: 5em;
   content: " ";
   left: 0;
   bottom: 0;
@@ -971,13 +977,13 @@ icon {
 .weui-tab__panel {
   box-sizing: border-box;
   height: 100%;
-  padding-top: 4.0em;
+  padding-top: 5em;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 .weui-search-bar {
   position: relative;
-  padding: 8px 10px;
+  padding: 1em 0.8em;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

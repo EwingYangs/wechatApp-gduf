@@ -6,12 +6,12 @@ Page({
    */
   data: {
     bgColor: [
-      'p-color',
-      'e-color',
-      'b-color',
-      'y-color',
-      'g-color',
-      'l-color',
+      'b-p-color',
+      'b-e-color',
+      'b-b-color',
+      'b-y-color',
+      'b-g-color',
+      'b-l-color',
     ]
   },
 

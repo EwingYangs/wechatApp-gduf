@@ -45,7 +45,7 @@
       </view>
     </view>
     <view class="weui-flex__item ">
-      <view class="fbox-right gbox">
+      <view class="fbox-right gbox" bindtap="studyQuery">
         <image class="bimg" src="../../images/icon_room.png"></image>
         <view class="btitle">自习室查询</view>
       </view>
@@ -53,7 +53,7 @@
   </view>
   <view class="weui-flex">
     <view class="weui-flex__item ">
-      <view class="fbox-left gbox">
+      <view class="fbox-left gbox" bindtap="bodyQuery">
         <image class="bimg" src="../../images/icon_lost.png"></image>
         <view class="btitle">体侧查询</view>
       </view>

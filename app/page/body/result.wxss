@@ -1,0 +1,47 @@
+/* page/body/result.wxss */
+page, .page {
+  height: 100%;
+}
+
+.listItem {
+  margin: 12px 12px 0px 12px;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listItem-title {
+  margin: 12px 12px 0px 12px;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.itemRight {
+  margin-right: 20rpx;
+}
+
+.siteName{
+  margin-left: 20rpx;
+}
+
+.score{
+  margin-top:50rpx;
+  font-size: 3em;
+}
+
+.title-name{
+  font-size:1.5em;margin-right:1em;margin-top:0.4em;
+}
+

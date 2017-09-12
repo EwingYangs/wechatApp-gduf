@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="listItem-title">
+    <view class="title-name">{{name}}</view>
+    <view class="f-s-09x g-f">
+      总分：<view class="score fa" style="margin-top:0px;">{{totalscore}}</view>
+    </view> 
+  </view>
+  <!-- 列表 -->
+  <view class="bresultList" wx:for="{{bdresults}}" wx:key="*this">
+    <view class="weui-cells listItem gbox">
+      <view class="itemLeft">
+        <view class="box">
+          <view class="siteName b-f">
+            <view class="">{{item.item}}</view>
+            <view class="adron {{item.bgColor}}"></view>
+            <view class="f-s-09x"><text class="g-f">数据：</text>{{item.data}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="itemRight f-s-09x">
+        得分：<view class="score fa {{item.color}}">{{item.score}}</view>
+      </view>
+    </view>
+  </view>
+  <!--底部分割view-->
+  <view class="bottom"></view>
+</view>

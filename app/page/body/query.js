@@ -1,6 +1,4 @@
-// page/login/index.js
-var common = require('../../utils/common.js');
-var Bmob = require("../../utils/bmob.js");
+// page/body/query.js
 Page({
 
   /**
@@ -67,27 +65,11 @@ Page({
   },
 
   //显示模拟登录教务系统
-  login: function (event){
+  search: function (event) {
     var sno = event.detail.value.usno;
     var pwd = event.detail.value.password;
-    var account = common.encodeInp(sno);
-    var passwd = common.encodeInp(pwd);
-    var encoded = account + "%%%" + passwd;
-    var token = md5('gduf-token-key');
-    //实现登录请求
-    wx.request({
-      url: 'https://www.itbasket.top/site/login', //教务系统登录地址
-      data: {
-        encoded: encoded,
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'x-gduf-access-token' : token,
-      },
-      method: 'POST',
-      success: function (res) {
-        console.log(res)
-      }
+    wx.navigateTo({
+      url: '../body/result'
     })
   }
 })

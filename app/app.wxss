@@ -6,7 +6,7 @@ page{
     font-family: 微软雅黑;
 }
 .page__hd {
-    padding: 40px;
+    padding: 16px;
 }
 .page__bd {
     padding-bottom: 40px;
@@ -140,26 +140,63 @@ page{
   height:24rpx;
 }
 
-.p-color{
+
+/**************bg-color*************/
+
+.b-p-color{
   background-color: #e080a6;
 }
 
-.e-color{
+.b-e-color{
   background-color: #7eb1c6;
 }
 
-.b-color{
+.b-b-color{
   background-color: #3aadde;
 }
 
-.y-color{
+.b-y-color{
   background-color: #f3bd5b;
 }
 
-.g-color{
+.b-g-color{
   background-color: #957bd1;
 }
 
-.l-color{
+.b-l-color{
   background-color: #90c14a;
+}
+
+/***************color******************/
+
+.p-color{
+  color: #e080a6;
+}
+
+.e-color{
+  color: #7eb1c6;
+}
+
+.b-color{
+  color: #3aadde;
+}
+
+.y-color{
+  color: #f3bd5b;
+}
+
+.g-color{
+  color: #957bd1;
+}
+
+.l-color{
+  color: #90c14a;
+}
+
+
+.adron{
+  width: 18px;
+  height: 5px;
+  margin-top:0.3em;
+  margin-bottom:0.3em;
 }
