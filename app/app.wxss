@@ -96,15 +96,14 @@ page{
 .userinfo-avatar {
   width: 160rpx;
   height: 160rpx;
-  margin: 20rpx;
+  margin: 1.4em;
   margin-bottom: 2rpx;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 3px solid #edf1ff;
+  box-shadow: 3px 3px 5px 2px rgba(120, 57, 87, 0.04);
 }
 
 .g-bda-userinfo {
-  padding-top: 30rpx;
-  padding-left:100rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,8 +119,8 @@ page{
 }
 
 .userinfo-sno{
-  color :#333333;
-  margin-top:20rpx;
+  color :#ffffff;
+  font-size: 1.5em;
 }
 
 .b-f{

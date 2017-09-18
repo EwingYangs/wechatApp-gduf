@@ -21,22 +21,21 @@
   margin-left:10px;
 }
 
-.holder-right{
+/*.holder-right{
   float:right;
-}
+}*/
 
 .banner{
     position: relative;
-    margin: 12px 12px 0px 12px;
     padding: 0 10px;
     text-align: center;
-    background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/08/07/25c6993740a660dc80ba1d115c83b413.png);
+    background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/18/87a60692406016a2803d874574de9d4c.png);
     background-position: bottom;
     background-repeat:no-repeat; 
     background-size:100% 40%;
-    background-color: #eaf4ff;
-    height: 12.8em;
-    line-height: 12.8em;
+    background-color: #6981ea;
+    height: 11.8em;
+    line-height: 11.8em;
     color: #C6E2FF;
 }
 
@@ -85,10 +84,9 @@
   line-height:1.5em;
   width:3.5em;
   position:relative;
-  top:7px;
-  right:-10px;
-  color:#625edd;
-  float:right;
+  top:2.6em;
+  color:#edf1ff;
+  float:left;
   font-weight: 500;
 }
 .banner-label-bottom{
@@ -96,16 +94,13 @@
   line-height:1.5em;
   width:4.5em;
   position:relative;
-  top:42px;
-  right:-9px;
-  color:#625edd;
+  top:2.6em;
+  color:#edf1ff;
   float:right;
   font-weight:500;
 }
 
 .banner-inner{
-  float:left;
-  height:50%;
   position:relative;
   top:26px;
   width:100%;

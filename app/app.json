@@ -1,13 +1,13 @@
 {
   "pages": [
-    "page/study/index",
+    "page/user/index",
     "page/index/index",
+    "page/study/index",
     "page/find/index",
     "page/score/index",
     "page/body/result",
     "page/body/query",
     "page/find/bdetail",
-    "page/user/index",
     "page/servicePhone/index",
     "page/login/index",
     "page/collect/index",

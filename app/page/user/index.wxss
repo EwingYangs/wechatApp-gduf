@@ -1,28 +1,25 @@
 /* page/user/index.wxss */
 .banner{
     position: relative;
-    margin: 12px 12px 0px 12px;
     padding: 0 10px;
     text-align: center;
-    background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/08/07/25c6993740a660dc80ba1d115c83b413.png);
+    background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/18/87a60692406016a2803d874574de9d4c.png);
     background-position: bottom;
     background-repeat:no-repeat; 
-    background-size:100% 40%;
-    background-color: #eaf4ff;
-    height: 12.8em;
-    line-height: 12.8em;
+    background-size:100% 50%;
+    background-color: #6981ea;
+    height: 8.8em;
+    line-height: 8.8em;
     color: #C6E2FF;
 }
 
 .banner-label-top{
   height:1.5em;
   line-height:1.5em;
-  width:3.5em;
   position:relative;
+  text-align: right;
   top:7px;
-  right:-10px;
-  color:#625edd;
-  float:right;
+  color:#edf1ff;
   font-weight: 500;
 }
 .user_icon{

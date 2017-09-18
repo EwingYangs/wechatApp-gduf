@@ -1,13 +1,14 @@
 <view class="page">
   <view class="weui-flex">
-    <view class="weui-flex__item ">
-      <view class="gbox banner">
-        <view class="banner-label-top">设置</view>
+    <view class="weui-flex__item " style="margin-bottom:2em;">
+      <view class="banner">
+      <view class="banner-label-top">退出登录</view>
+      
         <view class="banner-inner">
           <view class="g-bda-userinfo">
+            <text class="fa userinfo-sno ">131545151</text>
             <image class="userinfo-avatar" src="{{userInfo.userPic}}"></image>
-            <text class="fa userinfo-sno">131545151</text>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
           </view>
         </view>
       </view>

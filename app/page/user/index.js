@@ -20,6 +20,7 @@ Page({
     this.setData({
       userInfo: userInfo,
     })  
+    wx.setNavigationBarTitle({ title: userInfo.nickName })
   },
 
   /**
