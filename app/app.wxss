@@ -192,6 +192,20 @@ page{
   color: #90c14a;
 }
 
+/***************im-color******************/
+
+.a-im-color {
+  color: #6981ea;
+}
+
+.p-im-color {
+  color: #ff5b5b;
+}
+
+.t-im-color {
+  color: #2cbd7b;
+}
+
 
 .adron{
   width: 18px;

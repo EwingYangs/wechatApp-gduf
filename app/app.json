@@ -1,10 +1,10 @@
 {
   "pages": [
+    "page/study/index",
+    "page/score/index",
     "page/user/index",
     "page/index/index",
-    "page/study/index",
     "page/find/index",
-    "page/score/index",
     "page/body/result",
     "page/body/query",
     "page/find/bdetail",

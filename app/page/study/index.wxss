@@ -1,1 +1,43 @@
-/* page/study/index.wxss */
+.select-term{
+  display: flex;justify-content: center;
+}
+
+.select-list{
+  color:#333333;
+  font-weight:700;
+}
+
+.study-item{
+  margin:12px 12px 0px 12px;
+  padding: 0 5px 2px;
+  height:auto;
+}
+
+.item-title {
+  font-size: 20px;
+}
+
+.item-content .item-content-room1,
+.item-content .item-content-room2,
+.item-content .item-content-room3 {
+  display: inline-block;
+  padding: 0 3px;
+}
+
+.item-content .room {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.item-content .room .none-color {
+  color: #ddd;
+}
+
+.item-content .item-content-list {
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 5px;
+}
+
+.item-content .item-content-list:last-child {
+  border: 0 none;
+}

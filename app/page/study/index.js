@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    accounts: ["北教A", "北教B", "北教C", "北教D"],
+    accountIndex: 0,
+    emptyRoom: [      // 0 没课   1 有课
+      [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0],
+      [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0],
+      [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0],
+      [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0],
+      [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0],
+      [0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0]
+    ]
   },
 
   /**
@@ -62,5 +71,13 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  bindAccountChange: function (e) {
+    console.log('picker account 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      accountIndex: e.detail.value
+    })
+  },
 })
