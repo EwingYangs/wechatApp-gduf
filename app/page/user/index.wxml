@@ -2,11 +2,14 @@
   <view class="weui-flex">
     <view class="weui-flex__item " style="margin-bottom:2em;">
       <view class="banner">
-      <view class="banner-label-top">退出登录</view>
+      <view class="banner-label-top"><view bindtap="logout" wx:if="{{islogin}}">退出登录</view></view>
       
         <view class="banner-inner">
           <view class="g-bda-userinfo">
-            <text class="fa userinfo-sno ">131545151</text>
+            <text class="fa userinfo-sno" wx:if="{{islogin}}">{{sno}}</text>
+
+            <text bindtap="login" class="f-s-1x" style="color:#edf1ff;" wx:else>点击登录</text>
+
             <image class="userinfo-avatar" src="{{userInfo.userPic}}"></image>
             <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
           </view>

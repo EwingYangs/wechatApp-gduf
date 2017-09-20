@@ -27,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -99,5 +99,14 @@ Page({
     wx.navigateTo({
       url: '../study/index'
     })
+  },
+
+  flush : function(){
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 500
+    });
+    this.onShow();
   }
 })

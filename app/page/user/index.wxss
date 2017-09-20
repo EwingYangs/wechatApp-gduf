@@ -9,7 +9,6 @@
     background-size:100% 50%;
     background-color: #6981ea;
     height: 8.8em;
-    line-height: 8.8em;
     color: #C6E2FF;
 }
 

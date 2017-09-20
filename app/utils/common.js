@@ -17,21 +17,20 @@ function showModal(c,t,fun) {
     wx.showModal({
         title: t,
         content: c,
-        showCancel:false,
+        showCancel:true,
+        confirmColor: "#6981ea",
+        cancelColor: "",
         success: fun
     })
 }
 
 function checkLogin(){
-    wx.getStorage({
-      key: 'jwxtInfo',
-      success: function(res) {
-        return true;
-      },
-      fail : function(){
-        return false;
-      }
-    })
+  var jwxt = wx.getStorageSync('jwxtInfo');
+  if(jwxt){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 

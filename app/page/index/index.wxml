@@ -31,7 +31,7 @@
             </view>
           </view>
         </view>
-        <view class="banner-label-top">刷新</view>
+        <view class="banner-label-top" bindtap="flush">刷新</view>
         
         <view class="banner-label-bottom">切换宿舍</view>
       </view>

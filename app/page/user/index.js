@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    islogin : true,
+    sno : 0,
   },
 
   /**
@@ -34,7 +35,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    var isLogin = common.checkLogin();
+    this.setData({
+      islogin: isLogin,
+    })  
+    if (isLogin){
+      wx.getStorage({
+        key: 'jwxtInfo',
+        success: function (res) {
+          that.setData({
+            sno: res.sno,
+          }) 
+        }
+      })
+    }
   },
 
   /**
@@ -76,7 +91,7 @@ Page({
   score: function () {
     //如果没有登录跳到登录界面
     var isLogin = common.checkLogin();
-    if (isLogin) {
+    if (!isLogin) {
       wx.navigateTo({
         url: '../login/index'
       })
@@ -85,5 +100,24 @@ Page({
         url: '../score/index'
       })
     }
-  }
+  },
+
+  login: function(){
+    wx.navigateTo({
+      url: '../login/index'
+    })
+  },
+
+  logout: function(){
+    var that = this;
+    common.showModal('你确定要退出登录吗？', '提示' , function(res){
+      if (res.confirm) {
+        console.log('确定退出')
+        wx.removeStorageSync('jwxtInfo');//清空缓存
+        that.onShow();//刷新页面
+      } else {
+        console.log('取消')
+      }
+    });
+  },
 })
