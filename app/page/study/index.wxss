@@ -1,5 +1,10 @@
 .select-term{
-  display: flex;justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.select-term .icon-location {
+  padding-right: 5px;
 }
 
 .select-list{
@@ -17,11 +22,16 @@
   font-size: 20px;
 }
 
+.item-content {
+  font-size: 16px;
+}
+
 .item-content .item-content-room1,
 .item-content .item-content-room2,
 .item-content .item-content-room3 {
   display: inline-block;
   padding: 0 3px;
+  font-size: 16px;
 }
 
 .item-content .room {
