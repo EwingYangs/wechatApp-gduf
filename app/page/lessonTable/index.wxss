@@ -1,0 +1,171 @@
+.h-2 {
+  height: 270rpx;
+  padding-top: 30rpx;
+}
+
+.h-3 {
+  height: 330rpx;
+  padding-top: 140rpx;
+}
+
+.t-0 {
+  top: 10rpx;
+}
+
+.t-2 {
+  top: 340rpx;
+}
+
+.t-5 {
+  top: 840rpx;
+}
+
+.t-8 {
+  top: 1330rpx;
+}
+
+.t-10 {
+  top: 1670rpx;
+}
+
+.lesson-table {
+  margin: 10px;
+}
+
+.lesson-table .lesson-title {
+  height: 3.2em;
+  line-height: 3.2em;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  background-color: rgb(105, 129, 234);
+}
+
+.lesson-table .lesson-title .weui-select {
+  border: 0 none;
+}
+
+.lesson-content {
+  position: relative;
+}
+
+.lesson-content .lesson-content-hd {
+  display: flex;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+}
+
+.lesson-content .lesson-bg {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6em;
+}
+
+.lesson-content .lesson-content-hd .content-hd-one {
+  width: 30px;
+}
+
+.lesson-content .lesson-content-hd .content-hd-day {
+  flex: 1;
+  text-align: center;
+  height: 2em;
+  font-size: 18px;
+  line-height: 2em;
+}
+
+.lesson-content .lesson-content-hd view:nth-child(2n-1) {
+  background: rgb(235, 247, 255);
+}
+
+.lesson-content .lesson-content-hd view:nth-child(2n) {
+  background: rgb(226, 242, 255);
+}
+
+.lesson-content .lesson-content-bd {
+  display: flex;
+}
+
+.lesson-content .lesson-content-bd .content-bd {
+  flex: 1;
+}
+
+.lesson-content .lesson-content-bd:nth-child(6) {
+  width: 20px;
+  background-color: #ccc
+}
+
+.lesson-content .lesson-content-bd .content-bd-one {
+  width: 30px;
+}
+
+.lesson-content-bd .content-bd-one .content-bd-item,
+.lesson-content-bd .content-bd .content-bd-item
+{
+  height: 166rpx;
+  line-height: 166rpx;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.lesson-content-bd .content-bd-one .content-bd-item:nth-child(2n) {
+  background: rgb(235, 246, 255);
+}
+
+.lesson-content-bd .content-bd-one .content-bd-item:nth-child(2n-1) {
+  background: rgb(226, 242, 255);
+}
+
+.lesson-content-bd .content-bd:nth-child(2n) .content-bd-item:nth-child(2n-1) {
+  background: rgb(216, 238, 255);
+}
+
+.lesson-content-bd .content-bd:nth-child(2n-1) .content-bd-item:nth-child(2n-1) {
+  background: rgb(226, 243, 255);
+}
+
+.lesson-content-bd .content-bd:nth-child(2n)  {
+  background: rgb(223, 241, 255);
+}
+
+.lesson-content-bd .content-bd:nth-child(2n) .content-bd-item:nth-child(2n) {
+  background: rgb(228, 243, 255);
+}
+
+.lesson-content-bd .content-bd:nth-child(2n-1)  {
+  background: rgb(236, 247, 255);
+}
+
+.lesson-content .lesson-content-detail {
+  position: absolute;
+  top: 36px;
+  width: calc(100% - 30px);
+  display: flex;
+  padding-left: 30px;
+}
+
+.lesson-content .lesson-content-detail .content {
+  flex: 1;
+  height: 48em;
+}
+
+.lesson-content .lesson-content-detail .content-detail text {
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.lesson-content-detail .content .content-detail {
+  position: absolute;
+  width: 60px;
+  margin: 3px;
+  border-radius: 5px;
+}
+

@@ -57,7 +57,7 @@
     <view class="weui-flex__item ">
       <view class="fbox-left gbox" bindtap="bodyQuery">
         <image class="bimg" src="../../images/icon_lost.png"></image>
-        <view class="btitle">体侧查询</view>
+        <view class="btitle">体测查询</view>
       </view>
     </view>
     <view class="weui-flex__item ">

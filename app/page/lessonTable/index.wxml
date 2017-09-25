@@ -1,0 +1,35 @@
+<view class="lesson-table">
+  <view class="lesson-title weui-cell weui-cell_select">
+    <view class="weui-cell__bd">
+      <picker bindchange="bindWeekChange" value="{{weekIndex}}" range="{{week}}">
+        <view class="weui-select select-term">(当前)<text class="select-list">{{week[weekIndex]}}</text><text class="iconfont icon-triangle-bottom"></text></view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="lesson-content">
+    <image class="lesson-bg" src="../../images/lesson-bg.png" />
+    <view class="lesson-content-hd">
+      <view class="content-hd-one"></view>
+      <view class="content-hd-day p-f" wx:for="{{day}}">{{item}}</view>
+    </view>
+
+    <view class="lesson-content-bd">
+      <view class="content-bd-one">
+        <view class="content-bd-item p-f" wx:for="{{class}}">{{item}}</view>
+      </view>
+      <view class="content-bd" wx:for="{{lesson}}">
+        <view class="content-bd-item" wx:for="{{class}}"></view>
+      </view>
+    </view>
+    <view class="lesson-content-detail">
+      <view class="content" wx:for="{{lesson}}">
+        <view class="content-detail {{bgColorArr[lessonIndex % 3 + lessonItem.class]}} {{lessonItem.class === 3 || lessonItem.class === 5 ? 'h-3' : 'h-2'}} {{lessonItem.class === 2 || lessonItem.class === 3 ? 't-2' : 't-0'}} {{lessonItem.class === 4 || lessonItem.class === 5 ? 't-5' : 't-0'}} {{lessonItem.class === 6 ? 't-8' : 't-0'}} {{lessonItem.class === 7 ? 't-10' : 't-0'}}" wx:for="{{item}}" wx:for-item="lessonItem" wx:for-index="lessonIndex">
+          <text>{{'@' + lessonItem.site}}</text>
+          <text>{{lessonItem.teacher}}</text>
+          <text>{{lessonItem.subject}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

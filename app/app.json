@@ -1,5 +1,6 @@
 {
   "pages": [
+    "page/lessonTable/index",
     "page/study/index",
     "page/body/result",
     "page/score/index",
