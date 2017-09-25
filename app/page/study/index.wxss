@@ -12,9 +12,10 @@
   font-weight:700;
 }
 
+
 .study-item{
   margin:12px 12px 0px 12px;
-  padding: 0 5px 2px;
+  padding: 10px 10px 5px;
   height:auto;
 }
 
@@ -36,16 +37,32 @@
 
 .item-content .room {
   display: inline-block;
-  margin-left: 25px;
+}
+
+.room1{
+  margin-left: 70px;
+}
+
+.room2{
+  margin-left: 20px;
+}
+
+.room3{
+  margin-left: 20px;
 }
 
 .item-content .room .none-color {
   color: #ddd;
 }
 
+.none-color{
+  color: #ddd;
+}
+
 .item-content .item-content-list {
   border-bottom: 1rpx solid #eee;
   margin-bottom: 5px;
+  padding-bottom:5px;
 }
 
 .item-content .item-content-list:last-child {
