@@ -1,16 +1,16 @@
 // page/score/index.js
 var common = require('../../utils/common.js');
+var config = require("../../utils/config.js");
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    accounts: ["2016-2017-2", "QQ", "Email"],
+    accounts: config.scoreFrom,
     accountIndex: 0,
-    scoreData : [
-      { course: '微积分Ⅰ', num: '	16130014', attr: '必修', character: '专业基础课', credit: 4, term: '2013-2014-1', point: 3.7, score: 85, bgColor: 'b-p-color', color: 'p-color'},
-      { course: '信息技术导论', num: '15412007', attr: '必修', character: '专业基础课', credit: 3, term: '2013-2014-1', point: 1, score: 61, bgColor: 'b-l-color', color: 'l-color'},
-    ],
+    scoreData : [],
+    loading:true,
+    page:1
   },
 
   /**
@@ -31,7 +31,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var page = this.data.page;//默认第一页
+    var kksj = '';//默认查询全部
+    this.setData({
+      loading: true
+    })
+    this.setscoreData(kksj , page);
   },
 
   /**
@@ -59,30 +64,87 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 1000
+    });
+    var accounts = this.data.accounts;
+    var kksj = accounts[this.data.accountIndex];
+    if (this.data.accountIndex == 0) {
+      kksj = '';
+    }
+    var page = this.data.page + 1;
+    this.setData({
+      page: page
+    })
+    this.setscoreData(kksj , page);
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
   },
 
-  bindCountryChange: function (e) {
-    console.log('picker country 发生选择改变，携带值为', e.detail.value);
-
-    this.setData({
-      countryIndex: e.detail.value
-    })
-  },
   bindAccountChange: function (e) {
-    console.log('picker account 发生选择改变，携带值为', e.detail.value);
+    var accounts = this.data.accounts;
+    var kksj = accounts[e.detail.value];
+    if (e.detail.value == 0){
+      kksj = '';
+    }
+    this.setData({
+      loading: true,
+      scoreData : [],//置空
+      page:1
+    })
 
+    this.setscoreData(kksj, this.data.page);
+    e.detail.value
     this.setData({
       accountIndex: e.detail.value
     })
   },
+
+
+  setscoreData: function (kksj,page){
+    var that = this;
+    
+    //实现成绩请求
+    wx.request({
+      url: config.gdufScoreUrl, //成绩地址
+      data: {
+        page: page,
+        kksj: kksj,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token': config.token,
+      },
+      method: 'POST',
+      success: function (res) {
+        var scoreListData = res.data.data.data;
+        var len = scoreListData.length;
+        var arr = new Array();
+        for (var i = 0; i < len; i++) {
+          scoreListData[i][7] = !scoreListData[i][7] ? 0 : parseInt(scoreListData[i][7]);
+
+          var result = { course: scoreListData[i][3], num: scoreListData[i][2], attr: scoreListData[i][9], character: scoreListData[i][10], credit: parseInt(scoreListData[i][6]), term: scoreListData[i][1], point: scoreListData[i][7], score: parseInt(scoreListData[i][5]), bgColor: 'b-p-color', color: 'p-color' };
+          arr.push(result);
+        }
+
+        if (that.data.scoreData.length > 0){
+          arr = that.data.scoreData.concat(arr);
+        }
+        
+        that.setData({
+          scoreData: arr,
+          loading:false
+        })
+
+      }
+    })
+  }
 
 
 })

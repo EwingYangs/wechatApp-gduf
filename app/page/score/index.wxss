@@ -22,6 +22,7 @@
 }
 
 .select-list{
+  margin-left:20rpx;
   color:#333333;
   font-weight:700;
 }

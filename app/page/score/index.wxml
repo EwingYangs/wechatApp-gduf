@@ -2,28 +2,40 @@
     <view class="weui-cell weui-cell_select">
         <view class="weui-cell__bd">
             <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
-                <view class="weui-select select-term">(当前) <text class="select-list">{{accounts[accountIndex]}}</text><text class="iconfont icon-triangle-bottom"></text></view>
+                <view class="weui-select select-term">(当前)  <text class="select-list">{{accounts[accountIndex]}}</text><text class="iconfont icon-triangle-bottom"></text></view>
             </picker>
         </view>
     </view>
 </view>
 
 <view class="classname">
-    <view class="weui-cells gbox sbox" wx:for="{{scoreData}}">
-        <view class="score-title b-f">{{item.course}}</view>
-        <view class="score-content">
-            <view class="adron {{item.bgColor}}"></view>
-            <view>课程编号：<text class="b-f">{{item.num}}</text></view>
-            <view>课程属性：<text class="b-f">{{item.attr}}</text></view>
-            <view>课程性质：<text class="b-f">{{item.character}}</text></view>
-            <view>所修学分：<text class="b-f">{{item.credit}}</text></view>
-            <view>开课学期：<text class="b-f">{{item.term}}</text></view>
-            <view>课程绩点：<text class="b-f">{{item.point}}</text></view>
-            </view>
-            <view class="score-view"><view class="fa score {{item.color}}">{{item.score}}</view>分
-        </view>
-    </view>    
-  
+    <view class="weui-loadmore" wx:if="{{loading}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="" wx:if="{{scoreData.length > 0}}">
+      <view class="weui-cells gbox sbox" wx:for="{{scoreData}}">
+          <view class="score-title b-f">{{item.course}}</view>
+          <view class="score-content">
+              <view class="adron {{item.bgColor}}"></view>
+              <view>课程编号：<text class="b-f fa">{{item.num}}</text></view>
+              <view>课程属性：<text class="b-f lstrong">{{item.attr}}</text></view>
+              <view>课程性质：<text class="b-f lstrong">{{item.character}}</text></view>
+              <view>所修学分：<text class="b-f fa">{{item.credit}}</text></view>
+              <view>开课学期：<text class="b-f fa">{{item.term}}</text></view>
+              <view>课程绩点：<text class="b-f fa">{{item.point}}</text></view>
+              </view>
+              <view class="score-view">
+                <view class="" wx:if="{{item.score}}">
+                <view class="fa score {{item.color}}">{{item.score}}</view>分
+                </view>
+                <view class="" style="margin-top:108rpx" wx:else>暂无分数</view>
+          </view>
+      </view>  
+    </view>  
+    <view class="title-box-nodata" wx:elif="{{scoreData.length == 0 && !loading}}">
+    对不起，暂无数据
+    </view>
   <!--底部分割view-->
   <view class="bottom"></view> 
 </view>     

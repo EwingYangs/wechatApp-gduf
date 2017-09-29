@@ -1,6 +1,7 @@
 // page/login/index.js
 var common = require('../../utils/common.js');
 var Bmob = require("../../utils/bmob.js");
+var config = require("../../utils/config.js");
 Page({
 
   /**
@@ -73,10 +74,11 @@ Page({
     var account = common.encodeInp(sno);
     var passwd = common.encodeInp(pwd);
     var encoded = account + "%%%" + passwd;
-    var token = md5('gduf-token-key');
+    console.log(encoded);
+    var token = config.token;
     //实现登录请求
     wx.request({
-      url: 'https://www.itbasket.top/site/login', //教务系统登录地址
+      url: config.gdufLoginUrl, //教务系统登录地址
       data: {
         encoded: encoded,
       },
@@ -86,7 +88,15 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        console.log(res)
+        if (res.data.status.msg == 'success'){
+          //保存信息到缓存
+          var info = { sno: sno, pwd: pwd, encoded: encoded};
+          wx.setStorageSync('jwxtInfo', info);
+          common.setFlushMsg(res.data.data);
+          wx.navigateBack();//返回上一级页面
+        }else{
+          common.showTip('登录失败，账号或密码错误');
+        }
       }
     })
   }

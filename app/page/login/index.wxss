@@ -3,14 +3,59 @@ page{
     background-color: #FFFFFF;
 }
 .input{
-  border:1px #cccccc solid;
   height:2.0em;
   line-height:2.0em;
-  width:78%;
-  border-radius:5px;
-  margin-left:auto;
-  margin-bottom: 10px;
-  margin-right:auto;
-  text-align:center;
-  padding-left:17%;
 }
+
+.banner{
+    position: relative;
+    padding: 0 10px;
+    text-align: center;
+    background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/28/1c5673fe4099535580334647cfadefaa.png);
+    background-position: bottom;
+    background-repeat:no-repeat; 
+    background-size:100% 60%;
+    background-color: #6981ea;
+    height: 10.8em;
+    color: #FFFFFF;
+}
+
+
+.zan-cell::after {
+left:15px;
+right:0;
+bottom:0;
+border-top:1rpx solid #e5e5e5;
+background:#e5e5e5;
+content:' ';
+}
+
+.zan-cell {
+margin:30rpx auto;
+border-bottom:1px #cccccc solid;
+position:relative;
+padding-top:24rpx;
+display:flex;
+align-items:center;
+line-height:1.4;
+font-size:14px;
+width:85%;
+}
+
+.zan-form__title {
+color:#999999;
+float:left;
+width:90rpx;
+font-size:14px;
+}
+
+.zan-cell__bd {
+flex:1;
+}
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 
 function showTip(sms, icon, fun, t) {
     if (!t) {
-        t = 500;
+        t = 1000;
     }
     wx.showToast({
         title: sms,
@@ -63,7 +63,34 @@ function encodeInp(input) {
 }
 
 
+function setFlushMsg(msg){
+  wx.setStorageSync('msg', msg);
+}
+
+function getFlushMsg() {
+  var f = wx.getStorageSync('msg');
+  if (f){
+      return true;
+  }else{
+      return false;
+  }
+}
+
+function showFlushMsg(){
+  wx.getStorage({
+    key: 'msg',
+    success: function (res) {
+      showTip(res.data);
+      wx.removeStorageSync('msg')
+    }
+  })
+}
+
+
 module.exports.showTip = showTip;
 module.exports.showModal = showModal;
 module.exports.checkLogin = checkLogin;
 module.exports.encodeInp = encodeInp;
+module.exports.setFlushMsg = setFlushMsg;
+module.exports.getFlushMsg = getFlushMsg;
+module.exports.showFlushMsg = showFlushMsg;

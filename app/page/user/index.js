@@ -44,11 +44,12 @@ Page({
         key: 'jwxtInfo',
         success: function (res) {
           that.setData({
-            sno: res.sno,
+            sno: res.data.sno,
           }) 
         }
       })
     }
+    common.showFlushMsg();
   },
 
   /**
@@ -111,8 +112,8 @@ Page({
     var that = this;
     common.showModal('你确定要退出登录吗？', '提示' , function(res){
       if (res.confirm) {
-        console.log('确定退出')
         wx.removeStorageSync('jwxtInfo');//清空缓存
+        common.setFlushMsg('退出成功');
         that.onShow();//刷新页面
       } else {
         console.log('取消')

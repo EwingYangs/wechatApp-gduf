@@ -125,8 +125,14 @@ page{
 }
 
 .strong{
-  font-weight: 700;
+  font-weight: 600;
 }
+
+.lstrong{
+  font-weight: 500;
+}
+
+
 
 .b-f{
   color:#333333;
@@ -215,6 +221,17 @@ page{
 .adron{
   width: 18px;
   height: 5px;
-  margin-top:0.3em;
-  margin-bottom:0.3em;
+  margin-top:0.4em;
+  margin-bottom:0.4em;
+}
+
+.title-box-nodata{
+    width: 100%;
+    padding-top: 330rpx;
+    text-align: center;
+    font-size:28rpx;
+    color:#999;
+    background: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/29/775630314061eabe80f101b641cc6a70.png) no-repeat center 205rpx;
+    background-size: 100rpx auto;
+    margin-bottom: 50rpx;
 }

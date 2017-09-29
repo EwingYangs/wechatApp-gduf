@@ -554,11 +554,11 @@ icon {
           flex: 1;
 }
 .weui-btn {
-  margin-top: 15px;
+  margin-top: 40px;
   background-color:#6981ea!important;
-  height:2.0em;
-  line-height: 2.0em;
-  width:95%;
+  height:2.5em;
+  line-height: 2.5em;
+  width:91%;
   font-size:17px;
 }
 .weui-btn:first-child {
@@ -724,7 +724,7 @@ icon {
   min-width: 0;
 }
 .weui-loadmore {
-  width: 65%;
+  width: 22%;
   margin: 1.5em auto;
   line-height: 1.6em;
   font-size: 14px;
