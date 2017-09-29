@@ -1,6 +1,5 @@
 .sbox{
-  margin:12px 12px 0px 12px;
-  height:12em;
+  margin:12px;
 }
 .score-view{
   float:right;padding-right:24rpx;padding-top:4em;
@@ -14,7 +13,7 @@
 }
 
 .score-title{
-  padding-top:12rpx;padding-left:24rpx;font-size:1.2em;
+  padding-top:12rpx;padding-bottom:12rpx;padding-left:24rpx;font-size:1.2em;
 }
 
 .select-term{
