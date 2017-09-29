@@ -157,14 +157,14 @@
 .lesson-content .lesson-content-detail .content-detail text {
   display: block;
   width: 100%;
-  font-size: 24rpx;
+  font-size: 20rpx;
   text-align: center;
   color: #fff;
 }
 
 .lesson-content-detail .content .content-detail {
   position: absolute;
-  width: 60px;
+  width: 40px;
   margin: 3px;
   border-radius: 5px;
 }
