@@ -16,7 +16,8 @@
     <view class="" wx:if="{{scoreData.length > 0}}">
       <view class="weui-cells gbox sbox" wx:for="{{scoreData}}">
           <view class="score-title b-f">{{item.course}}</view>
-          <view class="score-content">
+          <view class="clearfix">
+              <view class="score-content">
               <view class="adron {{item.bgColor}}"></view>
               <view>课程编号：<text class="b-f fa">{{item.num}}</text></view>
               <view>课程属性：<text class="b-f lstrong">{{item.attr}}</text></view>
@@ -30,6 +31,7 @@
                 <view class="fa score {{item.color}}">{{item.score}}</view>分
                 </view>
                 <view class="" style="margin-top:108rpx" wx:else>暂无分数</view>
+          </view>
           </view>
       </view>  
     </view>  
