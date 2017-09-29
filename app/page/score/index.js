@@ -134,6 +134,9 @@ Page({
         }
 
         if (that.data.scoreData.length > 0){
+          if (arr.length == 0){
+            common.showTip('数据已加载完！')
+          }
           arr = that.data.scoreData.concat(arr);
         }
         

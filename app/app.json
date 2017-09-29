@@ -1,7 +1,7 @@
 {
   "pages": [
-    "page/score/index",
     "page/index/index",
+    "page/score/index",
     "page/login/index",
     "page/lessonTable/index",
     "page/study/index",
