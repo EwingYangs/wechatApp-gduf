@@ -69,13 +69,13 @@
       {
         "selectedIconPath": "images/icon2_h.png",
         "iconPath": "images/icon2.png",
-        "pagePath": "page/find/index",
+        "pagePath": "page/lessonTable/index",
         "text": "课表"
       },
       {
         "selectedIconPath": "images/icon3_h.png",
         "iconPath": "images/icon3.png",
-        "pagePath": "page/index",
+        "pagePath": "page/find/index",
         "text": "发现"
       },
       {

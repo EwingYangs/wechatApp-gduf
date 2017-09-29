@@ -6,6 +6,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bgColor: [
+      'b-p-color',
+      'b-e-color',
+      'b-b-color',
+      'b-y-color',
+      'b-g-color',
+      'b-l-color',
+    ],
+    color: [
+      'p-color',
+      'e-color',
+      'b-color',
+      'y-color',
+      'g-color',
+      'l-color',
+    ],
     accounts: config.scoreFrom,
     accountIndex: 0,
     scoreData : [],
@@ -109,7 +125,8 @@ Page({
 
   setscoreData: function (kksj,page){
     var that = this;
-    
+    var bgColorList = that.data.bgColor;
+    var colorList = that.data.color;
     //实现成绩请求
     wx.request({
       url: config.gdufScoreUrl, //成绩地址
@@ -127,9 +144,13 @@ Page({
         var len = scoreListData.length;
         var arr = new Array();
         for (var i = 0; i < len; i++) {
+          var j = i % 6;
+          var bgColor = bgColorList[j];
+          var color = colorList[j];
+
           scoreListData[i][7] = !scoreListData[i][7] ? 0 : parseInt(scoreListData[i][7]);
 
-          var result = { course: scoreListData[i][3], num: scoreListData[i][2], attr: scoreListData[i][9], character: scoreListData[i][10], credit: parseInt(scoreListData[i][6]), term: scoreListData[i][1], point: scoreListData[i][7], score: parseInt(scoreListData[i][5]), bgColor: 'b-p-color', color: 'p-color' };
+          var result = { course: scoreListData[i][3], num: scoreListData[i][2], attr: scoreListData[i][9], character: scoreListData[i][10], credit: parseInt(scoreListData[i][6]), term: scoreListData[i][1], point: scoreListData[i][7], score: parseInt(scoreListData[i][5]), bgColor: bgColor, color: color };
           arr.push(result);
         }
 

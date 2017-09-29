@@ -1,14 +1,33 @@
 <view class="page">
      <view class="weui-flex">
         <view class="weui-flex__item ">
-            <image src="../../images/login_bg.png" style="margin-top:6em;margin-bottom:3em;margin-left:20%;margin-right:20%;width:61.3%;height:6em;"></image>
+            <view class="banner">
+                  <text class="fa fa-2x" style="margin-top:0.8em">Meet</text>
+            </view>
         </view>
       </view>
-      <view class="page__bd page__bd_spacing">
-        <form bindsubmit="search">
-            <input class="input" name="usno" placeholder="学号" bindinput="userNameInput" type="text" bindfocus=""/>
-            <input class="input" name="password" placeholder="密码" bindinput="userNameInput"  password="true" bindfocus=""/>
-            <button class="weui-btn" type="primary" formType="submit"> 查询</button>
+      <view class="page__bd page__bd_spacing" style="margin-top:3em">
+        <form bindsubmit="login">
+            <view class="zan-cell zan-form__item">
+              <text class="zan-form__title">学号：</text>
+              <input
+                class="fa input zan-form__input zan-cell__bd"
+                name = "usno"
+                bindinput="userNameInput"
+                type="text"
+              />
+            </view>
+            <view class="zan-cell zan-form__item">
+              <text class="zan-form__title">密码：</text>
+              <input
+                class="input zan-form__input zan-cell__bd"
+                name = "password"
+                bindinput="userNameInput"
+                password="true"
+                bindfocus=""
+              />
+            </view>
+            <button class="weui-btn" type="primary" formType="submit">Go</button>
         </form>
       </view>
 </view>

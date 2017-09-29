@@ -18,11 +18,11 @@ Page({
       { name: 'ISBN', value: 'ISBN' },
     ],
 
-    bookList: [
-      { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
-      { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-l-color', color: 'l-color'},
-      { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
-    ],
+    // bookList: [
+    //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
+    //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-l-color', color: 'l-color'},
+    //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
+    // ],
 
     guide: [
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
@@ -36,15 +36,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
-        });
-      }
-    });
+    
   },
 
   /**
@@ -58,7 +50,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
 
+
+    
   },
 
   /**
