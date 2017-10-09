@@ -1,0 +1,23 @@
+<view class="page">
+<view class="phoneList" wx:for="{{guide}}" wx:for-index="key">
+  <view class="weui-cells listItem gbox">
+    <view class="itemLeft">
+      <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+      <view class="box">
+        <view class="siteName b-f">{{item.siteName}}</view>
+        <view class="thing g-f">{{item.thing}}</view>
+      </view>
+    </view>
+    <view class="itemRight">
+        <view wx:if="{{item.iscollect}}">
+        <image src="../../images/collect1.png" style="width:20px;height:20px" bindtap="cancel" data-id="{{key}}"></image>
+        </view>
+        <view wx:else>
+        <image src="../../images/collect.png" style="width:20px;height:20px" bindtap="collect" data-id="{{key}}"></image>
+        </view>
+    </view>
+  </view>
+</view>
+  <!--底部分割view-->
+  <view class="bottom"></view>
+</view>

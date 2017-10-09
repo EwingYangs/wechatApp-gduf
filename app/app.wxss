@@ -243,3 +243,13 @@ page{
     background-size: 100rpx auto;
     margin-bottom: 50rpx;
 }
+
+.title-box-adddata{
+    width: 100%;
+    padding-top: 330rpx;
+    text-align: center;
+    font-size:28rpx;
+    color:#999;
+    background-size: 100rpx auto;
+    margin-bottom: 50rpx;
+}

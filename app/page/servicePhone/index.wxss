@@ -34,4 +34,14 @@ page, .page {
 
 .itemRight {
   margin-right: 20rpx;
+  height: 90%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.add, .thing {
+  font-size: 12px;
+  color: #ddd;
 }

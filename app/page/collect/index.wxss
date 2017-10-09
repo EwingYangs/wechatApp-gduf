@@ -39,15 +39,13 @@
   line-height: 100rpx;
 }
 
-.itemRight {
-  margin-right: 20rpx;
-}
 
 .panel {
   padding-top: 158rpx;
 }
 
 .itemRight {
+  margin-right: 20rpx;
   height: 100%;
   text-align: right;
   display: flex;

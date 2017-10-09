@@ -9,7 +9,7 @@
     </view>
   </view>
   <!-- 列表 -->
-  <view class="phoneList" wx:for="{{phoneList}}" wx:key="*this">
+  <view class="phoneList" wx:for="{{phoneList}}" wx:for-index="key">
     <view class="weui-cells listItem gbox">
       <view class="itemLeft">
         <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
@@ -18,8 +18,14 @@
           <view class="phone g-f">{{item.phone}}</view>
         </view>
       </view>
-      <view class="itemRight p-f" data-phone="{{item.phone}}" bindtap="call">
-        拨打
+      <view class="itemRight">
+        <view wx:if="{{item.iscollect}}">
+        <image src="../../images/collect1.png" style="width:20px;height:20px" bindtap="cancel" data-id="{{key}}"></image>
+        </view>
+        <view wx:else>
+        <image src="../../images/collect.png" style="width:20px;height:20px" bindtap="collect" data-id="{{key}}"></image>
+        </view>
+        <view data-phone="{{item.phone}}" bindtap="call">拨打</view>
       </view>
     </view>
   </view>
