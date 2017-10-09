@@ -54,37 +54,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#6981ea",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "white",
-    "list": [
-      {
-        "selectedIconPath": "images/icon1_h.png",
-        "iconPath": "images/icon1.png",
-        "pagePath": "page/index/index",
-        "text": "首页"
-      },
-      {
-        "selectedIconPath": "images/icon2_h.png",
-        "iconPath": "images/icon2.png",
-        "pagePath": "page/lessonTable/index",
-        "text": "课表"
-      },
-      {
-        "selectedIconPath": "images/icon3_h.png",
-        "iconPath": "images/icon3.png",
-        "pagePath": "page/find/index",
-        "text": "发现"
-      },
-      {
-        "selectedIconPath": "images/icon4_h.png",
-        "iconPath": "images/icon4.png",
-        "pagePath": "page/user/index",
-        "text": "我的"
-      }
-    ]
-  },
+  
   "debug": true
 }

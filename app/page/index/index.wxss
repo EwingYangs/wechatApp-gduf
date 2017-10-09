@@ -32,10 +32,10 @@
     background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/18/87a60692406016a2803d874574de9d4c.png);
     background-position: bottom;
     background-repeat:no-repeat; 
-    background-size:100% 40%;
+    background-size:100% 35%;
     background-color: #6981ea;
-    height: 11.8em;
-    line-height: 11.8em;
+    height: 12.8em;
+    line-height: 12.8em;
     color: #C6E2FF;
 }
 
@@ -43,7 +43,6 @@
     margin: 12px 6px 0px 12px;
     padding: 0 10px;
     text-align: center;
-    background-color: #ffffff;
     height: 10.7em;
     line-height: 11.7em;
     color: #cfcfcf;
@@ -54,7 +53,6 @@
     margin: 12px 12px 0px 6px;
     padding: 0 10px;
     text-align: center;
-    background-color: #ffffff;
     height: 10.7em;
     line-height: 11.7em;
     color: #cfcfcf;
@@ -71,9 +69,7 @@
 
 .btitle{
   position:relative;
-  top:-3.5em;
-  font-size:20px;
-  color:#000000;
+  top:-4.8em;
   height: 1.5em;
   line-height: 1.5em;
   font-weight: 500;
@@ -84,7 +80,7 @@
   line-height:1.5em;
   width:3.5em;
   position:relative;
-  top:2.6em;
+  top:3.6em;
   color:#edf1ff;
   float:left;
   font-weight: 500;
@@ -94,7 +90,7 @@
   line-height:1.5em;
   width:4.5em;
   position:relative;
-  top:2.6em;
+  top:3.6em;
   color:#edf1ff;
   float:right;
   font-weight:500;
