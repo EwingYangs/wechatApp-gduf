@@ -13,13 +13,18 @@ Page({
       'b-y-color',
       'b-g-color',
       'b-l-color',
-    ]
+    ],
+    phoneList: [],
+    loading: true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      loading: true
+    })
     this.setPhoneListData();
   },
 
@@ -96,10 +101,6 @@ Page({
         query.equalTo("siteName", { "$regex": "" + where + ".*" });//模糊查询
       }
       var bgColorList = that.data.bgColor;
-
-      
-
-
       // 查询所有数据
       query.find({
         success: function (results) {
@@ -133,6 +134,7 @@ Page({
               }
               that.setData({
                 phoneList: phoneList,
+                loading: false
               })
             },
             error: function (error) {
@@ -141,6 +143,9 @@ Page({
         },
         error: function (error) {
           console.log("查询失败: " + error.code + " " + error.message);
+          that.setData({
+            loading: false
+          })
         }
       });
   },
@@ -186,7 +191,6 @@ Page({
 
     var Collect = Bmob.Object.extend("collect");
     var collect = new Bmob.Query(Collect);
-    console.log(phoneList[collectid].pid);
     collect.equalTo("message", phoneList[collectid].pid);
     collect.destroyAll({
       success: function (myObject) {
@@ -200,7 +204,4 @@ Page({
     common.showTip('取消收藏成功');
   },
 
-  getCollectData: function(){
-    
-  }
 })

@@ -1,10 +1,12 @@
 {
   "pages": [
     "page/index/index",
-    "page/servicePhone/index",
     "page/collect/index",
-    "page/user/index",
     "page/info/index",
+    "page/index",
+    "page/info/infodetail",
+    "page/servicePhone/index",
+    "page/user/index",
     "page/score/index",
     "page/login/index",
     "page/lessonTable/index",
@@ -13,7 +15,6 @@
     "page/book/index",
     "page/body/query",
     "page/find/bdetail",
-    "page/index",
     "page/cricle/cricle",
     "page/publish/publish",
     "page/cricleDetail/cricleDetail",

@@ -129,9 +129,6 @@ Page({
   bookdetail : function(){
     wx.navigateTo({
       url: 'bdetail',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
     })
   }
 

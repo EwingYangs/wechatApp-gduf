@@ -9,6 +9,11 @@
     </view>
   </view>
   <!-- 列表 -->
+<view class="weui-loadmore" wx:if="{{loading}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在加载</view>
+</view>
+<view class="" wx:if="{{phoneList.length > 0}}">
   <view class="phoneList" wx:for="{{phoneList}}" wx:for-index="key">
     <view class="weui-cells listItem gbox">
       <view class="itemLeft">
@@ -29,6 +34,10 @@
       </view>
     </view>
   </view>
+</view>
+<view class="title-box-nodata" wx:elif="{{phoneList.length == 0 && !loading}}">
+对不起，暂无数据
+</view>
   <!--底部分割view-->
   <view class="bottom"></view>
 </view>

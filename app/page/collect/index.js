@@ -24,26 +24,19 @@ Page({
       'b-l-color',
     ],
     phoneList: [],
-    guide: [
-      { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
-      { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
-      { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
-      { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
-    ]
+    guide: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
@@ -93,6 +86,9 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+    if(e.currentTarget.id == 2){
+      this.setGuideList();
+    }
   },
 
   call: function (e) {
@@ -131,7 +127,6 @@ Page({
               var fname = object.get('siteName').substr(0, 1);
               var j = i % 6;
               var bgColor = bgColorList[j];
-              var iscollect = false;
               if (collectArr.indexOf(object.id) != "-1") {
                 var a = { pid: object.id, shorthand: fname, bgColor: bgColor, siteName: object.get('siteName'), phone: object.get('phone')};
                 phoneList.push(a);
@@ -140,6 +135,7 @@ Page({
             that.setData({
               phoneList: phoneList,
             })
+            console.log(that.data.phoneList);
           },
           error: function (error) {
           }
@@ -151,18 +147,97 @@ Page({
     });
   },
 
-  cancel: function (event) {
+
+  setGuideList: function(){
+    var that = this;
+    var Article = Bmob.Object.extend("_Article");
+    var query = new Bmob.Query(Article);
+    var bgColorList = that.data.bgColor;
+    // 查询所有数据
+    query.find({
+      success: function (results) {
+        var Collect = Bmob.Object.extend("collect");
+        var collect = new Bmob.Query(Collect);
+        var isme = new Bmob.User();
+        var user = Bmob.User.current();
+        isme.id = user.id;        //当前用户的objectId
+        collect.equalTo("user", isme);
+        collect.equalTo("type", 1);
+        collect.find({
+          success: function (collectData) {
+            var collectArr = [];
+            for (var i = 0; i < collectData.length; i++) {
+              var object = collectData[i];
+              collectArr.push(object.get('message'));
+            }
+            // 循环处理查询到的数据
+            var guide = [];
+            for (var i = 0; i < results.length; i++) {
+              var object = results[i];
+              var fname = object.get('title').substr(0, 1);
+              var j = i % 6;
+              var bgColor = bgColorList[j];
+              if (collectArr.indexOf(object.id) != "-1") {
+                var a = { gid: object.id, shorthand: fname, bgColor: bgColor, siteName: object.get('title'), thing: object.get('desc')};
+                guide.push(a);
+              }
+            }
+            that.setData({
+              guide: guide,
+            })
+            
+          },
+          error: function (error) {
+          }
+        });
+      },
+      error: function (error) {
+        console.log("查询失败: " + error.code + " " + error.message);
+      }
+    });
+  },
+
+  cancelPhone: function (event) {
     var collectid = event.target.dataset.id;
     var phoneList = this.data.phoneList;
     phoneList.splice(collectid, 1);
     this.setData({
       phoneList: phoneList,
     })
-
     var Collect = Bmob.Object.extend("collect");
     var collect = new Bmob.Query(Collect);
-    console.log(phoneList[collectid].pid);
-    collect.equalTo("message", phoneList[collectid].pid);
+    if (phoneList.length == 0){
+      collect.equalTo("type", 0);
+    }else{
+      collect.equalTo("message", phoneList[collectid].pid);
+    }
+    collect.destroyAll({
+      success: function (myObject) {
+        // 删除成功
+      },
+      error: function (myObject, error) {
+        // 删除失败
+      }
+    });
+    
+    common.showTip('取消收藏成功');
+  },
+
+  cancelGuide: function (event) {
+    var collectid = event.target.dataset.id;
+    var guide = this.data.guide;
+    console.log(guide);
+    guide.splice(collectid, 1);
+    this.setData({
+      guide: guide,
+    })
+    var Collect = Bmob.Object.extend("collect");
+    var collect = new Bmob.Query(Collect);
+    if (guide.length == 0) {
+      collect.equalTo("type", 1);
+    } else {
+      collect.equalTo("message", guide[collectid].pid);
+    }
     collect.destroyAll({
       success: function (myObject) {
         // 删除成功
@@ -175,5 +250,5 @@ Page({
     common.showTip('取消收藏成功');
   },
 
-
+  
 })

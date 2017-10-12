@@ -29,10 +29,10 @@ page{
 }
 
 .page__desc {
-    margin-top: 5px;
     color: #888888;
     text-align: left;
     font-size: 14px;
+    margin-bottom: .5em;
 }
 
 .gbox{
