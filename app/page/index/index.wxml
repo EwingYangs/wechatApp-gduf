@@ -71,28 +71,28 @@
 
   <view class="weui-grids">
       <block >
-          <navigator url="../score/index" class="weui-grid" hover-class="weui-grid_active">
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="score">
               <image class="weui-grid__icon" src="../../images/icon_achievement.png" />
               <view class="weui-grid__label">成绩查询</view>
-          </navigator>
+          </view>
       </block>
       <block >
-          <navigator url="../study/index" class="weui-grid" hover-class="weui-grid_active">
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="study">
               <image class="weui-grid__icon" src="../../images/icon_room.png" />
               <view class="weui-grid__label">自习室查询</view>
-          </navigator>
+          </view>
       </block>
       <block >
-          <navigator url="../body/query" class="weui-grid" hover-class="weui-grid_active">
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="body">
               <image class="weui-grid__icon" src="../../images/icon_lost.png" />
               <view class="weui-grid__label">体侧查询</view>
-          </navigator>
+          </view>
       </block>
        <block >
-          <navigator url="../book/index" class="weui-grid" hover-class="weui-grid_active">
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="book">
               <image class="weui-grid__icon" src="../../images/icon_book.png" />
               <view class="weui-grid__label">图书查询</view>
-          </navigator>
+          </view>
       </block>
       <block >
           <navigator url="../servicePhone/index" class="weui-grid" hover-class="weui-grid_active">
