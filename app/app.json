@@ -1,5 +1,6 @@
 {
   "pages": [
+    "page/find/index",
     "page/index/index",
     "page/score/index",
     "page/login/index",
@@ -7,7 +8,6 @@
     "page/study/index",
     "page/body/result",
     "page/user/index",
-    "page/find/index",
     "page/body/query",
     "page/find/bdetail",
     "page/servicePhone/index",

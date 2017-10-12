@@ -1,4 +1,5 @@
 // page/find/index.js
+var config = require("../../utils/config.js");
 var sliderWidth = 188; // 需要设置slider的宽度，用于计算中间位置
 Page({
 
@@ -6,7 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: [],
+    bgColor: [
+      'b-p-color',
+      'b-e-color',
+      'b-b-color',
+      'b-y-color',
+      'b-g-color',
+      'b-l-color',
+    ],
+    color: [
+      'p-color',
+      'e-color',
+      'b-color',
+      'y-color',
+      'g-color',
+      'l-color',
+    ],
     tabs: [{ name: "图书查询", img: "../../images/icon_book.png" }, { name: "校园指南", img: "../../images/icon_guide.png" }],
     activeIndex: 0,
     sliderOffset: 0,
@@ -18,18 +34,15 @@ Page({
       { name: 'ISBN', value: 'ISBN' },
     ],
 
-    // bookList: [
-    //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
-    //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-l-color', color: 'l-color'},
-    //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
-    // ],
+    bookList: [],
 
     guide: [
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
-    ]
+    ],
+    loading: true,
   },
 
   /**
@@ -60,7 +73,11 @@ Page({
       }
     });
 
+    this.setData({
+      loading: true
+    })
 
+    this.setBookList();
     
   },
 
@@ -132,6 +149,52 @@ Page({
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
+    })
+  },
+
+  setBookList: function (strKeyValue, strType, page ){
+    var that = this;
+    var bgColorList = that.data.bgColor;
+    var colorList = that.data.color;
+    //实现成绩请求
+    wx.request({
+      url: config.gdufGetBookListUrl, //成绩地址
+      data: {
+        strKeyValue: '马云',
+        strType: 'text',
+        page: 1
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token': config.token,
+      },
+      method: 'POST',
+      success: function (res) {
+        var bookListData = res.data.data;
+        var len = bookListData.length;
+        var arr = new Array();
+        for (var i = 0; i < len; i++) {
+          var j = i % 6;
+          var bgColor = bgColorList[j];
+          var color = colorList[j];
+          var result = { bname: bookListData[i][1], author: bookListData[i][2], publish: bookListData[i][3], ISBN: bookListData[i][5], snum: bookListData[i][6], remain: 8 , page: bookListData[i][8], price: bookListData[i][9],  bgColor: bgColor, color: color };
+          arr.push(result);
+        }
+
+        if (that.data.bookList.length > 0) {
+          if (arr.length == 0) {
+            common.showTip('数据已加载完！')
+          }
+          arr = that.data.bookList.concat(arr);
+        }
+console.log(arr);
+console.log('1111');
+        that.setData({
+          bookList: arr,
+          loading: false
+        })
+
+      }
     })
   }
 
