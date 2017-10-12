@@ -67,7 +67,23 @@ Page({
 
 
   //***********************自定义函数 **************************//
-  score: function () {
+  
+  score:function(){
+    //如果没有登录跳到登录界面
+    var isLogin = common.checkLogin();
+    if (!isLogin) {
+      wx.navigateTo({
+        url: '../login/index'
+      })
+    }else{
+      wx.navigateTo({
+        url: '../score/index'
+      })
+    }
+  },
+
+
+  study: function () {
     //如果没有登录跳到登录界面
     var isLogin = common.checkLogin();
     if (!isLogin) {
@@ -76,29 +92,42 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../score/index'
+        url: '../study/index'
       })
     }
   },
 
-
-  servicePhone: function () {
-    wx.navigateTo({
-      url: '../servicePhone/index'
-    })
+  book: function () {
+      wx.navigateTo({
+        url: '../book/index'
+      })
   },
 
 
-  bodyQuery : function () {
+  body: function () {
     wx.navigateTo({
       url: '../body/query'
     })
   },
 
-  studyQuery : function () {
+  user : function () {
     wx.navigateTo({
-      url: '../study/index'
+      url: '../user/index'
     })
+  },
+
+  lesson : function () {
+    //如果没有登录跳到登录界面
+    var isLogin = common.checkLogin();
+    if (!isLogin) {
+      wx.navigateTo({
+        url: '../login/index'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../lessonTable/index'
+      })
+    }
   },
 
   flush : function(){

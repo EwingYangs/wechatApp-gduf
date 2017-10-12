@@ -2,45 +2,23 @@
   "pages": [
     "page/find/index",
     "page/index/index",
+    "page/collect/index",
+    "page/info/index",
+    "page/index",
+    "page/info/infodetail",
+    "page/servicePhone/index",
+    "page/user/index",
     "page/score/index",
     "page/login/index",
     "page/lessonTable/index",
     "page/study/index",
     "page/body/result",
-    "page/user/index",
+    "page/book/index",
     "page/body/query",
     "page/find/bdetail",
-    "page/servicePhone/index",
-    "page/collect/index",
-    "page/index",
     "page/cricle/cricle",
     "page/publish/publish",
-    "page/cricleDetail/cricleDetail",
-    "page/button/button",
-    "page/list/list",
-    "page/input/input",
-    "page/slider/slider",
-    "page/uploader/uploader",
-    "page/article/article",
-    "page/badge/badge",
-    "page/flex/flex",
-    "page/footer/footer",
-    "page/gallery/gallery",
-    "page/grid/grid",
-    "page/icons/icons",
-    "page/loadmore/loadmore",
-    "page/panel/panel",
-    "page/preview/preview",
-    "page/progress/progress",
-    "page/actionsheet/actionsheet",
-    "page/dialog/dialog",
-    "page/msg/msg",
-    "page/msg/msg_success",
-    "page/msg/msg_fail",
-    "page/picker/picker",
-    "page/toast/toast",
-    "page/navbar/navbar",
-    "page/searchbar/searchbar"
+    "page/cricleDetail/cricleDetail"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -54,37 +32,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#6981ea",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "white",
-    "list": [
-      {
-        "selectedIconPath": "images/icon1_h.png",
-        "iconPath": "images/icon1.png",
-        "pagePath": "page/index/index",
-        "text": "首页"
-      },
-      {
-        "selectedIconPath": "images/icon2_h.png",
-        "iconPath": "images/icon2.png",
-        "pagePath": "page/lessonTable/index",
-        "text": "课表"
-      },
-      {
-        "selectedIconPath": "images/icon3_h.png",
-        "iconPath": "images/icon3.png",
-        "pagePath": "page/find/index",
-        "text": "发现"
-      },
-      {
-        "selectedIconPath": "images/icon4_h.png",
-        "iconPath": "images/icon4.png",
-        "pagePath": "page/user/index",
-        "text": "我的"
-      }
-    ]
-  },
+  
   "debug": true
 }

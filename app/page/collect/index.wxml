@@ -19,21 +19,33 @@
       <view class="weui-tab__panel">
         <!-- 电话 -->
         <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
-          <view class="phoneList" wx:for="{{phoneList}}" wx:key="*this">
-            <view class="weui-cells listItem gbox">
-              <view class="itemLeft">
-                <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
-                <view class="box">
-                  <view class="siteName b-f">{{item.siteName}}</view>
-                  <view class="phone g-f">{{item.phone}}</view>
+
+          <view wx:if="{{phoneList.length > 0}}">
+            <view class="phoneList" wx:for="{{phoneList}}" wx:for-index="key">
+              <view class="weui-cells listItem gbox">
+                <view class="itemLeft">
+                  <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+                  <view class="box">
+                    <view class="siteName b-f">{{item.siteName}}</view>
+                    <view class="phone g-f">{{item.phone}}</view>
+                  </view>
                 </view>
-              </view>
-              <view class="itemRight">
-                <view class='cancel'>取消收藏</view>
-                <view class='p-f' data-phone="{{item.phone}}" bindtap="call">拨打</view>
+                <view class="itemRight">
+                  <view class='cancel' bindtap="cancelPhone" data-id="{{key}}">取消收藏</view>
+                  <view class='p-f' data-phone="{{item.phone}}" bindtap="call">拨打</view>
+                </view>
               </view>
             </view>
           </view>
+          <view wx:elif="{{phoneList.length == 0}}">
+            <view class="title-box-adddata">
+            <navigator url="../servicePhone/index">
+            点击添加
+            </navigator>
+            </view>
+          </view>
+
+
           <!--底部分割view-->
           <view class="bottom"></view>
 
@@ -44,21 +56,35 @@
         </view>
         <!-- 指南 -->
         <view class="weui-tab__content content" hidden="{{activeIndex != 2}}">
-          <view class="phoneList" wx:for="{{guide}}" wx:key="*this">
-            <view class="weui-cells listItem gbox">
-              <view class="itemLeft">
-                <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
-                <view class="box">
-                  <view class="siteName b-f">{{item.siteName}}</view>
-                  <view class="thing g-f">{{item.thing}}</view>
+        <view wx:if="{{guide.length > 0}}">
+
+              <view class="phoneList" wx:for="{{guide}}" wx:for-index="key">
+                <navigator url="../info/infodetail?id={{item.gid}}">
+                <view class="weui-cells listItem gbox">
+                  <view class="itemLeft">
+                    <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+                    <view class="box">
+                      <view class="siteName b-f">{{item.siteName}}</view>
+                      <view class="thing g-f">{{item.thing}}</view>
+                    </view>
+                  </view>
+                  <view class="itemRight">
+                    <view class='cancel' catchtap="cancelGuide" data-id="{{key}}">取消收藏</view>
+                    <view></view>
+                  </view>
                 </view>
+                </navigator>
               </view>
-              <view class="itemRight">
-                <view class='cancel'>取消收藏</view>
-                <view></view>
-              </view>
-            </view>
-          </view>
+
+        </view>
+        <view wx:elif="{{guide.length == 0}}">
+        <view class="title-box-adddata">
+            <navigator url="../info/index">
+            点击添加
+            </navigator>
+        </view>
+        </view>
+              
         </view>
       </view>
     </view>

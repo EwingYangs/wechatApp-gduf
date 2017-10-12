@@ -1,0 +1,5 @@
+/* page/find/bdetail.wxss */
+
+image{
+    margin: 4px 0;
+}

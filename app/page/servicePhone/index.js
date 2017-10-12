@@ -1,5 +1,6 @@
 // page/servicePhone/index.js
 var Bmob = require("../../utils/bmob.js");
+var common = require('../../utils/common.js');
 Page({
   /**
    * 页面的初始数据
@@ -12,13 +13,18 @@ Page({
       'b-y-color',
       'b-g-color',
       'b-l-color',
-    ]
+    ],
+    phoneList: [],
+    loading: true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      loading: true
+    })
     this.setPhoneListData();
   },
 
@@ -98,23 +104,104 @@ Page({
       // 查询所有数据
       query.find({
         success: function (results) {
-          // 循环处理查询到的数据
-          var phoneList = [];
-          for (var i = 0; i < results.length; i++) {
-            var object = results[i];
-            var fname = object.get('siteName').substr(0, 1);
-            var j = i % 6;
-            var bgColor = bgColorList[j];
-            var a = { shorthand: fname, bgColor: bgColor, siteName: object.get('siteName'), phone: object.get('phone') };
-            phoneList.push(a);
-          }
-          that.setData({
-            phoneList: phoneList,
-          })
+          var Collect = Bmob.Object.extend("collect");
+          var collect = new Bmob.Query(Collect);
+          var isme = new Bmob.User();
+          var user = Bmob.User.current();
+          isme.id = user.id;        //当前用户的objectId
+          collect.equalTo("user", isme);
+          collect.equalTo("type", 0);
+          collect.find({
+            success: function (collectData) {
+              var collectArr = [];
+              for (var i = 0; i < collectData.length; i++) {
+                var object = collectData[i];
+                collectArr.push(object.get('message'));
+              }
+              // 循环处理查询到的数据
+              var phoneList = [];
+              for (var i = 0; i < results.length; i++) {
+                var object = results[i];
+                var fname = object.get('siteName').substr(0, 1);
+                var j = i % 6;
+                var bgColor = bgColorList[j];
+                var iscollect = false;
+                if (collectArr.indexOf(object.id) != "-1"){
+                  iscollect = true;
+                }
+                var a = { pid: object.id, shorthand: fname, bgColor: bgColor, siteName: object.get('siteName'), phone: object.get('phone'), iscollect: iscollect };
+                phoneList.push(a);
+              }
+              that.setData({
+                phoneList: phoneList,
+                loading: false
+              })
+            },
+            error: function (error) {
+            }
+          });
         },
         error: function (error) {
           console.log("查询失败: " + error.code + " " + error.message);
+          that.setData({
+            loading: false
+          })
         }
       });
-  }
+  },
+
+
+  collect: function (event){
+    var collectid = event.target.dataset.id;
+    var phoneList = this.data.phoneList;
+    phoneList[collectid].iscollect = true;
+    this.setData({
+      phoneList: phoneList,
+    })
+
+    //创建类和实例
+    var Collect = Bmob.Object.extend("collect");
+    var collect = new Collect();
+    var user = Bmob.User.current();
+    var user = Bmob.Object.createWithoutData("_User", user.id);
+    collect.set("user", user);
+    collect.set("type", 0);//收藏电话
+    collect.set("message", phoneList[collectid].pid);
+    //添加数据，第一个入口参数是null
+    collect.save(null, {
+      success: function (result) {
+        
+      },
+      error: function (result, error) {
+        
+      }
+    });
+
+    common.showTip('收藏成功');
+    
+  },
+
+  cancel: function (event){
+    var collectid = event.target.dataset.id;
+    var phoneList = this.data.phoneList;
+    phoneList[collectid].iscollect = false;
+    this.setData({
+      phoneList: phoneList,
+    })
+
+    var Collect = Bmob.Object.extend("collect");
+    var collect = new Bmob.Query(Collect);
+    collect.equalTo("message", phoneList[collectid].pid);
+    collect.destroyAll({
+      success: function (myObject) {
+        // 删除成功
+      },
+      error: function (myObject, error) {
+        // 删除失败
+      }
+    });
+
+    common.showTip('取消收藏成功');
+  },
+
 })

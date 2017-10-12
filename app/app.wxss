@@ -29,14 +29,19 @@ page{
 }
 
 .page__desc {
-    margin-top: 5px;
     color: #888888;
     text-align: left;
     font-size: 14px;
+    margin-bottom: .5em;
 }
 
 .gbox{
     border-radius:5px;
+    box-shadow: 5px 5px 1px rgba(98, 94, 221, 0.03);
+}
+
+.gbox-circle{
+    border-radius:25px;
     box-shadow: 5px 5px 1px rgba(98, 94, 221, 0.03);
 }
 
@@ -235,6 +240,16 @@ page{
     font-size:28rpx;
     color:#999;
     background: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/29/775630314061eabe80f101b641cc6a70.png) no-repeat center 205rpx;
+    background-size: 100rpx auto;
+    margin-bottom: 50rpx;
+}
+
+.title-box-adddata{
+    width: 100%;
+    padding-top: 330rpx;
+    text-align: center;
+    font-size:28rpx;
+    color:#999;
     background-size: 100rpx auto;
     margin-bottom: 50rpx;
 }

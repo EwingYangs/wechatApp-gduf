@@ -1,0 +1,30 @@
+<!--page/info/infodetail.wxml-->
+
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">{{detail.title}}</view>
+            <view class="page__desc">{{detail.createdAt}} <text class="b-color" style="margin-left:20rpx;">512工作室</text></view>
+           <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                       <import src="../../utils/wxParse/wxParse.wxml"/>
+                       <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+                    </view>
+                </view>
+            </view>
+            
+        </view>
+    </view>
+    <view class="page__ft">
+      <view class="page__bd page__bd_spacing">
+        <view class="weui-footer ">
+          <view class="weui-footer__text">Copyright © 2016-2017 512工作室</view>
+        </view>
+      </view>
+    </view>
+</view>
+
+
+

@@ -38,7 +38,7 @@
       
     </view>
   </view>
-  <view class="weui-flex">
+  <!--<view class="weui-flex">
 
     <view class="weui-flex__item">
       <view class="fbox-left gbox" bindtap="score">
@@ -66,7 +66,61 @@
         <view class="btitle">服务电话</view>
       </view>
     </view>
+  </view>-->
+
+
+  <view class="weui-grids">
+      <block >
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="score">
+              <image class="weui-grid__icon" src="../../images/icon_achievement.png" />
+              <view class="weui-grid__label">成绩查询</view>
+          </view>
+      </block>
+      <block >
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="study">
+              <image class="weui-grid__icon" src="../../images/icon_room.png" />
+              <view class="weui-grid__label">自习室查询</view>
+          </view>
+      </block>
+      <block >
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="body">
+              <image class="weui-grid__icon" src="../../images/icon_lost.png" />
+              <view class="weui-grid__label">体侧查询</view>
+          </view>
+      </block>
+       <block >
+          <view class="weui-grid" hover-class="weui-grid_active" bindtap="book">
+              <image class="weui-grid__icon" src="../../images/icon_book.png" />
+              <view class="weui-grid__label">图书查询</view>
+          </view>
+      </block>
+      <block >
+          <navigator url="../servicePhone/index" class="weui-grid" hover-class="weui-grid_active">
+              <image class="weui-grid__icon" src="../../images/icon_tel.png" />
+              <view class="weui-grid__label">服务电话</view>
+          </navigator>
+      </block>
+      <block >
+          <navigator url="../info/index" class="weui-grid" hover-class="weui-grid_active">
+              <image class="weui-grid__icon" src="../../images/icon_guide.png" />
+              <view class="weui-grid__label">校园指南</view>
+          </navigator>
+      </block>
   </view>
 
 
+  <view class="weui-flex">
+    <view class="weui-flex__item ">
+      <view class="fbox-left">
+            <image class="bimg gbox-circle" src="../../images/icon2.png" bindtap="lesson"></image>
+            <view class="btitle">课表</view>
+      </view>
+    </view>
+    <view class="weui-flex__item ">
+      <view class="fbox-right">
+            <image class="bimg gbox-circle" src="../../images/icon4.png" bindtap="user"></image>
+            <view class="btitle">我的</view>
+      </view>
+    </view>
+  </view>
 </view>

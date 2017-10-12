@@ -1,0 +1,44 @@
+<view class="page">
+  <!--搜索-->
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+      </view>
+    </view>
+  </view>
+ <!-- 列表 -->
+ <view class="weui-loadmore" wx:if="{{loading}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+</view>
+<view class="" wx:if="{{guide.length > 0}}">
+<view class="phoneList" wx:for="{{guide}}" wx:for-index="key">
+  <navigator url="infodetail?id={{item.gid}}">
+    <view class="weui-cells listItem gbox">
+      <view class="itemLeft">
+        <view class="shorthand {{item.bgColor}}">{{item.shorthand}}</view>
+        <view class="box">
+          <view class="siteName b-f">{{item.siteName}}</view>
+          <view class="thing g-f">{{item.thing}}</view>
+        </view>
+      </view>
+      <view class="itemRight">
+          <view wx:if="{{item.iscollect}}">
+          <image src="../../images/collect1.png" style="width:20px;height:20px" catchtap="cancel" data-id="{{key}}"></image>
+          </view>
+          <view wx:else>
+          <image src="../../images/collect.png" style="width:20px;height:20px" catchtap="collect" data-id="{{key}}"></image>
+          </view>
+      </view>
+    </view>
+   </navigator> 
+</view>
+</view>
+<view class="title-box-nodata" wx:elif="{{guide.length == 0 && !loading}}">
+对不起，暂无数据
+</view>
+  <!--底部分割view-->
+  <view class="bottom"></view>
+</view>

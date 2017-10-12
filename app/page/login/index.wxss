@@ -45,7 +45,7 @@ width:85%;
 .zan-form__title {
 color:#999999;
 float:left;
-width:90rpx;
+width:100rpx;
 font-size:14px;
 }
 

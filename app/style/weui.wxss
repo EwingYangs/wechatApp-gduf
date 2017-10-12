@@ -481,7 +481,7 @@ icon {
 .weui-article__h1 {
   font-size: 1.5em;
   font-weight: 400;
-  margin-bottom: .9em;
+  margin-bottom: .5em;
 }
 .weui-article__h2 {
   font-size: 16px;
@@ -641,26 +641,23 @@ icon {
   font-size: 12px;
 }
 .weui-grids {
-  border-top: 1rpx solid #D9D9D9;
-  border-left: 1rpx solid #D9D9D9;
+  margin-top:64rpx;
   overflow: hidden;
 }
 .weui-grid {
   position: relative;
   float: left;
-  padding: 20px 10px;
+  padding: 50rpx 20rpx;
   width: 33.33333333%;
   box-sizing: border-box;
-  border-right: 1rpx solid #D9D9D9;
-  border-bottom: 1rpx solid #D9D9D9;
 }
 .weui-grid_active {
-  background-color: #ECECEC;
+  background-color: #ffffff;
 }
 .weui-grid__icon {
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 80rpx;
+  height: 72rpx;
   margin: 0 auto;
 }
 .weui-grid__label {
@@ -668,7 +665,7 @@ icon {
   display: block;
   text-align: center;
   color: #000000;
-  font-size: 14px;
+  font-size: 28rpx;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -937,8 +934,8 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  padding-top: 3%;
-  padding-bottom: 3px;
+  padding-top: 32rpx;
+  padding-bottom: 6rpx;
   text-align: center;
   font-size: 0;
   color:#999999;
@@ -948,12 +945,12 @@ icon {
 }
 .weui-navbar__slider {
   position: absolute;
-  top: 5em;
+  top: 150rpx;
   content: " ";
   left: 0;
   bottom: 0;
   width: 50%;
-  height: 3px;
+  height: 6rpx;
   background-color: #6981ea;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
@@ -962,7 +959,7 @@ icon {
 }
 .weui-navbar__title {
   display: inline-block;
-  font-size: 15px;
+  font-size: 30rpx;
   max-width: 8em;
   width: auto;
   overflow: hidden;
@@ -977,7 +974,7 @@ icon {
 .weui-tab__panel {
   box-sizing: border-box;
   height: 100%;
-  padding-top: 5em;
+  padding-top: 150rpx;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
