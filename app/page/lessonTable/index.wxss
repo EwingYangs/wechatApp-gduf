@@ -1,11 +1,11 @@
 .h-2 {
-  height: 270rpx;
-  padding-top: 30rpx;
+  height: 200rpx;
+  padding-top: 20rpx;
 }
 
 .h-3 {
-  height: 330rpx;
-  padding-top: 140rpx;
+  height: 240rpx;
+  padding-top: 100rpx;
 }
 
 .t-0 {
@@ -13,33 +13,37 @@
 }
 
 .t-2 {
-  top: 340rpx;
+  top: 240rpx;
 }
 
 .t-5 {
-  top: 840rpx;
+  top: 600rpx;
 }
 
 .t-8 {
-  top: 1330rpx;
+  top: 960rpx;
 }
 
 .t-10 {
-  top: 1670rpx;
+  top: 1200rpx;
 }
 
 .lesson-table {
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .lesson-table .lesson-title {
   height: 3.2em;
   line-height: 3.2em;
   text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  /* border-top-left-radius: 10px; */
+  /* border-top-right-radius: 10px; */
   color: #fff;
   background-color: rgb(105, 129, 234);
+}
+
+.lesson-table .lesson-title .select-tip {
+  color: #dbd7d7;
 }
 
 .lesson-table .lesson-title .weui-select {
@@ -48,6 +52,7 @@
 
 .lesson-content {
   position: relative;
+  margin: 10px;
 }
 
 .lesson-content .lesson-content-hd {
@@ -55,15 +60,22 @@
   height: 36px;
   line-height: 36px;
   font-size: 14px;
+  /* height: 3.2em; */
+  /* line-height: 3.2em; */
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #000;
+  background-color: rgb(213, 218, 244);
 }
 
-.lesson-content .lesson-bg {
+.lesson-title .lesson-bg {
   position: absolute;
   display: block;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 6em;
+  height: 2em;
 }
 
 .lesson-content .lesson-content-hd .content-hd-one {
@@ -76,15 +88,16 @@
   height: 2em;
   font-size: 18px;
   line-height: 2em;
+  color: #333;
 }
 
-.lesson-content .lesson-content-hd view:nth-child(2n-1) {
+/* .lesson-content .lesson-content-hd view:nth-child(2n-1) {
   background: rgb(235, 247, 255);
 }
 
 .lesson-content .lesson-content-hd view:nth-child(2n) {
   background: rgb(226, 242, 255);
-}
+} */
 
 .lesson-content .lesson-content-bd {
   display: flex;
@@ -101,44 +114,45 @@
 
 .lesson-content .lesson-content-bd .content-bd-one {
   width: 30px;
+  color: #c7c7c7;
 }
 
 .lesson-content-bd .content-bd-one .content-bd-item,
 .lesson-content-bd .content-bd .content-bd-item
 {
-  height: 166rpx;
-  line-height: 166rpx;
+  height: 120rpx;
+  line-height: 120rpx;
   font-size: 22px;
   text-align: center;
   font-weight: 600;
 }
 
 .lesson-content-bd .content-bd-one .content-bd-item:nth-child(2n) {
-  background: rgb(235, 246, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content-bd .content-bd-one .content-bd-item:nth-child(2n-1) {
-  background: rgb(226, 242, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n) .content-bd-item:nth-child(2n-1) {
-  background: rgb(216, 238, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n-1) .content-bd-item:nth-child(2n-1) {
-  background: rgb(226, 243, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n)  {
-  background: rgb(223, 241, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n) .content-bd-item:nth-child(2n) {
-  background: rgb(228, 243, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n-1)  {
-  background: rgb(236, 247, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content .lesson-content-detail {
@@ -165,7 +179,7 @@
 .lesson-content-detail .content .content-detail {
   position: absolute;
   width: 40px;
-  margin: 3px;
+  margin: 10rpx 3px 0;
   border-radius: 5px;
 }
 
