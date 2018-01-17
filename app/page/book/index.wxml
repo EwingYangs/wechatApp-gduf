@@ -43,8 +43,6 @@
             </radio-group>
 
           </view>
-
-
           <view wx:if="{{bookList.length > 0}}">
             <view class="classname">
 
@@ -66,8 +64,8 @@
                   <view>索书号：
                     <text class="b-f">{{item.snum}}</text>
                   </view>
-                  <view>馆藏点：
-                    <text class="b-f">{{item.location}}</text>
+                  <view>页数：
+                    <text class="b-f">{{item.page}}</text>
                   </view>
                 </view>
                 <view class="book-view">余书:
@@ -77,7 +75,7 @@
 
             </view>
           </view>
-          <view wx:else>
+          <view wx:elif="{{bookList.length == 0 && !loading}}">
             <view class="book-bg"></view>
           </view>
 

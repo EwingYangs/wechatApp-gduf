@@ -8,7 +8,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: [],
+    bgColor: [
+      'b-p-color',
+      'b-e-color',
+      'b-b-color',
+      'b-y-color',
+      'b-g-color',
+      'b-l-color',
+    ],
+    color: [
+      'p-color',
+      'e-color',
+      'b-color',
+      'y-color',
+      'g-color',
+      'l-color',
+    ],
     tabs: [{ name: "图书查询", img: "../../images/icon_book.png" }, { name: "校园指南", img: "../../images/icon_guide.png" }],
     activeIndex: 0,
     sliderOffset: 0,
@@ -42,13 +57,12 @@ Page({
     //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-l-color', color: 'l-color'},
     //   { bname: '谁认识马云', author: '刘世英, 彭征', publish: '中信出版社', ISBN: '7-5086-0752-X', snum: 'K825.38/137', location: '社科书库2', remain: 8, bgColor: 'b-p-color', color: 'p-color'},
     // ],
-
     guide: [
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
       { shorthand: '大', siteName: '大一新生入学必备物品', thing: '一份新生入学必备手册', bgColor: 'b-p-color' },
-    ]
+    ],
   },
 
   /**
@@ -77,9 +91,6 @@ Page({
         });
       }
     });
-
-
-    
   },
 
   /**
@@ -201,7 +212,6 @@ Page({
       success: res => {
         var bookList = res.data.data ? res.data.data : [];
         var len = bookList.length;
-        
         var arr = new Array();
         for (var i = 0; i < len; i++) {
           var j = i % 6;
