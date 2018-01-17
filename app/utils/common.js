@@ -24,6 +24,7 @@ function showModal(c,t,fun) {
     })
 }
 
+/** 检测登录 */
 function checkLogin(){
   var jwxt = wx.getStorageSync('jwxtInfo');
   if(jwxt){

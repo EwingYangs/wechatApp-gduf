@@ -19,16 +19,19 @@
             <!--搜索-->
             <view class="weui-search-bar">
               <view class="weui-search-bar__form">
-                <view class="weui-search-bar__box">
-                  <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <view class="weui-search-bar__box" style="padding-left:10px;">
+                  
                   <input type="text" class="weui-search-bar__input" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                  <view bindtap='search'>
+                  <icon class="weui-icon-search_in-box" style="right:10px;left:auto" type="search" size="14"></icon>
+                  </view>
                 </view>
               </view>
             </view>
 
             <!--单选-->
             <radio-group class="group" bindchange="radioChange" style="padding-bottom:8px;">
-              <label class="label-2" wx:for="{{radios}}">
+              <label class="label-2" wx:for="{{radios}}" wx:key="{{index}}">
                 <radio id="{{item.name}}" hidden value="{{item.name}}" checked="{{item.checked}}"></radio>
                 <view class="label-2__icon">
                   <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
@@ -42,10 +45,10 @@
           </view>
 
 
-          <view wx:if="{{bookList}}">
+          <view wx:if="{{bookList.length > 0}}">
             <view class="classname">
 
-              <view class="weui-cells gbox bbox" wx:for="{{bookList}}" bindtap="bookdetail">
+              <view class="weui-cells gbox bbox" wx:key="{{index}}" wx:for="{{bookList}}" bindtap="bookdetail">
                 <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>
                 <view class="book-content f-s-09x">
                   <view class="adron {{item.bgColor}}"></view>
