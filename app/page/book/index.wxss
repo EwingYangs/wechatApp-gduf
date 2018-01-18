@@ -44,7 +44,8 @@ page, .page, .page__bd {
 
 .bbox {
   margin: 12px 12px 0px 12px;
-  height: 9.5em;
+  height: auto;
+  overflow: auto;
 }
 
 .book-title {
@@ -56,6 +57,7 @@ page, .page, .page__bd {
   float: left;
   padding-bottom: 12rpx;
   padding-left: 24rpx;
+  width: 70%;
 }
 
 .book-bg {

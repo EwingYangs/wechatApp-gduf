@@ -116,7 +116,6 @@ Page({
     })
 
     this.setscoreData(kksj, this.data.page);
-    e.detail.value
     this.setData({
       accountIndex: e.detail.value
     })

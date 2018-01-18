@@ -118,7 +118,25 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 1000
+    });
 
+    let strKeyValue = this.data.inputVal;
+    let radios = this.data.radios;
+    let strType = '';
+    for (let i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        strType = radios[i].name;
+      }
+    }
+    let page = this.data.page + 1;
+    this.setData({
+      page: page
+    })
+    this.setBookListData(strType, strKeyValue, page);
   },
 
   /**
