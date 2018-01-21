@@ -14,7 +14,7 @@
         <view class="weui-loadmore__tips">正在加载</view>
     </view>
     <view class="" wx:if="{{scoreData.length > 0}}">
-      <view class="weui-cells gbox sbox" wx:for="{{scoreData}}">
+      <view class="weui-cells gbox sbox" wx:for="{{scoreData}}" wx:key="{{index}}">
           <view class="score-title b-f">{{item.course}}</view>
           <view class="clearfix">
               <view class="score-content">

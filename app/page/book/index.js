@@ -29,10 +29,10 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     radios: [
-      { name: 'anycode', value: '任意词', checked: 'true' },
+      { name: 'text', value: '任意词', checked: 'true' },
       { name: 'name', value: '书名', },
-      { name: 'title', value: '主题词' },
-      { name: 'ISBN', value: 'ISBN' },
+      { name: 'author', value: '作者' },
+      { name: 'isbn', value: 'ISBN' },
     ],
     bookList:[],
     page: 1,

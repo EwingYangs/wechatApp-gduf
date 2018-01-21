@@ -138,33 +138,51 @@ Page({
         'x-gduf-access-token': config.token,
       },
       method: 'POST',
-      success: function (res) {
-        var scoreListData = res.data.data.data;
-        var len = scoreListData.length;
-        var arr = new Array();
-        for (var i = 0; i < len; i++) {
-          var j = i % 6;
-          var bgColor = bgColorList[j];
-          var color = colorList[j];
+      success: res => {
+        if(res.data.status.code == 1005){
+          //重新登录
+          common.reLogin();  
+          var page = this.data.page;//默认第一页
+          var kksj = '';//默认查询全部
+          this.setscoreData(kksj, page);
+        }else{
+          var scoreListData = res.data.data.data;
+          var len = scoreListData.length;
+          var arr = new Array();
+          for (var i = 0; i < len; i++) {
+            var j = i % 6;
+            var bgColor = bgColorList[j];
+            var color = colorList[j];
 
-          scoreListData[i][7] = !scoreListData[i][7] ? 0 : parseInt(scoreListData[i][7]);
+            scoreListData[i][7] = !scoreListData[i][7] ? 0 : parseInt(scoreListData[i][7]);
 
-          var result = { course: scoreListData[i][3], num: scoreListData[i][2], attr: scoreListData[i][9], character: scoreListData[i][10], credit: parseInt(scoreListData[i][6]), term: scoreListData[i][1], point: scoreListData[i][7], score: parseInt(scoreListData[i][5]), bgColor: bgColor, color: color };
-          arr.push(result);
-        }
-
-        if (that.data.scoreData.length > 0){
-          if (arr.length == 0){
-            common.showTip('数据已加载完！')
+            var result = { 
+              course: scoreListData[i][3],
+              num: scoreListData[i][2],
+              attr: scoreListData[i][9], 
+              character: scoreListData[i][10], 
+              credit: parseInt(scoreListData[i][6]), 
+              term: scoreListData[i][1], 
+              point: scoreListData[i][7], 
+              score: parseInt(scoreListData[i][5]), 
+              bgColor: bgColor, 
+              color: color 
+            };
+            arr.push(result);
           }
-          arr = that.data.scoreData.concat(arr);
-        }
-        
-        that.setData({
-          scoreData: arr,
-          loading:false
-        })
 
+          if (that.data.scoreData.length > 0) {
+            if (arr.length == 0) {
+              common.showTip('数据已加载完！')
+            }
+            arr = that.data.scoreData.concat(arr);
+          }
+
+          that.setData({
+            scoreData: arr,
+            loading: false
+          })
+        }
       }
     })
   }

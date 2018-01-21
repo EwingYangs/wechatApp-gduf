@@ -1,3 +1,4 @@
+var config = require("./config.js");
 
 function showTip(sms, icon, fun, t) {
     if (!t) {
@@ -87,6 +88,32 @@ function showFlushMsg(){
   })
 }
 
+function reLogin(){
+  let jwxtInfo = wx.getStorageSync('jwxtInfo');
+  let encoded = jwxtInfo.encoded;
+  let token = config.token;
+  //实现登录请求
+  wx.request({
+    url: config.gdufLoginUrl, //教务系统登录地址
+    data: {
+      encoded: encoded,
+    },
+    header: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'x-gduf-access-token': token,
+    },
+    method: 'POST',
+    success: function (res) {
+      if (res.data.status.msg == 'success') {
+        //保存信息到缓存
+        return true;
+      } else {
+        return false;
+      }
+    }
+  })
+}
+
 
 module.exports.showTip = showTip;
 module.exports.showModal = showModal;
@@ -95,3 +122,5 @@ module.exports.encodeInp = encodeInp;
 module.exports.setFlushMsg = setFlushMsg;
 module.exports.getFlushMsg = getFlushMsg;
 module.exports.showFlushMsg = showFlushMsg;
+module.exports.reLogin = reLogin;
+
