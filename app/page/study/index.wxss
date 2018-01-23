@@ -20,7 +20,7 @@
 }
 
 .item-title {
-  font-size: 20px;
+  font-size: 40rpx;
 }
 
 .item-content {
@@ -31,8 +31,8 @@
 .item-content .item-content-room2,
 .item-content .item-content-room3 {
   display: inline-block;
-  padding: 0 3px;
-  font-size: 16px;
+  padding: 0 6rpx;
+  font-size: 32rpx;
 }
 
 .item-content .room {
@@ -40,15 +40,15 @@
 }
 
 .room1{
-  margin-left: 70px;
+  margin-left: 138rpx;
 }
 
 .room2{
-  margin-left: 20px;
+  margin-left: 40rpx;
 }
 
 .room3{
-  margin-left: 20px;
+  margin-left: 40rpx;
 }
 
 .item-content .room .none-color {

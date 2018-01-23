@@ -2,7 +2,7 @@
   <view class="weui-cell weui-cell_select">
     <view class="weui-cell__bd">
       <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
-        <view class="weui-select select-term"><text class="iconfont icon-location p-f"></text><text class="select-list">{{accounts[accountIndex]}}</text><text class="iconfont icon-triangle-bottom"></text></view>
+        <view class="weui-select select-term"><text class="iconfont icon-location p-f"></text><text class="select-list">{{accounts[index]}}</text><text class="iconfont icon-triangle-bottom"></text></view>
       </picker>
     </view>
   </view>
