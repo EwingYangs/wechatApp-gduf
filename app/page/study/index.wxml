@@ -9,11 +9,11 @@
 </view>
 
 <view class="study">
-  <view class="weui-cells study-item gbox" wx:for="{{emptyRoom}}" wx:for-index="roomIndex" wx:for-item="item">
+  <view class="weui-cells study-item gbox" wx:for="{{emptyRoom}}" wx:key="roomIndex" wx:for-item="item">
     <view class="item-title b-f fa">Floor{{item.index}}</view>
     <view class="adron {{roomIndex % 2 === 0 ? 'b-p-color' : 'b-b-color'}}"></view>
     <view class="item-content">
-      <view class="item-content-list fa" wx:for="{{item.floor}}" wx:for-index="floorIndex" wx:for-item="floorItem">
+      <view class="item-content-list fa" wx:for="{{item.floor}}" wx:key="floorIndex" wx:for-item="floorItem">
       <text class="iconfont icon-location none-color"></text>
       <text class="strong b-f">{{floorItem.ceil}}</text>
         <view class="room room1">
