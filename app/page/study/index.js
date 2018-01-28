@@ -85,12 +85,17 @@ Page({
       title: '加载中',
     })
     let accoutIndex = this.data.accountIndex;
-    console.log('00000' + accoutIndex);
+    var jwxt = wx.getStorageSync('jwxtInfo');
+    if (!jwxt) {
+      common.showTip('获取用户信息失败，请重新登录');
+    }
+    var encoded = jwxt.encoded;
     wx.request({
       url: config.gdufRoomUrl, //成绩地址
       data: {
         xqid: 1,
         jzwid: accoutIndex,
+        encoded: encoded,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -98,11 +103,16 @@ Page({
       },
       method: 'POST',
       success: res => {
-        console.log(res);
-        this.setData({
-          emptyRoom : res.data.data,
-        });
-        wx.hideLoading();
+        if (res.data.status.code == 1005) {
+          //重新登录
+          common.reLogin();
+          this.setEmptyRoomData();
+        }else{
+          this.setData({
+            emptyRoom: res.data.data,
+          });
+          wx.hideLoading();
+        }
       }
     })
   }

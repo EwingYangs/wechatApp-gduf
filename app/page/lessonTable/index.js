@@ -1,5 +1,6 @@
 // page/lessonTable/index.js
 var common = require('../../utils/common.js');
+var config = require("../../utils/config.js");
 Page({
 
   /**
@@ -29,146 +30,14 @@ Page({
       '第20周'
     ],
     weekIndex: 0,
-    lesson: [
-      [               // 周一
-        {
-          site: '北教A503',     // 上课地点
-          teacher: '邓超',      // 任课老师
-          subject: '国际商务国际商务国际商务',  // 科目
-          class: 1             // 节次： 1 => 1,2 节
-                               // 2 => 3,4 节
-                               // 3 => 3,4,5 节
-                               // 4 => 6,7 节
-                               // 5 => 6,7,8 节
-                               // 6 => 9,10 节
-                               // 7 => 11,12 节
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '语文',      // 科目
-          class: 3
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '数学',      // 科目
-          class: 5
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '英语',      // 科目
-          class: 6
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '体育',      // 科目
-          class: 7
-        }
-      ],
-      [
-        {
-          site: '北教A503',     // 上课地点
-          teacher: '邓超',      // 任课老师
-          subject: '国际商务',  // 科目
-          class: 1             // 节次： 1 => 1,2 节
-                               // 2 => 3,4 节
-                               // 3 => 3,4,5 节
-                               // 4 => 6,7 节
-                               // 5 => 6,7,8 节
-                               // 6 => 9,10 节
-                               // 7 => 11,12 节
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '语文',      // 科目
-          class: 3
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '数学',      // 科目
-          class: 4
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '英语',      // 科目
-          class: 6
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '体育',      // 科目
-          class: 7
-        }
-      ],
-      [
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '语文',      // 科目
-          class: 3
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '数学',      // 科目
-          class: 4
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '体育',      // 科目
-          class: 7
-        }
-      ],
-      [
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '语文',      // 科目
-          class: 1
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '数学',      // 科目
-          class: 5
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '体育',      // 科目
-          class: 7
-        }
-      ],
-      [
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '语文',      // 科目
-          class: 5
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '数学',      // 科目
-          class: 6
-        },
-        {
-          site: '北教D401',     // 上课地点
-          teacher: '胡歌',      // 任课老师
-          subject: '体育',      // 科目
-          class: 7
-        }
-      ],
-      [],
-      []
-    ],
+    // 节次： 1 => 1,2 节
+    // 2 => 3,4 节
+    // 3 => 3,4,5 节
+    // 4 => 6,7 节
+    // 5 => 6,7,8 节
+    // 6 => 9,10 节
+    // 7 => 11,12 节
+    lesson: [],
     day: ['一', '二', '三', '四', '五', '六', '日'],
     class: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     bgColorArr: [
@@ -199,7 +68,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    //计算当前是第几周
+    // this.setData({
+    //   weekIndex : 0
+    // });
+    this.setLessonData();
   },
 
   /**
@@ -238,9 +111,57 @@ Page({
   },
 
   bindWeekChange: function (e) {
+    console.log(e.detail.value);
     this.setData({
       weekIndex: e.detail.value
     })
+    this.setLessonData();
+  },
+
+  setLessonData : function(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    let weekIndex = parseInt(this.data.weekIndex) + 1;
+    var jwxt = wx.getStorageSync('jwxtInfo');
+    if (!jwxt) {
+      common.showTip('获取用户信息失败，请重新登录');
+    }
+    var encoded = jwxt.encoded;
+    wx.request({
+      url: config.gdufLessonUrl, //成绩地址
+      data: {
+        zc: weekIndex,
+        encoded: encoded,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token': config.token,
+      },
+      method: 'POST',
+      success: res => {
+        if(!res.data.data){
+          common.showTip('暂无数据','loading');
+          this.setData({
+            lesson: null,
+          });
+          return false;
+        }
+        if (res.data.status.code == 1005) {
+          //重新登录
+          common.reLogin();
+          this.setLessonData();
+        } else {
+          this.setData({
+            lesson: res.data.data,
+          });
+          wx.hideLoading();
+        }
+      }
+    })
+
   }
+
+
 
 })

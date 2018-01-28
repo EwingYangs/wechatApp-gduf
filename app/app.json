@@ -4,6 +4,7 @@
     "page/collect/index",
     "page/info/index",
     "page/index",
+    "page/dorm/index",
     "page/info/infodetail",
     "page/servicePhone/index",
     "page/user/index",
@@ -21,7 +22,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "遇见广金",
+    "navigationBarTitleText": "广金小工具",
     "navigationBarBackgroundColor": "#6981ea",
     "backgroundColor": "#f8f8f8"
   },

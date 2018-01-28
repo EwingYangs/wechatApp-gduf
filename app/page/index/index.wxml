@@ -3,37 +3,51 @@
     <view class="weui-flex__item ">
       <view class="banner">
         <view class="banner-inner">
-          <view class="weui-flex">
-            <!--<view class="weui-flex__item">
-              <view class="holder holder-left">饭卡剩余热水费</view>
-            </view>-->
-            <view class="weui-flex__item">
-              <view class="holder" style="color:#edf1ff">
-                <text style="font-weight:600;">北苑<text class="fa">21#b512</text></text>剩余电费
+          <view wx:if="{{isBind == true}}">
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="holder" style="color:#edf1ff">
+                  <text style="font-weight:600;">北苑<text class="fa">{{floorNumber}}{{dormNumber}}</text></text>剩余电费
+                </view>
+              </view>
+            </view>
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="holder">
+                  <text style="color:#edf1ff;">
+                              <text style="font-size:38px" class="fa">132</text><text class="fa">.45</text><text style="color:#edf1ff;font-weight:400"> 元</text>
+                  </text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{isBind == false}}">
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="holder" style="color:#edf1ff">
+                  <text style="font-weight:600;">未绑定宿舍</text>
+                </view>
+              </view>
+            </view>
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="holder">
+                  
+                </view>
               </view>
             </view>
           </view>
 
-          <view class="weui-flex">
-            <!--<view class="weui-flex__item">
-              <view class="holder holder-left" style="margin-left:20px">
-                <text style="color:#ff5b5b;font-weight:700">
-                            <text style="font-size:38px" class="fa">24</text><text class="fa">.30</text><text style="color:#000000;font-weight:400"> 元</text>
-                </text>
-              </view>
-            </view>-->
-            <view class="weui-flex__item">
-              <view class="holder">
-                <text style="color:#edf1ff;">
-                            <text style="font-size:38px" class="fa">132</text><text class="fa">.45</text><text style="color:#edf1ff;font-weight:400"> 元</text>
-                </text>
-              </view>
-            </view>
-          </view>
+
+
         </view>
         <view class="banner-label-top" bindtap="flush">刷新</view>
-        
-        <view class="banner-label-bottom">切换宿舍</view>
+        <navigator url='/page/dorm/index'>
+        <view class="banner-label-bottom" wx:if="{{isBind == true}}">切换宿舍</view>
+        </navigator>
+        <navigator url='/page/dorm/index'>
+        <view class="banner-label-bottom" wx:if="{{isBind == false}}">立即绑定</view>
+        </navigator>
       </view>
       
     </view>

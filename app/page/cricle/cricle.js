@@ -58,7 +58,7 @@ Page({
 
   onShareAppMessage: function () {
     return {
-      title: '遇见广金',
+      title: '广金小工具',
       desc: '倾心为广金人服务的小程序app',
       path: '/pages/index/index'
     }

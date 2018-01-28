@@ -164,8 +164,8 @@
 }
 
 .lesson-content .lesson-content-detail .content {
-  flex: 1;
   height: 48em;
+  width:94rpx;
 }
 
 .lesson-content .lesson-content-detail .content-detail text {

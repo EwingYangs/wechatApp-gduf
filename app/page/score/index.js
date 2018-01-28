@@ -126,12 +126,18 @@ Page({
     var that = this;
     var bgColorList = that.data.bgColor;
     var colorList = that.data.color;
+    var jwxt = wx.getStorageSync('jwxtInfo');
+    if(!jwxt){
+      common.showTip('获取用户信息失败，请重新登录');
+    }
+    var encoded = jwxt.encoded;
     //实现成绩请求
     wx.request({
       url: config.gdufScoreUrl, //成绩地址
       data: {
         page: page,
         kksj: kksj,
+        encoded: encoded,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',

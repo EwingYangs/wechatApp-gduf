@@ -6,14 +6,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isBind: false,
+    accounts: ["16#A", "16#B", "17#A", "17#B", "18#A", "18#B", "19#A", "19#B", "20#A", "20#B", "21#A", "21#B", "22#A", "22#B", "23#A", "23#B", "24#A", "24#B", "25#A", "25#B"],
+    dormNumber:'',
+    floorNumber: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let dorm = wx.getStorageSync('dorm');
+    if(dorm){
+      this.setData({
+        isBind: true,
+        dormNumber: dorm.dormNumber,
+        floorNumber: this.data.accounts[dorm.floorNumber]
+      });
+    }
   },
 
   /**
