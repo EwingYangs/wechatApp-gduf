@@ -61,11 +61,11 @@ page, .page, .page__bd {
 }
 
 .book-bg {
-  height: 29em;
+  height: 47em;
   background-image: url(https://bmob-cdn-12684.b0.upaiyun.com/2017/09/05/552aeb3240172fbb80390ff4b6bf91a0.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 18% 55%;
+  background-size: 15% 38%;
 }
 
 .book-view {

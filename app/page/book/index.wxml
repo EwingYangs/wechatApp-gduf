@@ -1,21 +1,8 @@
 <view class="page">
   <view class="page__bd">
-    <!--<view class="weui-tab">-->
-      <!--<view class="weui-navbar navbar">
-        <block wx:for="{{tabs}}" wx:key="*this">
-          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-            <view>
-              <image class="img-icon" src="{{item.img}}"></image>
-            </view>
-            <view class="weui-navbar__title">{{item.name}}</view>
-          </view>
-        </block>
-        <view class="weui-navbar__slider slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-      </view>-->
-      <!--<view class="weui-tab__panel">-->
       <view>
         <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
-          <view class="weui-cells gbox" style="margin-top:0px;">
+          <view class="weui-cells gbox select-title" style="margin-top:0px;">
             <!--搜索-->
             <view class="weui-search-bar">
               <view class="weui-search-bar__form">
@@ -44,7 +31,7 @@
 
           </view>
           <view wx:if="{{bookList.length > 0}}">
-            <view class="classname">
+            <view style="margin-top:190rpx;">
 
               <view class="weui-cells gbox bbox" wx:key="{{index}}" wx:for="{{bookList}}" bindtap="bookdetail">
                 <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>

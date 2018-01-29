@@ -93,9 +93,11 @@ Page({
           var info = { sno: sno, pwd: pwd, encoded: encoded};
           wx.setStorageSync('jwxtInfo', info);
           common.setFlushMsg(res.data.data);
-          wx.navigateBack();//返回上一级页面
+          wx.navigateTo({
+            url: '/page/user/index',
+          })
         }else{
-          common.showTip('登录失败，账号或密码错误');
+          common.showModal('登录失败，账号或密码错误');
         }
       }
     })

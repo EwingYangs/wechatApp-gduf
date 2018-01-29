@@ -24,6 +24,8 @@ Page({
         floorNumber: this.data.accounts[dorm.floorNumber]
       });
     }
+
+    common.showFlushMsg();
   },
 
   /**

@@ -1,4 +1,4 @@
-<view class="gbox weui-cells weui-cells_after-title">
+<view class="gbox weui-cells weui-cells_after-title select-title">
   <view class="weui-cell weui-cell_select">
     <view class="weui-cell__bd">
       <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
@@ -8,7 +8,7 @@
   </view>
 </view>
 
-<view class="study">
+<view class="study" style="margin-top:100rpx">
   <view class="weui-cells study-item gbox" wx:for="{{emptyRoom}}" wx:key="roomIndex" wx:for-item="item">
     <view class="item-title b-f fa">Floor{{item.index}}</view>
     <view class="adron {{roomIndex % 2 === 0 ? 'b-p-color' : 'b-b-color'}}"></view>

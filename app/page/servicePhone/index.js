@@ -129,7 +129,14 @@ Page({
                 if (collectArr.indexOf(object.id) != "-1"){
                   iscollect = true;
                 }
-                var a = { pid: object.id, shorthand: fname, bgColor: bgColor, siteName: object.get('siteName'), phone: object.get('phone'), iscollect: iscollect };
+                var a = { 
+                  pid: object.id, 
+                  shorthand: fname, 
+                  bgColor: bgColor, 
+                  siteName: object.get('siteName'), 
+                  phone: object.get('phone'), 
+                  iscollect: iscollect 
+                };
                 phoneList.push(a);
               }
               that.setData({

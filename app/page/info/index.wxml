@@ -1,6 +1,6 @@
 <view class="page">
   <!--搜索-->
-  <view class="weui-search-bar">
+  <view class="weui-search-bar select-title">
     <view class="weui-search-bar__form">
       <view class="weui-search-bar__box">
         <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
@@ -13,7 +13,7 @@
     <view class="weui-loading"></view>
     <view class="weui-loadmore__tips">正在加载</view>
 </view>
-<view class="" wx:if="{{guide.length > 0}}">
+<view style="margin-top:130rpx;" wx:if="{{guide.length > 0}}">
 <view class="phoneList" wx:for="{{guide}}" wx:for-index="key">
   <navigator url="infodetail?id={{item.gid}}">
     <view class="weui-cells listItem gbox">
