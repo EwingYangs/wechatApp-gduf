@@ -1,26 +1,27 @@
 <view class="page">
     <view class="page__bd">
         <view class="weui-article">
-            <view class="weui-article__h1">这还是马云: 马云助理亲撰,告诉你最真实的马云/陈伟</view>
+            <view class="weui-article__h1">{{title}}</view>
+            <view class="weui-article__h3">作者：{{author}}</view>
             <view class="weui-article__section">
                 <view class="weui-article__section">
                     <view class="weui-article__d">
-                      <image src="http://img7.doubanio.com/lpic/s26559853.jpg" style="width:10em;height:12em;"></image>
+                      <image src="{{bimage}}" style="width:10em;height:12em;"></image>
                       <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">价格：CNY35.00</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">出版社：中信出版社</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">价格：{{price}}</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">出版社：{{publish}}</view></view>
                       </view>
                       <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">索书号：K825.38=76/266</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">ISBN：978-7-213-05475-4</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">索书号：{{indexnum}}</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">ISBN：{{isbn}}</view></view>
                       </view>
                        <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">分类号：K825.38=76</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">页数：277页</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">分类号：{{groupnum}}</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">页数：{{page}}</view></view>
                       </view>
                        <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">出版日期：20130101</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">出版地：杭州</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">出版日期：{{date}}</view></view>
+                          <view class="weui-flex__item"><view class="placeholder">出版地：{{position}}</view></view>
                       </view>
                     </view>
                   
@@ -28,7 +29,7 @@
                 <view class="weui-article__section">
                     <view class="weui-article__h3">联图内容简介:</view>
                     <view class="weui-article__p">
-                       “幽默马云”、“开心马云”、“顽皮马云”、“狂妄马云”……《这还是马云(全新升级版)》由陈伟所著，《这还是马云(全新升级版)》从各个角度揭开了实际生活中“千面马云”的真面目，告诉你一个与想象中大不一样的马云。这不只是一本书，更像一部喜剧电影，让你通过声音、色彩、表情等诸多要素走近马云，感受阿里巴巴。没有冗长的说教，只有让人忍俊不禁的细节；没有高深的理论，只有通俗、诚恳的陈述。作者借幽默平常的琐事，
+                       {{desc}}
                     </view>
                   
                 </view>

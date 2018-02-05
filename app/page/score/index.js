@@ -106,6 +106,7 @@ Page({
   bindAccountChange: function (e) {
     var accounts = this.data.accounts;
     var kksj = accounts[e.detail.value];
+    kksj = kksj.replace(/\(.*\)/,'');
     if (e.detail.value == 0){
       kksj = '';
     }

@@ -175,7 +175,7 @@ Page({
 
   bookdetail : function(){
     wx.navigateTo({
-      url: 'bdetail',
+      url: '/page/book/bdetail',
     })
   },
 
@@ -229,6 +229,8 @@ Page({
       method: 'POST',
       success: res => {
         var bookList = res.data.data ? res.data.data : [];
+        console.log(bookList);
+        
         var len = bookList.length;
         var arr = new Array();
         for (var i = 0; i < len; i++) {
@@ -242,9 +244,10 @@ Page({
             ISBN: bookList[i][5], 
             snum: bookList[i][6], 
             location: '社科书库2', 
-            remain: 8, 
+            remain: bookList[i][11], 
             bgColor: bgColor,
-            color: color 
+            color: color,
+            page: bookList[i][8],
           };
           arr.push(result);
         }

@@ -46,6 +46,12 @@
 					"name": "dorm",
 					"pathName": "page/dorm/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bdetail",
+					"pathName": "page/book/bdetail",
+					"query": "id=384720"
 				}
 			]
 		}

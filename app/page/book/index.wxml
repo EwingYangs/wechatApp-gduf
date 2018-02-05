@@ -51,7 +51,8 @@
                   <view>索书号：
                     <text class="b-f">{{item.snum}}</text>
                   </view>
-                  <view>页数：
+                  <view>
+                    <text class="book-info-left">页</text>数：
                     <text class="b-f">{{item.page}}</text>
                   </view>
                 </view>
