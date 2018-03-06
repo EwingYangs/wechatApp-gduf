@@ -93,8 +93,8 @@ Page({
           var info = { sno: sno, pwd: pwd, encoded: encoded};
           wx.setStorageSync('jwxtInfo', info);
           common.setFlushMsg(res.data.data);
-          wx.navigateTo({
-            url: '/page/user/index',
+          wx.navigateBack({
+            delta: 1
           })
         }else{
           common.showModal('登录失败，账号或密码错误');

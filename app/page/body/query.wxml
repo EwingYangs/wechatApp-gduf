@@ -7,7 +7,7 @@
         </view>
       </view>
       <view class="page__bd page__bd_spacing" style="margin-top:3em">
-        <form bindsubmit="login">
+        <form bindsubmit="search">
             <view class="zan-cell zan-form__item">
               <text class="zan-form__title">学号：</text>
               <input

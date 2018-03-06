@@ -17,17 +17,17 @@
       <text class="iconfont icon-location none-color"></text>
       <text class="strong b-f">{{floorItem.ceil}}</text>
         <view class="room room1">
-          <view class="item-content-room1 {{dataItem == 1 || dataItem == 11 ? 't-im-color' : 'none-color'}}" wx:for="{{floorItem.data}}" wx:if="{{dataIndex < 5}}" wx:for-index="dataIndex" wx:for-item="dataItem">
+          <view class="item-content-room1 {{dataItem == 1 || dataItem == 11 ? 'none-color' : 't-im-color'}}" wx:for="{{floorItem.data}}" wx:if="{{dataIndex < 5}}" wx:for-index="dataIndex" wx:for-item="dataItem">
             {{dataIndex + 1}}
           </view>
         </view>
         <view class="room room2">
-          <view class="item-content-room2 {{dataItem == 1 || dataItem == 11 ? 't-im-color' : 'none-color'}}" wx:for="{{floorItem.data}}" wx:if="{{dataIndex >= 5 && dataIndex < 10}}" wx:for-index="dataIndex" wx:for-item="dataItem">
+          <view class="item-content-room2 {{dataItem == 1 || dataItem == 11 ? 'none-color' : 't-im-color'}}" wx:for="{{floorItem.data}}" wx:if="{{dataIndex >= 5 && dataIndex < 10}}" wx:for-index="dataIndex" wx:for-item="dataItem">
             {{dataIndex + 1}}
           </view>
         </view>
         <view class="room room3">
-          <view class="item-content-room3 {{dataItem == 1 || dataItem == 11 ? 't-im-color' : 'none-color'}}" wx:for="{{floorItem.data}}" wx:if="{{dataIndex >= 10}}" wx:for-index="dataIndex" wx:for-item="dataItem">
+          <view class="item-content-room3 {{dataItem == 1 || dataItem == 11 ? 'none-color' : 't-im-color'}}" wx:for="{{floorItem.data}}" wx:if="{{dataIndex >= 10}}" wx:for-index="dataIndex" wx:for-item="dataItem">
             {{dataIndex + 1}}
           </view>
         </view>

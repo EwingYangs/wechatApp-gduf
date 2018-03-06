@@ -57,7 +57,7 @@ page, .page, .page__bd {
   float: left;
   padding-bottom: 12rpx;
   padding-left: 24rpx;
-  width: 70%;
+  width: 65%;
 }
 
 .book-bg {

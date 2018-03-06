@@ -1,4 +1,5 @@
 // page/body/query.js
+var common = require('../../utils/common.js');
 Page({
 
   /**
@@ -66,6 +67,12 @@ Page({
 
   //显示模拟登录教务系统
   search: function (event) {
+    common.showModal('体测查询暂未开放','',function(){
+      wx.navigateTo({
+        url: '/page/index/index',
+      })
+    });
+    return false;
     var sno = event.detail.value.usno;
     var pwd = event.detail.value.password;
     wx.navigateTo({

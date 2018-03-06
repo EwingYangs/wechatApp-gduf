@@ -23,7 +23,7 @@ Page({
       'l-color',
     ],
     accounts: config.scoreFrom,
-    accountIndex: 0,
+    accountIndex: 1,
     scoreData : [],
     loading:true,
     page:1
@@ -48,7 +48,8 @@ Page({
    */
   onShow: function () {
     var page = this.data.page;//默认第一页
-    var kksj = '';//默认查询全部
+    var accounts = this.data.accounts;
+    var kksj = accounts[this.data.accountIndex];
     this.setData({
       loading: true
     })
