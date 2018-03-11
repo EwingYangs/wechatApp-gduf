@@ -1,0 +1,31 @@
+<view class='page'>
+  <form bindsubmit="addFeedback">
+    <view class="weui-cells__title">联系电话</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入联系方式" type="number" maxlength="11" value="{{contact}}" name = "contact" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">反馈内容</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入内容" style="min-height: 3.3em" auto-height name="content" maxlength="200" value="{{content}}" bindinput='input' />
+          <view class="weui-textarea-counter">{{content.length}}/200</view>
+        </view>
+      </view>
+    </view>
+    <view class="p-md" style="margin-top:30rpx">
+      <button class="weui-btn" type="primary" formType="submit">立即提交</button>
+    </view>
+  </form>
+  <!-- <view class="page__ft">
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-footer ">
+        <view class="weui-footer__text">Copyright © 2013-2017</view>
+      </view>
+    </view>
+  </view> -->
+</view>

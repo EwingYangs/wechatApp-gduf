@@ -1,29 +1,38 @@
 // page/find/bdetail.js
+var config = require("../../utils/config.js");
+var common = require('../../utils/common.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:'这还是马云: 马云助理亲撰,告诉你最真实的马云',
-    bimage:'http://img7.doubanio.com/lpic/s26559853.jpg',
-    author:'陈伟',
-    price:'CNY39.80',
-    publish:'浙江人民出版社',
-    indexnum: 'K825.38=76/266',
-    isbn: '978-7-213-05475-4',
-    groupnum: 'K825.38=76',
-    page: '277页',
-    date: '20130101',
-    position: '杭州',
-    desc: '“幽默马云”、“开心马云”、“顽皮马云”、“狂妄马云”……《这还是马云(全新升级版)》由陈伟所著，《这还是马云(全新升级版)》从各个角度揭开了实际生活中“千面马云”的真面目，告诉你一个与想象中大不一样的马云。这不只是一本书，更像一部喜剧电影，让你通过声音、色彩、表情等诸多要素走近马云，感受阿里巴巴。没有冗长的说教，只有让人忍俊不禁的细节；没有高深的理论，只有通俗、诚恳的陈述。作者借幽默平常的琐事'
+    title:'',
+    bimage:'../../images/cover-default-s.png',
+    author:'',
+    price:'未获取',
+    publish:'未获取',
+    snum: '',
+    isbn: '',
+    recno:'',
+    page: '',
+    date: '未获取',
+    desc: '未获取',
+    localList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options);
+    if (options.isbn && options.recno && options.snum){
+      this.setData({
+        isbn: options.isbn,
+        recno: options.recno,
+        snum: options.snum,
+      });
+    }
   },
 
   /**
@@ -37,7 +46,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getBookDetail();
   },
 
   /**
@@ -73,5 +82,85 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  getBookDetail: function(){
+    if (!this.data.isbn && !this.data.recno) {
+      common.showModal("数据获取错误", '', (res) => {
+          wx.navigateTo({
+            url: '../book/index',
+          })
+      });
+      return false;
+    }
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    wx.request({
+      url: config.gdufgetBookDetailUrl, //教务系统登录地址
+      data: {
+        ListISBN: this.data.isbn,
+        ListRecno: this.data.recno,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token': config.token,
+      },
+      method: 'POST',
+      success: res => {
+        if (!res.data) {
+          common.showTip('查询失败', 'loading');
+          wx.hideLoading();
+        }
+
+        if (res.data.status.code == 1001) {
+          common.showModal("ISBN损坏，无法查询详细", '', (res) => {
+            wx.navigateTo({
+              url: '../book/index',
+            })
+          });
+          wx.hideLoading();
+          return false;
+        }
+
+        let bookDetail = res.data.data;
+        console.log(bookDetail);
+        this.setData({
+          desc: bookDetail.baseInfo.summary,
+          title: bookDetail.baseInfo.title,
+          author: bookDetail.baseInfo.author,
+          price: bookDetail.baseInfo.price,
+          publish: bookDetail.baseInfo.publisher,
+          page: bookDetail.baseInfo.pages,
+          date: bookDetail.baseInfo.pubdate,
+          localList: bookDetail.bookLocal.book
+        });
+
+
+        //兼容一条信息
+        if (bookDetail.bookLocal.book.hasOwnProperty('bookid')){
+          let local = [];
+          local[0] = bookDetail.bookLocal.book;
+          this.setData({
+            localList: local
+          });
+        }
+
+        if (bookDetail.bookImage){
+          this.setData({
+            bimage: bookDetail.bookImage
+          });
+        }
+
+        wx.hideLoading();
+      },
+      fail: error => {
+        wx.hideLoading();
+        common.showTip('查询失败', 'loading');
+        console.log(error);
+      }
+    })
   }
 })

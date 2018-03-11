@@ -1,58 +1,72 @@
 <view class="page">
-    <view class="page__bd">
-        <view class="weui-article">
-            <view class="weui-article__h1">{{title}}</view>
-            <view class="weui-article__h3">作者：{{author}}</view>
-            <view class="weui-article__section">
-                <view class="weui-article__section">
-                    <view class="weui-article__d">
-                      <image src="{{bimage}}" style="width:10em;height:12em;"></image>
-                      <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">价格：{{price}}</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">出版社：{{publish}}</view></view>
-                      </view>
-                      <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">索书号：{{indexnum}}</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">ISBN：{{isbn}}</view></view>
-                      </view>
-                       <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">分类号：{{groupnum}}</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">页数：{{page}}</view></view>
-                      </view>
-                       <view class="weui-flex">
-                          <view class="weui-flex__item"><view class="placeholder">出版日期：{{date}}</view></view>
-                          <view class="weui-flex__item"><view class="placeholder">出版地：{{position}}</view></view>
-                      </view>
-                    </view>
-                  
-                </view>
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">联图内容简介:</view>
-                    <view class="weui-article__p">
-                       {{desc}}
-                    </view>
-                  
-                </view>
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">联图目录:</view>
-                    <view class="weui-article__p">
-
-<view>再版序</view>
-<view>自 序</view>
-<view>第一章 马云和他的英语班</view>
-<view>迟到的老师</view>
-<view>“马关条约”</view>
-<view>课堂之外</view>
-<view>依然存活的海博翻译社</view>
-<view>马氏英语班之G的故事</view>
-<view>情同父子</view>
-<view>曲终人未散</view>
-
-
-
-                    </view>
-                </view>
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">{{title}}</view>
+      <view class="weui-article__h3">作者：{{author}}</view>
+        <view class="weui-article__section">
+          <view class="weui-article__d">
+            <image src="{{bimage}}" style="width:10em;height:12em;"></image>
+            <view class="weui-flex">
+              <view class="weui-flex__item"><view class="placeholder">价格：{{price}}</view></view>
+              <view class="weui-flex__item"><view class="placeholder">出版社：{{publish}}</view></view>
             </view>
+            <view class="weui-flex">
+              <view class="weui-flex__item"><view class="placeholder">索书号：{{snum}}</view></view>
+              <view class="weui-flex__item"><view class="placeholder">ISBN：{{isbn}}</view></view>
+            </view>
+            <view class="weui-flex">
+              <view class="weui-flex__item"><view class="placeholder">页数：{{page}}页</view></view>
+              <view class="weui-flex__item"><view class="placeholder">出版日期：{{date}}</view></view>
+            </view>
+          </view>
+
+      <view class="weui-article__section">
+        <view class="weui-article__h3">图书内容简介：</view>
+        <view class="weui-article__p">
+            {{desc}}
         </view>
+      </view> 
+      <!-- <view class="weui-article__section">
+        <view class="weui-article__h3">联图目录:</view>
+        <view class="weui-article__p">
+          <view>再版序</view>
+          <view>自 序</view>
+          <view>第一章 马云和他的英语班</view>
+          <view>迟到的老师</view>
+          <view>“马关条约”</view>
+          <view>课堂之外</view>
+          <view>依然存活的海博翻译社</view>
+          <view>马氏英语班之G的故事</view>
+          <view>情同父子</view>
+          <view>曲终人未散</view>
+        </view>
+      </view>   -->
+      <view class="weui-article__h3">图书馆藏信息：</view>
+      <view class="table">
+          <view class="tr bg-w">
+            <view class="th">条码号</view> 
+            <view class="th">索书号</view>
+            <view class="th">馆藏状态</view>
+            <view class="th">流通类型</view>
+            <view class="th">馆藏地点</view>
+          </view>
+          <block wx:for="{{localList}}" wx:key="{{date}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+              <view class="td">{{item.callno}}</view>
+              <view class="td">{{item.localstatu}}</view>
+              <view class="td">{{item.cirType}}</view>
+              <view class="td">{{item.local}}</view>
+            </view>
+            <view class="tr" wx:else>
+              <view class="td">{{item.callno}}</view>
+              <view class="td">{{item.localstatu}}</view>
+              <view class="td">{{item.cirType}}</view>
+              <view class="td">{{item.local}}</view>
+            </view>
+          </block>
+        </view>
+
+      </view>
     </view>
+  </view>
 </view>

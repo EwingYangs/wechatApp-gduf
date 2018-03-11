@@ -31,7 +31,7 @@
           <view wx:if="{{bookList.length > 0}}">
             <view style="margin-top:190rpx;">
 
-              <view class="weui-cells gbox bbox" wx:key="{{index}}" wx:for="{{bookList}}" bindtap="bookdetail">
+              <view class="weui-cells gbox bbox" wx:key="{{index}}" wx:for="{{bookList}}" bindtap="bookdetail" data-isbn="{{item.ISBN}}" data-recno="{{item.recno}}" data-snum="{{item.snum}}">
                 <view class="book-title b-f f-s-1x">{{index+1}}、{{item.bname}}</view>
                 <view class="book-content f-s-09x">
                   <view class="adron {{item.bgColor}}"></view>

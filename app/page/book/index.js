@@ -173,9 +173,12 @@ Page({
     });
   },
 
-  bookdetail : function(){
+  bookdetail : function(e){
+    let isbn = e.currentTarget.dataset.isbn;
+    let recno = e.currentTarget.dataset.recno;
+    let snum = e.currentTarget.dataset.snum;
     wx.navigateTo({
-      url: '/page/book/bdetail',
+      url: '/page/book/bdetail?isbn=' + isbn + '&recno=' + recno + '&snum=' + snum,
     })
   },
 
@@ -238,6 +241,7 @@ Page({
           var bgColor = bgColorList[j];
           var color = colorList[j];
           var result = { 
+            recno: bookList[i][0],
             bname: bookList[i][1], 
             author: bookList[i][2], 
             publish: bookList[i][3], 

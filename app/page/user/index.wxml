@@ -37,9 +37,9 @@
       <view class="weui-cell__bd">我收藏的</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="../feedback/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <image src="../../images/icon_comment.png" class="user_icon"></image>
-      <view class="weui-cell__bd">我评论的</view>
+      <view class="weui-cell__bd">反馈建议</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
   </view>

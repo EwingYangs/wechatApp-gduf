@@ -50,6 +50,7 @@ Page({
     var page = this.data.page;//默认第一页
     var accounts = this.data.accounts;
     var kksj = accounts[this.data.accountIndex];
+    kksj = kksj.replace(/\(.*\)/, '');
     this.setData({
       loading: true
     })
@@ -88,6 +89,7 @@ Page({
     });
     var accounts = this.data.accounts;
     var kksj = accounts[this.data.accountIndex];
+    kksj = kksj.replace(/\(.*\)/, '');
     if (this.data.accountIndex == 0) {
       kksj = '';
     }

@@ -5,6 +5,7 @@
     "page/info/index",
     "page/index",
     "page/dorm/index",
+    "page/dorm/detail",
     "page/info/infodetail",
     "page/servicePhone/index",
     "page/user/index",
@@ -19,6 +20,7 @@
     "page/find/bdetail",
     "page/cricle/cricle",
     "page/publish/publish",
+    "page/feedback/index",
     "page/cricleDetail/cricleDetail"
   ],
   "window": {

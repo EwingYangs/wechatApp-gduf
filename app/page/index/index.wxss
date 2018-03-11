@@ -69,7 +69,7 @@
 .banner-label-top{
   height:20rpx;
   line-height:20rpx;
-  width:3.5em;
+  width:120rpx;
   position:relative;
   top:100rpx;
   color:#edf1ff;
@@ -79,7 +79,7 @@
 .banner-label-bottom{
   height:20rpx;
   line-height:20rpx;
-  width:4.5em;
+  width:120rpx;
   position:relative;
   top:100rpx;
   color:#edf1ff;

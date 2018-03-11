@@ -1,4 +1,5 @@
 // page/dorm/index.js
+var common = require('../../utils/common.js');
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     accounts: ["16A", "16B", "17A", "17B", "18A", "18B", "19A", "19B", "20A", "20B", "21A", "21B", "22A", "22B", "23A", "23B", "24A", "24B", "25A", "25B"],
+    buildingId: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "2384", "2601", "2602", "2603", "2604", "2605", "2606", "2607", "2608", "2609"],
     accountIndex: 0,
     dormNumber:'',
   },
@@ -81,12 +83,16 @@ Page({
   bindDorm: function (event){
     let dormNumber = event.detail.value.dormNumber;
     let floorNumber = this.data.accountIndex;
+    let buildingId = this.data.buildingId[floorNumber];
     wx.setStorageSync('dorm', {
       dormNumber: dormNumber,
-      floorNumber: floorNumber
+      floorNumber: floorNumber,
+      buildingId:buildingId,
     });
-    wx.navigateTo({
-      url: '/page/index/index',
-    })
+    common.showModal('绑定成功', '', function () {
+      wx.navigateTo({
+        url: '../index/index',
+      })
+    });
   }
 })

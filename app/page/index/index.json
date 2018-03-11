@@ -1,3 +1,4 @@
 {
-  "backgroundColor": "#6981ea"
+  "backgroundColor": "#6981ea",
+  "enablePullDownRefresh": true
 }

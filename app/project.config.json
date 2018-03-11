@@ -21,7 +21,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
@@ -52,6 +52,18 @@
 					"name": "bdetail",
 					"pathName": "page/book/bdetail",
 					"query": "id=384720"
+				},
+				{
+					"id": -1,
+					"name": "dormdetail",
+					"pathName": "page/dorm/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "feedback",
+					"pathName": "page/feedback/index",
+					"query": ""
 				}
 			]
 		}

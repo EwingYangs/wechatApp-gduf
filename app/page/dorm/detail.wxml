@@ -1,0 +1,72 @@
+<view class="page">
+<view class="page__bd">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd" style="text-align:center">北苑<text class="fa">{{floorNumber}} {{dormNumber}}</text> 用电记录</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">日期</view>
+            <view class="th">当日用电(度)</view>
+            <view class="th">剩余电量(度)</view>
+          </view>
+          <view class='p-md' wx:if="{{!feeList.length}}">
+            <view class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style='background-color:#f9f9f9'>暂无记录</view>
+            </view>
+          </view>
+          <block wx:for="{{feeList}}" wx:key="{{date}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+              <view class="td fa">{{item.date}}</view>
+              <view class="td fa">{{item.today}}</view>
+              <view class="td fa">{{item.remain}}</view>
+            </view>
+            <view class="tr" wx:else>
+              <view class="td fa">{{item.date}}</view>
+              <view class="td fa">{{item.today}}</view>
+              <view class="td fa">{{item.remain}}</view>
+            </view>
+          </block>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view> 
+<view class="page__bd">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd" style="text-align:center">北苑<text class="fa">{{floorNumber}} {{dormNumber}}</text> 购电记录</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">日期</view>
+            <view class="th">购买电量(度)</view>
+            <view class="th">支付金额(￥)</view>
+          </view>
+          <view class='p-md' wx:if="{{!buyList.length}}">
+            <view class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style='background-color:#f9f9f9'>暂无记录</view>
+            </view>
+          </view>
+          <block wx:for="{{buyList}}" wx:key="{{date}}">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+              <view class="td fa">{{item.date}}</view>
+              <view class="td fa">{{item.fee}}</view>
+              <view class="td fa">{{item.amount}}</view>
+            </view>
+            <view class="tr" wx:else>
+              <view class="td fa">{{item.date}}</view>
+              <view class="td fa">{{item.fee}}</view>
+              <view class="td fa">{{item.amount}}</view>
+            </view>
+          </block>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view> 
+</view>

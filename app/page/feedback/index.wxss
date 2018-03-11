@@ -1,0 +1,6 @@
+/* pages/center/feedback/feedback.wxss */
+page{ background: #eee;}
+.g-bda-userinfo{ padding-bottom: 20px;}
+.page__ft{
+    position: absolute; bottom: 30rpx; width: 100%; text-align: center;
+}
