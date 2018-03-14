@@ -9,6 +9,8 @@ Page({
   data: {
     islogin : true,
     sno : 0,
+    nickName: "",
+    avatarUrl: "",
   },
 
   /**
@@ -16,11 +18,32 @@ Page({
    */
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    var userInfo = Bmob.User.current().attributes;
-    this.setData({
-      userInfo: userInfo,
-    })  
-    wx.setNavigationBarTitle({ title: userInfo.nickName })
+    wx.getUserInfo({
+      success: ({ userInfo }) => {
+        this.setData({
+          nickName: userInfo.nickName,
+          avatarUrl: userInfo.avatarUrl
+        })
+        wx.setNavigationBarTitle({ title: userInfo.nickName })
+      },
+      fail: (error) => {
+        wx.openSetting({
+          success: (res) => {
+            //重新授权登录
+            wx.getUserInfo({
+              success: ({ userInfo }) => {
+                this.setData({
+                  nickName: userInfo.nickName,
+                  avatarUrl: userInfo.avatarUrl
+                })
+                wx.setNavigationBarTitle({ title: userInfo.nickName })
+              }
+            })
+          }
+        })
+      }
+
+    })
   },
 
   /**

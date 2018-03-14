@@ -10,8 +10,8 @@
 
             <text bindtap="login" class="f-s-1x" style="color:#edf1ff;" wx:else>点击登录</text>
 
-            <image class="userinfo-avatar" src="{{userInfo.userPic}}"></image>
-            <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
+            <image class="userinfo-avatar" src="{{avatarUrl}}"></image>
+            <!--<text class="userinfo-nickname">{{nickName}}</text>-->
           </view>
         </view>
       </view>
