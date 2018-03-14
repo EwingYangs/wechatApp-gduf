@@ -26,3 +26,6 @@
   height:1.5em;
   margin-right:0.5em;
 }
+.deg button{border:none;height:90rpx;background:none;border-radius:0;line-height:90rpx;font-size:15px;text-align:left;
+}
+.deg button:after{border:none;}

@@ -69,14 +69,13 @@ Page({
    */
   onPullDownRefresh: function () {
     this.getDormFee();
-    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
@@ -176,9 +175,7 @@ Page({
     if (!this.data.dormNumber && !this.data.buildingId){
       return false;
     }
-    wx.showLoading({
-      title: '加载中',
-    })
+    wx.showNavigationBarLoading() //在标题栏中显示加载
 
     wx.request({
       url: config.gdufgetCurrentFeeUrl, //教务系统登录地址
@@ -194,7 +191,7 @@ Page({
       success: res => {
         if(!res.data){
           common.showTip('查询失败', 'loading');
-          wx.hideLoading();
+          wx.hideNavigationBarLoading() //完成停止加载
         }
         if(res.data.status.code == 1001){
           common.showModal("您的宿舍暂时没有录入系统!请切换宿舍",'',(res) => {
@@ -204,7 +201,7 @@ Page({
               })
             }
           });
-          wx.hideLoading();
+          wx.hideNavigationBarLoading() //完成停止加载
           return false;
         }
 
@@ -215,12 +212,16 @@ Page({
           dormFeeFloat: '.' + dormFee[1], 
         });
 
-        wx.hideLoading();
+        
       },
       fail: error => {
-        wx.hideLoading();
         common.showTip('查询失败', 'loading');
         console.log(error);
+      },
+      complete: function () {
+        // complete
+        wx.hideNavigationBarLoading() //完成停止加载
+        wx.stopPullDownRefresh() //停止下拉刷新
       }
     })
   }

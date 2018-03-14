@@ -11,19 +11,19 @@
   <view class="lesson-content">
     <view class="lesson-content-hd">
       <view class="content-hd-one"></view>
-      <view class="content-hd-day p-f" wx:for="{{day}}">{{item}}</view>
+      <view class="content-hd-day p-f" wx:for="{{day}}" wx:key="d">{{item}}</view>
     </view>
 
     <view class="lesson-content-bd">
       <view class="content-bd-one">
-        <view class="content-bd-item" wx:for="{{class}}">{{item}}</view>
+        <view class="content-bd-item" wx:for="{{class}}" wx:key="c">{{item}}</view>
       </view>
-      <view class="content-bd" wx:for="{{lesson}}">
+      <view class="content-bd" wx:for="{{lesson}}" wx:key="l">
         <view class="content-bd-item" wx:for="{{class}}"></view>
       </view>
     </view>
     <view class="lesson-content-detail">
-      <view class="content" wx:for="{{lesson}}" wx:for-index="index">
+      <view class="content" wx:for="{{lesson}}" wx:for-index="index" wx:key="le">
         <view class="content-detail {{bgColorArr[(lessonIndex + index + 1) % 6]}} {{lessonItem.class === 3 || lessonItem.class === 5 ? 'h-3' : 'h-2'}} {{lessonItem.class === 2 || lessonItem.class === 3 ? 't-2' : ''}} {{lessonItem.class === 4 || lessonItem.class === 5 ? 't-5' : ''}} {{lessonItem.class === 6 ? 't-8' : ''}} {{lessonItem.class === 7 ? 't-10' : ''}}" wx:for="{{item}}" wx:for-item="lessonItem" wx:for-index="lessonIndex">
           <text>{{'@' + lessonItem.site}}</text>
           <text>{{lessonItem.teacher}}</text>

@@ -64,6 +64,24 @@
 					"name": "feedback",
 					"pathName": "page/feedback/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "page/user/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "page/login/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "lessonTable",
+					"pathName": "page/lessonTable/index",
+					"query": ""
 				}
 			]
 		}

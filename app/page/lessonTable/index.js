@@ -69,9 +69,8 @@ Page({
    */
   onShow: function () {
     //计算当前是第几周
-    // this.setData({
-    //   weekIndex : 0
-    // });
+    this.setWeekIndex();
+    
     this.setLessonData();
   },
 
@@ -160,6 +159,19 @@ Page({
       }
     })
 
+  },
+
+  setWeekIndex : function(){
+    let termStartTime = config.termStartTime + ' 00:00:00';
+    let termStartStamp = new Date(termStartTime).getTime() / 1000;
+    let nowTimeStamp = new Date().getTime() / 1000;
+
+    let timeInterval = parseInt(nowTimeStamp) - parseInt(termStartStamp);
+
+    let weekIndex = timeInterval > 0 ? ((Math.ceil(timeInterval / (24 * 3600 * 7))) - 1) : 0
+    this.setData({
+      weekIndex: weekIndex
+    });
   }
 
 

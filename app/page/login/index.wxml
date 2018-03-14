@@ -27,7 +27,11 @@
                 bindfocus=""
               />
             </view>
+            
             <button class="weui-btn" type="primary" formType="submit">Go</button>
         </form>
+      </view>
+      <view class="zan-form__item">
+        <text class="zan-form__title" style="width:100%;text-align:center">请输入教务系统账号密码</text>
       </view>
 </view>

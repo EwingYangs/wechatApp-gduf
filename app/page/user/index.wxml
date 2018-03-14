@@ -43,4 +43,15 @@
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
   </view>
+
+  <view class="weui-cells gbox" style="margin:12px 12px 0px 12px;">
+    <view class="deg">
+      <button class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="contact" session-from="weapp">
+        <image src="../../images/contact.png" class="user_icon"></image>
+        <view class="weui-cell__bd">联系客服</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </button>
+    </view>
+  </view>
+
 </view>
