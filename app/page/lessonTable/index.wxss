@@ -58,10 +58,9 @@
   height: 3.2em;
   line-height: 3.2em;
   text-align: center;
-  /* border-top-left-radius: 10px; */
-  /* border-top-right-radius: 10px; */
+  box-shadow: 0 3px 1px rgba(98, 94, 221, 0.03);
   color: #fff;
-  background-color: rgb(105, 129, 234);
+  background-color: rgb(255, 255, 255);
 }
 
 .lesson-table .lesson-title .select-tip {
@@ -75,6 +74,7 @@
 .lesson-content {
   position: relative;
   margin: 10px;
+  box-shadow: 0 0 5px rgba(98, 94, 221, 0.05);
 }
 
 .lesson-content .lesson-content-hd {
@@ -82,13 +82,11 @@
   height: 36px;
   line-height: 36px;
   font-size: 14px;
-  /* height: 3.2em; */
-  /* line-height: 3.2em; */
   text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   color: #000;
-  background-color: rgb(213, 218, 244);
+  background-color: rgb(255, 255, 255);
 }
 
 .lesson-title .lesson-bg {
@@ -100,29 +98,32 @@
   height: 2em;
 }
 
+.select-term .select-list {
+  font-size: 18px;
+  color: #000;
+}
+
+.icon-triangle-bottom {
+  color: #333;
+}
+
 .lesson-content .lesson-content-hd .content-hd-one {
-  width: 30px;
+  width: 20px;
 }
 
 .lesson-content .lesson-content-hd .content-hd-day {
   flex: 1;
   text-align: center;
-  height: 2em;
-  font-size: 18px;
-  line-height: 2em;
+  height: 2.5em;
+  font-size: 14px;
+  line-height: 2.5em;
   color: #333;
+  font-weight: 700;
 }
-
-/* .lesson-content .lesson-content-hd view:nth-child(2n-1) {
-  background: rgb(235, 247, 255);
-}
-
-.lesson-content .lesson-content-hd view:nth-child(2n) {
-  background: rgb(226, 242, 255);
-} */
 
 .lesson-content .lesson-content-bd {
   display: flex;
+  border-bottom-right-radius: 5px;
 }
 
 .lesson-content .lesson-content-bd .content-bd {
@@ -135,7 +136,7 @@
 }
 
 .lesson-content .lesson-content-bd .content-bd-one {
-  width: 30px;
+  width: 20px;
   color: #c7c7c7;
 }
 
@@ -144,50 +145,58 @@
 {
   height: 120rpx;
   line-height: 120rpx;
-  font-size: 22px;
+  font-size: 16px;
   text-align: center;
   font-weight: 600;
 }
 
+.lesson-content-bd .content-bd-one .content-bd-item:last-child {
+  border-bottom-left-radius: 5px;
+}
+
+.lesson-content-bd .content-bd:last-child .content-bd-item:last-child {
+  border-bottom-right-radius: 5px;
+}
+
 .lesson-content-bd .content-bd-one .content-bd-item:nth-child(2n) {
-  background: rgb(244, 247, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content-bd .content-bd-one .content-bd-item:nth-child(2n-1) {
-  background: rgb(255, 255, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n) .content-bd-item:nth-child(2n-1) {
-  background: rgb(255, 255, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n-1) .content-bd-item:nth-child(2n-1) {
-  background: rgb(255, 255, 255);
+  background: rgb(244, 247, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n)  {
-  background: rgb(244, 247, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n) .content-bd-item:nth-child(2n) {
-  background: rgb(244, 247, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content-bd .content-bd:nth-child(2n-1)  {
-  background: rgb(244, 247, 255);
+  background: rgb(255, 255, 255);
 }
 
 .lesson-content .lesson-content-detail {
   position: absolute;
   top: 36px;
-  width: calc(100% - 30px);
+  width: calc(100% - 20px);
   display: flex;
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .lesson-content .lesson-content-detail .content {
   height: 48em;
-  width:94rpx;
+  width: 94rpx;
 }
 
 .lesson-content .lesson-content-detail .content-detail text {
@@ -200,7 +209,7 @@
 
 .lesson-content-detail .content .content-detail {
   position: absolute;
-  width: 40px;
+  width: 45px;
   margin: 10rpx 3px 0;
   border-radius: 5px;
 }

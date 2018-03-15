@@ -1,9 +1,9 @@
 <view class="lesson-table">
   <view class="lesson-title weui-cell weui-cell_select">
-    <image class="lesson-bg" src="../../images/bg_lesson.png" />
     <view class="weui-cell__bd">
       <picker bindchange="bindWeekChange" value="{{weekIndex}}" range="{{week}}">
-        <view class="weui-select select-term"><text class="select-tip">(当前)  </text><text class="select-list">{{week[weekIndex]}}</text><text class="iconfont icon-triangle-bottom"></text></view>
+        <view class="weui-select select-term"><text class="select-tip">(当前)  </text><text class="select-list">{{week[weekIndex] }}</text>
+        <text class="iconfont icon-triangle-bottom"></text></view>
       </picker>
     </view>
   </view>
