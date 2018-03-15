@@ -29,6 +29,7 @@
           <view class="content-detail-item {{lessonItem.site.length < 8 ? 'pt-50' : ''}} {{lessonItem.site.length > 12 ? 'pt-10' : ''}}">
             <text>{{lessonItem.site}}</text>
             <text>{{'@' + lessonItem.subject}}</text>
+            <text>{{lessonItem.teacher}}</text>
           </view>
         </view>
       </view>
