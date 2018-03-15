@@ -54,13 +54,22 @@
   top: 1200rpx;
 }
 
+.lesson-table {
+  position: relative;
+}
+
 .lesson-table .lesson-title {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 3.2em;
   line-height: 3.2em;
+  width: 100%;
   text-align: center;
   box-shadow: 0 3px 1px rgba(98, 94, 221, 0.03);
   color: #fff;
   background-color: rgb(255, 255, 255);
+  z-index: 10;
 }
 
 .lesson-table .lesson-title .select-tip {
@@ -73,7 +82,7 @@
 
 .lesson-content {
   position: relative;
-  margin: 10px;
+  margin: 4em 10px 10px;
   box-shadow: 0 0 5px rgba(98, 94, 221, 0.05);
 }
 
