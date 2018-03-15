@@ -37,7 +37,36 @@ Page({
     // 5 => 6,7,8 节
     // 6 => 9,10 节
     // 7 => 11,12 节
-    lesson: [],
+    lesson: [
+      // [
+      //   {
+      //     subject: '北教A503',
+      //     teacher: '邓超',
+      //     site: '国际商务国际',
+      //     class: 1
+      //   },
+      //   {
+      //     subject: '北教A503',
+      //     teacher: '邓超',
+      //     site: '国际商务国际商务国际商务国际商务',
+      //     class: 3
+      //   }
+      // ],
+      // [
+      //   {
+      //     subject: '北教A503',
+      //     teacher: '邓超',
+      //     site: '国际商务国际商务国际商务国际商务国际商务国际商务',
+      //     class: 1
+      //   },
+      //   {
+      //     subject: '北教A503',
+      //     teacher: '邓超',
+      //     site: '国际商务国际商务国际商务',
+      //     class: 3
+      //   }
+      // ]
+    ],
     day: ['一', '二', '三', '四', '五', '六', '日'],
     class: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     bgColorArr: [
@@ -151,8 +180,16 @@ Page({
           common.reLogin();
           this.setLessonData();
         } else {
+          let data = res.data.data
+          data.forEach(item => {
+            item.forEach(items => {
+              if (items.site.length > 12 && item.class !== 3 && item.class !== 5) {
+                items.site = items.site.substr(0, 11) + '...'
+              }
+            })
+          })
           this.setData({
-            lesson: res.data.data,
+            lesson: data,
           });
           wx.hideLoading();
         }

@@ -1,11 +1,37 @@
+.content-detail-item.pt-50 {
+  margin-top: 45rpx;
+}
+
+.h-3 .content-detail-item.pt-50 {
+    margin-top: 105rpx;
+}
+
+.h-3 .content-detail-item.pt-20 {
+    margin-top: 20rpx;
+}
+
+.h-2 .content-detail-item.pt-10 {
+  margin-top: 20rpx;
+}
+
+.h-3 .content-detail-item.pt-10 {
+  margin-top: 70rpx;
+}
+
 .h-2 {
-  height: 200rpx;
-  padding-top: 20rpx;
+  height: 220rpx;
 }
 
 .h-3 {
-  height: 240rpx;
-  padding-top: 100rpx;
+  height: 340rpx;
+}
+
+.content-detail-item {
+  margin-top: 20rpx;
+}
+
+.h-3 .content-detail-item {
+  margin-top: 100rpx;
 }
 
 .t-0 {
@@ -26,10 +52,6 @@
 
 .t-10 {
   top: 1200rpx;
-}
-
-.lesson-table {
-  /* margin: 10px; */
 }
 
 .lesson-table .lesson-title {
