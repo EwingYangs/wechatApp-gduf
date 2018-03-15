@@ -2,20 +2,20 @@
   margin-top: 45rpx;
 }
 
-.h-3 .content-detail-item.pt-50 {
+.h-3 .content-detail-item.mt-50 {
     margin-top: 105rpx;
 }
 
-.h-3 .content-detail-item.pt-20 {
-    margin-top: 20rpx;
+.h-2 .content-detail-item.mt-30 {
+    margin-top: 30rpx;
 }
 
-.h-2 .content-detail-item.pt-10 {
-  margin-top: 20rpx;
+.h-2 .content-detail-item.mt-10 {
+  margin-top: 15rpx;
 }
 
-.h-3 .content-detail-item.pt-10 {
-  margin-top: 70rpx;
+.h-3 .content-detail-item.mt-10 {
+  margin-top: 60rpx;
 }
 
 .h-2 {
