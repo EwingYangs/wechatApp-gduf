@@ -7,7 +7,7 @@
             <view class="weui-flex">
               <view class="weui-flex__item">
                 <view class="holder" style="color:#edf1ff">
-                  <text style="font-weight:600;">北苑<text class="fa">{{floorNumber}} {{dormNumber}}</text></text>剩余电费
+                  <text style="font-weight:600;">北苑 <text class="fa">{{floorNumber}} {{dormNumber}}</text></text> 剩余电量
                 </view>
               </view>
             </view>
