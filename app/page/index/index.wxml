@@ -15,7 +15,7 @@
               <view class="weui-flex__item">
                 <view class="holder">
                   <text style="color:#edf1ff;">
-                              <text style="font-size:38px" class="fa">{{dormFeeInt}}</text><text class="fa">{{dormFeeFloat}}</text><text style="color:#edf1ff;font-weight:400"> 元</text>
+                              <text style="font-size:38px" class="fa">{{dormFeeInt}}</text><text class="fa">{{dormFeeFloat}}</text><text style="color:#edf1ff;font-weight:400"> 度</text>
                   </text>
                 </view>
               </view>
