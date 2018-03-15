@@ -87,15 +87,29 @@
 }
 
 .lesson-content .lesson-content-hd {
+  position: fixed;
+  top: 4em;
+  left: 10px;
   display: flex;
   height: 36px;
   line-height: 36px;
+  width: calc(100% - 20px);
   font-size: 14px;
   text-align: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: #000;
   background-color: rgb(255, 255, 255);
+  z-index: 10;
+}
+
+.lesson-content-mask {
+  position: fixed;
+  top: 3em;
+  height: 42px;
+  width: 100%;
+  background-color: rgb(248, 248, 248);
+  z-index: 9;
 }
 
 .lesson-title .lesson-bg {
@@ -132,6 +146,7 @@
 
 .lesson-content .lesson-content-bd {
   display: flex;
+  margin-top: calc(4em + 36px);
   border-bottom-right-radius: 5px;
 }
 
@@ -197,7 +212,7 @@
 
 .lesson-content .lesson-content-detail {
   position: absolute;
-  top: 36px;
+  top: 0;
   width: calc(100% - 20px);
   display: flex;
   padding-left: 20px;

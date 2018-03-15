@@ -8,6 +8,8 @@
     </view>
   </view>
 
+  <view class="lesson-content-mask"></view>
+
   <view class="lesson-content">
     <view class="lesson-content-hd">
       <view class="content-hd-one"></view>
