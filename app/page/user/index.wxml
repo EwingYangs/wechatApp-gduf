@@ -24,24 +24,16 @@
       <view class="weui-cell__bd">我的成绩</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </view>
-  </view>
-
-  <view class="weui-cells gbox " style="margin:12px 12px 0px 12px;">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="../collect/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <image src="../../images/icon_collect.png" class="user_icon"></image>
+      <view class="weui-cell__bd">我的收藏</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+     <!-- <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <image src="../../images/icon_publish.png" class="user_icon"></image>
       <view class="weui-cell__bd">我发布的</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="../collect/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <image src="../../images/icon_collect.png" class="user_icon"></image>
-      <view class="weui-cell__bd">我收藏的</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="../feedback/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <image src="../../images/icon_comment.png" class="user_icon"></image>
-      <view class="weui-cell__bd">反馈建议</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
+    </navigator> -->
   </view>
 
   <view class="weui-cells gbox" style="margin:12px 12px 0px 12px;">
@@ -52,6 +44,11 @@
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </button>
     </view>
+    <navigator url="../feedback/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <image src="../../images/icon_comment.png" class="user_icon"></image>
+      <view class="weui-cell__bd">反馈建议</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
   </view>
 
 </view>

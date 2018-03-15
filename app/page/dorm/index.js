@@ -94,5 +94,12 @@ Page({
         url: '../index/index',
       })
     });
+  },
+
+  //监听页面卸载事件
+  onUnload : function(){
+    wx.navigateTo({
+      url: '../index/index',
+    })
   }
 })

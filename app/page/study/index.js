@@ -114,6 +114,10 @@ Page({
           });
           wx.hideLoading();
         }
+      },
+      fail : error => {
+        common.showTip('查询失败请重试');
+        wx.hideLoading();
       }
     })
   }

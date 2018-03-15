@@ -24,7 +24,7 @@
     </view>
     <view class="lesson-content-detail">
       <view class="content" wx:for="{{lesson}}" wx:for-index="index" wx:key="le">
-        <view class="content-detail {{bgColorArr[(lessonIndex * 5 + index * 7 + 1) % 6]}} {{lessonItem.class === 3 || lessonItem.class === 5 ? 'h-3' : 'h-2'}} {{lessonItem.class === 2 || lessonItem.class === 3 ? 't-2' : ''}} {{lessonItem.class === 4 || lessonItem.class === 5 ? 't-5' : ''}} {{lessonItem.class === 7 ? 't-10' : ''}}"
+        <view class="content-detail {{bgColorArr[(lessonIndex + index + 1) % 6]}} {{lessonItem.class === 3 || lessonItem.class === 5 ? 'h-3' : 'h-2'}} {{lessonItem.class === 2 || lessonItem.class === 3 ? 't-2' : ''}} {{lessonItem.class === 4 || lessonItem.class === 5 ? 't-5' : ''}} {{lessonItem.class === 6 ? 't-8' : ''}} {{lessonItem.class === 7 ? 't-10' : ''}}"
         wx:for="{{item}}" wx:for-item="lessonItem" wx:for-index="lessonIndex">
           <view class="content-detail-item {{lessonItem.site.length < 8 ? 'pt-50' : ''}} {{lessonItem.site.length > 12 ? 'pt-10' : ''}}">
             <text>{{lessonItem.site}}</text>
