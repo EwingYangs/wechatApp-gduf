@@ -205,11 +205,11 @@ Page({
         }
         if(res.data.status.code == 1001){
           common.showModal("您的宿舍暂时没有录入系统!请切换宿舍",'',(res) => {
-            if(res.confirm){
-              wx.navigateTo({
-                url: '../dorm/index',
-              })
-            }
+            // if(res.confirm){
+            //   wx.navigateTo({
+            //     url: '../dorm/index',
+            //   })
+            // }
           });
           wx.hideNavigationBarLoading() //完成停止加载
           return false;

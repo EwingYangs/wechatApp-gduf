@@ -265,9 +265,14 @@ Page({
 
   setWeekIndex : function(){
     let termStartTime = config.termStartTime + ' 00:00:00';
-    let termStartStamp = new Date(termStartTime).getTime() / 1000;
+    let termStartStamp = Date.parse(new Date(termStartTime));
+    if (isNaN(termStartStamp)){
+      //解决IOS兼容性问题
+      termStartTime = termStartTime.replace(/-/g, '/');
+      termStartStamp = Date.parse(new Date(termStartTime));
+    }
+    termStartStamp = termStartStamp / 1000;
     let nowTimeStamp = new Date().getTime() / 1000;
-
     let timeInterval = parseInt(nowTimeStamp) - parseInt(termStartStamp);
 
     let weekIndex = timeInterval > 0 ? ((Math.ceil(timeInterval / (24 * 3600 * 7))) - 1) : 0

@@ -1,4 +1,5 @@
-var host = "https://www.itbasket.top";
+// var host = "https://www.itbasket.top";
+var host = "http://www.itbasket.top";
 // var host = "http://www.gduf.cn";
 module.exports = {
   // API 接口www.gduf-api.com，旧版使用
