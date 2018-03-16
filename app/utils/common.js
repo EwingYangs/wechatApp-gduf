@@ -88,7 +88,48 @@ function showFlushMsg(){
   })
 }
 
-function reLogin(){
+//重新登录
+function reLoginGduf(){
+  let jwxtInfo = wx.getStorageSync('jwxtInfo');
+  if (!jwxtInfo){
+    return false;
+  }
+  let sno = jwxtInfo.sno;
+  let pwd = jwxtInfo.pwd;
+  let encoded = jwxtInfo.encoded;
+  let token = config.token;
+  //实现登录请求
+  wx.request({
+    url: config.zgdufLoginUrl, //教务系统登录地址
+    data: {
+      xh: sno,
+      pwd: pwd
+    },
+    header: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'x-gduf-access-token': token,
+    },
+    method: 'POST',
+    success: function (res) {
+      if (res.data.flag != '1') {
+        common.showModal('登录失败，账号或密码错误');
+        return false;
+      }
+      //保存登录信息
+      let jwxtInfo = {
+        sno: sno,
+        pwd: pwd,
+        encoded: encoded,
+        userrealname: res.data.userrealname,
+        userdwmc: res.data.userdwmc,
+        token: res.data.token,
+      }
+      wx.setStorageSync('jwxtInfo', jwxtInfo);
+    }
+  })
+}
+
+function reLogin() {
   let jwxtInfo = wx.getStorageSync('jwxtInfo');
   let encoded = jwxtInfo.encoded;
   let token = config.token;
@@ -115,6 +156,7 @@ function reLogin(){
 }
 
 
+
 module.exports.showTip = showTip;
 module.exports.showModal = showModal;
 module.exports.checkLogin = checkLogin;
@@ -123,4 +165,5 @@ module.exports.setFlushMsg = setFlushMsg;
 module.exports.getFlushMsg = getFlushMsg;
 module.exports.showFlushMsg = showFlushMsg;
 module.exports.reLogin = reLogin;
+module.exports.reLoginGduf = reLoginGduf;
 

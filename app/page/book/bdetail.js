@@ -87,9 +87,9 @@ Page({
   getBookDetail: function(){
     if (!this.data.isbn && !this.data.recno) {
       common.showModal("数据获取错误", '', (res) => {
-          wx.navigateTo({
-            url: '../book/index',
-          })
+        wx.navigateBack({
+          delta: 1
+        })
       });
       return false;
     }
@@ -117,8 +117,8 @@ Page({
 
         if (res.data.status.code == 1001) {
           common.showModal("ISBN损坏，无法查询详细", '', (res) => {
-            wx.navigateTo({
-              url: '../book/index',
+            wx.navigateBack({
+              delta: 1
             })
           });
           wx.hideLoading();

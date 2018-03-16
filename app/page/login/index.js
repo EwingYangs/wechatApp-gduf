@@ -67,8 +67,71 @@ Page({
   
   },
 
+
+  toLogin: function (event){
+    if (config.isGdufApi) {
+      //判断是否使用智校园的接口
+      this.loginGduf(event);
+    } else {
+      this.login(event);
+    }
+  },
+
+
+  //新版登录，智校园
+  loginGduf: function (event){
+    var sno = event.detail.value.usno;
+    var pwd = event.detail.value.password;
+    var account = common.encodeInp(sno);
+    var passwd = common.encodeInp(pwd);
+    var encoded = account + "%%%" + passwd;
+    if(!sno){
+      common.showTip('请输入学号','loading');
+      return false;
+    }
+    if (!pwd) {
+      common.showTip('请输入密码', 'loading');
+      return false;
+    }
+    var token = config.token;
+    //实现登录请求
+    wx.request({
+      url: config.zgdufLoginUrl, //教务系统登录地址
+      data: {
+        xh: sno,
+        pwd: pwd
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token' : token,
+      },
+      method: 'POST',
+      success: function (res) {
+        if (res.data.flag != '1'){
+          common.showModal('登录失败，账号或密码错误');
+          return false;
+        }
+
+        //保存登录信息
+        let jwxtInfo = { 
+          sno: sno,
+          pwd: pwd,
+          encoded: encoded,
+          userrealname: res.data.userrealname,
+          userdwmc: res.data.userdwmc,
+          token: res.data.token,
+        }
+        wx.setStorageSync('jwxtInfo', jwxtInfo);
+        common.setFlushMsg('登录成功');
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+    })
+  },
+
   //显示模拟登录教务系统
-  login: function (event){
+  login: function (event) {
     var sno = event.detail.value.usno;
     var pwd = event.detail.value.password;
     var account = common.encodeInp(sno);
@@ -84,19 +147,19 @@ Page({
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'x-gduf-access-token' : token,
+        'x-gduf-access-token': token,
       },
       method: 'POST',
       success: function (res) {
-        if (res.data.status.msg == 'success'){
+        if (res.data.status.msg == 'success') {
           //保存信息到缓存
-          var info = { sno: sno, pwd: pwd, encoded: encoded};
+          var info = { sno: sno, pwd: pwd, encoded: encoded };
           wx.setStorageSync('jwxtInfo', info);
           common.setFlushMsg(res.data.data);
           wx.navigateBack({
             delta: 1
           })
-        }else{
+        } else {
           common.showModal('登录失败，账号或密码错误');
         }
       }

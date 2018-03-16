@@ -7,13 +7,12 @@
         </view>
       </view>
       <view class="page__bd page__bd_spacing" style="margin-top:3em">
-        <form bindsubmit="login">
+        <form bindsubmit="toLogin">
             <view class="zan-cell zan-form__item">
               <text class="zan-form__title">学号：</text>
               <input
                 class="fa input zan-form__input zan-cell__bd"
                 name = "usno"
-                bindinput="userNameInput"
                 type="text"
               />
             </view>
@@ -22,7 +21,6 @@
               <input
                 class="input zan-form__input zan-cell__bd"
                 name = "password"
-                bindinput="userNameInput"
                 password="true"
                 bindfocus=""
               />

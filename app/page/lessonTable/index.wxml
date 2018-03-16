@@ -32,6 +32,7 @@
             <text>{{lessonItem.site}}</text>
             <text>{{'@' + lessonItem.subject}}</text>
             <text>{{lessonItem.teacher}}</text>
+            <text>{{lessonItem.isonetwo == '0' ? '' : lessonItem.isonetwo == '1' ? '(单周)' : '(双周)'}}</text>
           </view>
         </view>
       </view>

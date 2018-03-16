@@ -63,7 +63,7 @@ Page({
       //     subject: '北教A503',
       //     teacher: '邓超',
       //     site: '国际商务国际商务国际商务',
-      //     class: 3
+      //     class: 2
       //   }
       // ]
     ],
@@ -146,7 +146,72 @@ Page({
     this.setLessonData();
   },
 
-  setLessonData : function(){
+  setLessonData: function(){
+    if (config.isGdufApi) {
+      //判断是否使用智校园的接口
+      this.requestGduf();
+    } else {
+      this.request();
+    }
+  },
+
+  requestGduf: function(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    let weekIndex = parseInt(this.data.weekIndex) + 1;
+    var jwxt = wx.getStorageSync('jwxtInfo');
+    if (!jwxt) {
+      common.showModal('获取用户信息失败，请重新登录','',function(){
+        wx.navigateBack({
+          delta: 1
+        })
+      });
+      return false;
+    }
+    var encoded = jwxt.encoded;
+    wx.request({
+      url: config.zgdufLessonUrl, //成绩地址
+      data: {
+        zc: weekIndex,
+        token: jwxt.token,
+        xh: jwxt.sno,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'x-gduf-access-token': config.token,
+      },
+      method: 'POST',
+      success: res => {
+        if (res.data.data.length == 0) {
+          common.showTip('暂无数据', 'loading');
+          this.setData({
+            lesson: null,
+          });
+          return false;
+        }
+
+        if (res.data.status.code == 1006){
+          common.showModal('身份认证出错，请重新登录','',function(){
+            wx.navigateBack({
+              delta: 1
+            })
+          });
+          wx.hideLoading();
+          return false;
+        }
+        
+        let data = res.data.data
+        
+        this.setData({
+          lesson: data,
+        });
+        wx.hideLoading();
+      }
+    })
+  },
+
+  request : function(){
     wx.showLoading({
       title: '加载中',
     })

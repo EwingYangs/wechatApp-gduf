@@ -104,6 +104,7 @@ Page({
       },
       method: 'POST',
       success: res => {
+        console.log(res);
         if (res.data.status.code == 1005) {
           //重新登录
           common.reLogin();

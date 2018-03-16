@@ -32,6 +32,14 @@ Page({
     }
 
     common.showFlushMsg();
+
+
+    //强制用智校园的接口
+    let jwxtInfo = wx.getStorageSync('jwxtInfo');
+    if (jwxtInfo && !jwxtInfo.token){
+      //如果有登录过并且没有token信息的,没有登录过不做任何处理
+      common.reLoginGduf();
+    }
   },
 
   /**
