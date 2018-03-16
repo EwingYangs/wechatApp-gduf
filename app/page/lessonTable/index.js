@@ -181,14 +181,8 @@ Page({
           this.setLessonData();
         } else {
           let data = res.data.data
-          let jobTitle = ['讲师', '教授', '副教授', '中级', '高级', '特级']
           data.forEach(item => {
             item.forEach(items => {
-              jobTitle.forEach(i => {
-                if (items.teacher.indexOf(i) > 0) {
-                  items.teacher = items.teacher.substr(0, items.teacher.indexOf(i))
-                }
-              })
               if (items.site.length > 12 && item.class !== 3 && item.class !== 5) {
                 items.site = items.site.substr(0, 11) + '...'
               }
