@@ -1,5 +1,5 @@
-// var host = "https://www.itbasket.top";
-var host = "http://www.gduf.cn";
+var host = "https://www.itbasket.top";
+// var host = "http://www.gduf.cn";
 module.exports = {
   // API 接口www.gduf-api.com，旧版使用
   token: "bad0f20dbd034357e6bff27e7a4453b3",
