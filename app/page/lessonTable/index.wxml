@@ -29,8 +29,8 @@
         <view class="content-detail {{bgColorArr[(lessonIndex + index + 1) % 6]}} {{lessonItem.class === 3 || lessonItem.class === 5 ? 'h-3' : 'h-2'}} {{lessonItem.class === 2 || lessonItem.class === 3 ? 't-2' : ''}} {{lessonItem.class === 4 || lessonItem.class === 5 ? 't-5' : ''}} {{lessonItem.class === 6 ? 't-8' : ''}} {{lessonItem.class === 7 ? 't-10' : ''}}"
         wx:for="{{item}}" wx:for-item="lessonItem" wx:for-index="lessonIndex">
           <view class="content-detail-item {{lessonItem.site.length <= 8 ? 'mt-30' : ''}} {{lessonItem.site.length > 8 && lessonItem.site.length < 12 ? 'mt-50' : ''}} {{lessonItem.site.length >= 12 ? 'mt-10' : ''}}">
-            <text>{{lessonItem.site}}</text>
-            <text>{{'@' + lessonItem.subject}}</text>
+            <text>{{lessonItem.subject}}</text>
+            <text>{{'@' + lessonItem.site}}</text>
             <text>{{lessonItem.teacher}}</text>
             <text>{{lessonItem.isonetwo == '0' ? '' : lessonItem.isonetwo == '1' ? '(单周)' : '(双周)'}}</text>
           </view>

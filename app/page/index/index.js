@@ -133,7 +133,7 @@ Page({
 
 
   body: function () {
-    common.showModal('体侧暂未开放查询');
+    common.showModal('体测暂未开放查询');
     return false;
     wx.navigateTo({
       url: '../body/query'
