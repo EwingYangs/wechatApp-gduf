@@ -90,7 +90,7 @@ Page({
       buildingId:buildingId,
     });
     common.showModal('绑定成功', '', function () {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../index/index',
       })
     });
@@ -98,8 +98,8 @@ Page({
 
   //监听页面卸载事件
   onUnload : function(){
-    wx.navigateTo({
-      url: '../index/index',
-    })
+    // wx.navigateTo({
+    //   url: '../index/index',
+    // })
   }
 })
